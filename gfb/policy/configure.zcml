@@ -7,4 +7,11 @@
 
     <include package="slc.riskassessmentlink" />
 
+    <genericsetup:registerProfile
+      name="default"
+      title="GFB Site Policy"
+      directory="profiles/default"
+      description"Turn a Plone Site into a GFB Site."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 </configure>

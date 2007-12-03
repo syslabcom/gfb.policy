@@ -1,6 +1,10 @@
 README.txt
 setup.cfg
 setup.py
+docs/HISTORY.txt
+docs/INSTALL.txt
+docs/LICENSE.GPL
+docs/LICENSE.txt
 gfb/__init__.py
 gfb.policy.egg-info/PKG-INFO
 gfb.policy.egg-info/SOURCES.txt
@@ -8,7 +12,9 @@ gfb.policy.egg-info/dependency_links.txt
 gfb.policy.egg-info/entry_points.txt
 gfb.policy.egg-info/namespace_packages.txt
 gfb.policy.egg-info/not-zip-safe
+gfb.policy.egg-info/paster_plugins.txt
 gfb.policy.egg-info/requires.txt
 gfb.policy.egg-info/top_level.txt
 gfb/policy/__init__.py
+gfb/policy/configure.zcml
 gfb/policy/tests.py
