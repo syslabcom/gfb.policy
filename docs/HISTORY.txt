@@ -1,0 +1,9 @@
+Changelog for gfb.policy
+
+    (name of developer listed in brackets)
+
+gfb.policy - 0.1 Unreleased
+
+    - Initial package structure.
+      [zopeskel]
+
