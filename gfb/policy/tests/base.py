@@ -11,7 +11,7 @@ from Products.PloneTestCase.layer import onsetup
 # should happen at module level to make sure they are available early enough.
 
 #ztc.installProduct('SimpleAttachment')
-#ztc.installProduct('RichDocument')
+#ztc.installProduct('RiskAssessmentLink')
 
 @onsetup
 def setup_gfb_policy():
@@ -32,6 +32,7 @@ def setup_gfb_policy():
     # should be available. This can't happen until after we have loaded
     # the ZCML.
     
+    ztc.installPackage('slc.riskassessmentlink')
     ztc.installPackage('gfb.policy')
     
 # The order here is important: We first call the (deferred) function which

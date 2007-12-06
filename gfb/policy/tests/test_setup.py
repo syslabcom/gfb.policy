@@ -16,6 +16,10 @@ class TestSetup(GFBPolicyTestCase):
     def test_portal_description(self):
         self.assertEquals("Welcome to the GFB portal", self.portal.getProperty('description'))
         
+    def test_riskassessmentlink_installed(self):
+        self.failUnless('RiskAssessmentLink' in self.types.objectIds())        
+        
+        
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestSetup))
