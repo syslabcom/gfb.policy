@@ -26,6 +26,7 @@ def importVarious(context):
     quickinst.installProduct('plone.app.iterate')
     quickinst.installProduct('RiskAssessmentLink')
     quickinst.installProduct('ATVocabularyManager')
+    quickinst.installProduct('ProxyIndex')
 
     importVocabularies(site)
 
