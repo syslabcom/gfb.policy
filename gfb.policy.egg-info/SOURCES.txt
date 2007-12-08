@@ -17,10 +17,11 @@ gfb.policy.egg-info/requires.txt
 gfb.policy.egg-info/top_level.txt
 gfb/policy/__init__.py
 gfb/policy/configure.zcml
-gfb/policy/gfb.policy_various.txt
 gfb/policy/setuphandlers.py
 gfb/policy/Extensions/Install.py
 gfb/policy/Extensions/__init__.py
+gfb/policy/data/vocabularies/ISCO.vdex
+gfb/policy/profiles/default/gfb.policy_various.txt
 gfb/policy/profiles/default/import_steps.xml
 gfb/policy/profiles/default/properties.xml
 gfb/policy/tests/__init__.py

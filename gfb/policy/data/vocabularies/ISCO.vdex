@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vdex orderSignificant="true" profileType="hierarchicalTokenTerms" language="en">
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 imsvdex_v1p0.xsd imsvdex_v1p0_thesaurus.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd" orderSignificant="true" profileType="flatTokenTerms" language="en">
   <vocabName>
     <langstring language="en">International Standard Classification of Occupations, ISCO-88</langstring>
   </vocabName>
@@ -7,8 +7,7 @@
   <term>
     <termIdentifier>1</termIdentifier>
     <caption>
-      <langstring language="en">LEGISLATORS, SENIOR OFFICIALS AND MANAGERS
-</langstring>
+      <langstring language="en">LEGISLATORS, SENIOR OFFICIALS AND MANAGERS</langstring>
     </caption>
     <term>
       <termIdentifier>11</termIdentifier>

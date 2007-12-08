@@ -27,6 +27,8 @@ def importVarious(context):
     quickinst.installProduct('RiskAssessmentLink')
     quickinst.installProduct('ATVocabularyManager')
     quickinst.installProduct('ProxyIndex')
+    quickinst.installProduct('VocabularyPickerWidget')
+    quickinst.installProduct('Clouseau')
 
     importVocabularies(site)
 
