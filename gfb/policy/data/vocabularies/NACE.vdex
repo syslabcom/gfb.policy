@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 
+                          imsvdex_v1p0.xsd imsvdex_v1p0_thesaurus.xsd 
+                          http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 
+                          imsmd_rootv1p2p1.xsd" 
+      orderSignificant="true" 
+      profileType="flatTokenTerms" 
+      language="de">
+    <vocabName>
+	   <langstring language="de">NACE - Wirtschaftszweigklassifikationen der Europäischen Union</langstring>
+    </vocabName>
+    <vocabIdentifier>NACE</vocabIdentifier>
+    
+    <term>
+        <termIdentifier>A</termIdentifier>
+        <caption><langstring language="de">Land- und Forstwirtschaft, Fischerei</langstring></caption>
+    
+        <term>
+            <termIdentifier>1</termIdentifier>
+            <caption><langstring language="de">Landwirtschaft, Jagd und damit verbundene Tätigkeiten</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>2</termIdentifier>
+            <caption><langstring language="de">Forstwirtschaft und Holzeinschlag</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>3</termIdentifier>
+            <caption><langstring language="de">Fischerei und Aquakultur</langstring></caption>
+        </term>
+    
+    </term>
+    
+    <term>
+        <termIdentifier>B</termIdentifier>
+        <caption><langstring language="de">Bergbau und Gewinnung von Steinen und Erden</langstring></caption>
+    
+        <term>
+            <termIdentifier>5</termIdentifier>
+            <caption><langstring language="de">Kohlenbergbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>6</termIdentifier>
+            <caption><langstring language="de">Gewinnung von Erdöl und Erdgas</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>7</termIdentifier>
+            <caption><langstring language="de">Erzbergbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>8</termIdentifier>
+            <caption><langstring language="de">Gewinnung von Steinen und Erden, sonstiger Bergbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>9</termIdentifier>
+            <caption><langstring language="de">Erbringung von Dienstleistungen für den Bergbau und für die Gewinnung von 	Steinen und Erden</langstring></caption>
+        </term>
+    
+    </term>    
+    
+    <term>
+        <termIdentifier>C</termIdentifier>
+        <caption><langstring language="de">Verarbeitendes Gewerbe/Herstellung von Waren</langstring></caption>
+    
+        <term>
+            <termIdentifier>10</termIdentifier>
+            <caption><langstring language="de">Herstellung von Nahrungs- und Futtermitteln</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>11</termIdentifier>
+            <caption><langstring language="de">Getränkeherstellung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>12</termIdentifier>
+            <caption><langstring language="de">Tabakverarbeitung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>13</termIdentifier>
+            <caption><langstring language="de">Herstellung von Textilien</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>14</termIdentifier>
+            <caption><langstring language="de">Herstellung von Bekleidung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>15</termIdentifier>
+            <caption><langstring language="de">Herstellung von Leder, Lederwaren und Schuhen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>16</termIdentifier>
+            <caption><langstring language="de">Herstellung von Holz-, Flecht-, Korb- und Korkwaren (ohne Möbel)</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>17</termIdentifier>
+            <caption><langstring language="de">Herstellung von Papier, Pappe und Waren daraus</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>18</termIdentifier>
+            <caption><langstring language="de">Herstellung von Druckerzeugnissen; Vervielfältigung von bespielten Ton-, Bild- 	und Datenträgern</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>19</termIdentifier>
+            <caption><langstring language="de">Kokerei und Mineralölverarbeitung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>20</termIdentifier>
+            <caption><langstring language="de">Herstellung von chemischen Erzeugnissen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>21</termIdentifier>
+            <caption><langstring language="de">Herstellung von pharmazeutischen Erzeugnissen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>22</termIdentifier>
+            <caption><langstring language="de">Herstellung von Gummi- und Kunststoffwaren</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>23</termIdentifier>
+            <caption><langstring language="de">Herstellung von Glas und Glaswaren, Keramik, Verarbeitung von Steinen und 	Erden</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>24</termIdentifier>
+            <caption><langstring language="de">Metallerzeugung und -bearbeitung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>25</termIdentifier>
+            <caption><langstring language="de">Herstellung von Metallerzeugnissen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>26</termIdentifier>
+            <caption><langstring language="de">Herstellung von Datenverarbeitungsgeräten, elektronischen und optischen 	Erzeugnissen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>27</termIdentifier>
+            <caption><langstring language="de">Herstellung von elektrischen Ausrüstungen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>28</termIdentifier>
+            <caption><langstring language="de">Maschinenbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>29</termIdentifier>
+            <caption><langstring language="de">Herstellung von Kraftwagen und Kraftwagenteilen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>30</termIdentifier>
+            <caption><langstring language="de">Sonstiger Fahrzeugbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>31</termIdentifier>
+            <caption><langstring language="de">Herstellung von Möbeln</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>32</termIdentifier>
+            <caption><langstring language="de">Herstellung von sonstigen Waren</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>33</termIdentifier>
+            <caption><langstring language="de">Reparatur und Installation von Maschinen und Ausrüstungen</langstring></caption>
+        </term>
+    
+    </term>    
+
+    <term>
+        <termIdentifier>D</termIdentifier>
+        <caption><langstring language="de">Energieversorgung</langstring></caption>
+    
+        <term>
+            <termIdentifier>35</termIdentifier>
+            <caption><langstring language="de">Energieversorgung</langstring></caption>
+        </term>
+    </term>
+    
+    <term>
+        <termIdentifier>E</termIdentifier>
+        <caption><langstring language="de">Wasserversorgung, Abwasser- und Abfallentsorgung und Beseitigung von Umweltverschmutzungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>36</termIdentifier>
+            <caption><langstring language="de">Wasserversorgung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>37</termIdentifier>
+            <caption><langstring language="de">Abwasserentsorgung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>38</termIdentifier>
+            <caption><langstring language="de">Sammlung, Behandlung und Beseitigung von Abfällen; Rückgewinnung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>39</termIdentifier>
+            <caption><langstring language="de">Beseitigung von Umweltverschmutzungen und sonstige Entsorgung</langstring></caption>
+        </term>
+    </term>    
+    
+    <term>
+        <termIdentifier>F</termIdentifier>
+        <caption><langstring language="de">Baugewerbe/Bau</langstring></caption>
+    
+        <term>
+            <termIdentifier>41</termIdentifier>
+            <caption><langstring language="de">Hochbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>42</termIdentifier>
+            <caption><langstring language="de">Tiefbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>43</termIdentifier>
+            <caption><langstring language="de">Vorbereitende Baustellenarbeiten, Bauinstallation und sonstiges 	Ausbaugewerbe</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>G</termIdentifier>
+        <caption><langstring language="de">Handel, Instandhaltung und Reparatur von Kraftfahrzeugen</langstring></caption>
+    
+        <term>
+            <termIdentifier>45</termIdentifier>
+            <caption><langstring language="de">Handel mit Kraftfahrzeugen; Instandhaltung und Reparatur von 	Kraftfahrzeugen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>46</termIdentifier>
+            <caption><langstring language="de">Großhandel (ohne Handel mit Kraftfahrzeugen und Krafträdern)</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>47</termIdentifier>
+            <caption><langstring language="de">Einzelhandel (ohne Handel mit Kraftfahrzeugen)</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>H</termIdentifier>
+        <caption><langstring language="de">Verkehr und Lagerei</langstring></caption>
+    
+        <term>
+            <termIdentifier>49</termIdentifier>
+            <caption><langstring language="de">Landverkehr und Transport in Rohrfernleitungen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>50</termIdentifier>
+            <caption><langstring language="de">Schifffahrt</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>51</termIdentifier>
+            <caption><langstring language="de">Luftfahrt</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>52</termIdentifier>
+            <caption><langstring language="de">Lagerei sowie Erbringung von sonstigen Dienstleistungen für den Verkehr</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>53</termIdentifier>
+            <caption><langstring language="de">Post-, Kurier- und Expressdienste</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>I</termIdentifier>
+        <caption><langstring language="de">Gastgewerbe/Beherbergung von Gastronomie</langstring></caption>
+    
+        <term>
+            <termIdentifier>55</termIdentifier>
+            <caption><langstring language="de">Beherbergung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>56</termIdentifier>
+            <caption><langstring language="de">Gastronomie</langstring></caption>
+        </term>
+    </term>
+    
+    <term>
+        <termIdentifier>J</termIdentifier>
+        <caption><langstring language="de">Information und Kommunikation</langstring></caption>
+    
+        <term>
+            <termIdentifier>58</termIdentifier>
+            <caption><langstring language="de">Verlagswesen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>59</termIdentifier>
+            <caption><langstring language="de">Herstellung, Verleih und Vertrieb von Filmen und Fernsehprogrammen; Kinos; 	Tonstudios und Verlegen von Musik</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>60</termIdentifier>
+            <caption><langstring language="de">Rundfunkveranstalter</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>61</termIdentifier>
+            <caption><langstring language="de">Telekommunikation</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>62</termIdentifier>
+            <caption><langstring language="de">Erbringung von Dienstleistungen der Informationstechnologie</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>63</termIdentifier>
+            <caption><langstring language="de">Informationsdienstleistungen</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>K</termIdentifier>
+        <caption><langstring language="de">Erbringung von Finanz und Versicherungsdienstleistungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>64</termIdentifier>
+            <caption><langstring language="de">Erbringung von Finanzdienstleistungen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>65</termIdentifier>
+            <caption><langstring language="de">Versicherungen, Rückversicherungen und Pensionskassen (ohne 	Sozialversicherung)</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>66</termIdentifier>
+            <caption><langstring language="de">Mit Finanz- und Versicherungsdienstleistungen verbundene Tätigkeiten</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>L</termIdentifier>
+        <caption><langstring language="de">Grundstücks- und Wohnungswesen</langstring></caption>
+    
+        <term>
+            <termIdentifier>68</termIdentifier>
+            <caption><langstring language="de">Grundstücks- und Wohnungswesen</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>M</termIdentifier>
+        <caption><langstring language="de">Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>69</termIdentifier>
+            <caption><langstring language="de">Rechts- und Steuerberatung, Wirtschaftsprüfung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>70</termIdentifier>
+            <caption><langstring language="de">Verwaltung und Führung von Unternehmen und Betrieben; 	Unternehmensberatung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>71</termIdentifier>
+            <caption><langstring language="de">Architektur- und Ingenieurbüros; technische, physikalische und chemische 	Untersuchung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>72</termIdentifier>
+            <caption><langstring language="de">Forschung und Entwicklung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>73</termIdentifier>
+            <caption><langstring language="de">Werbung und Marktforschung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>74</termIdentifier>
+            <caption><langstring language="de">Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>75</termIdentifier>
+            <caption><langstring language="de">Veterinärwesen</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>N</termIdentifier>
+        <caption><langstring language="de">Erbringung von sonstigen wirtschaftlichen Dienstleistungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>77</termIdentifier>
+            <caption><langstring language="de">Vermietung von beweglichen Sachen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>78</termIdentifier>
+            <caption><langstring language="de">Vermittlung und Überlassung von Arbeitskräften</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>79</termIdentifier>
+            <caption><langstring language="de">Reisebüros, Reiseveranstalter und Erbringung sonstiger 	Reservierungsdienstleistungen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>80</termIdentifier>
+            <caption><langstring language="de">Wach- und Sicherheitsdienste sowie Detekteien</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>81</termIdentifier>
+            <caption><langstring language="de">Gebäudebetreuung; Garten- und Landschaftsbau</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>82</termIdentifier>
+            <caption><langstring language="de">Erbringung von wirtschaftlichen Dienstleistungen für Unternehmen und 	Privatpersonen a. n. g.</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>O</termIdentifier>
+        <caption><langstring language="de">Öffentliche Verwaltung, Verteidigung, Sozialversicherung</langstring></caption>
+    
+        <term>
+            <termIdentifier>84</termIdentifier>
+            <caption><langstring language="de">Öffentliche Verwaltung, Verteidigung, Sozialversicherung</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>P</termIdentifier>
+        <caption><langstring language="de">Erziehung und Unterricht</langstring></caption>
+    
+        <term>
+            <termIdentifier>85</termIdentifier>
+            <caption><langstring language="de">Erziehung und Unterricht</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>Q</termIdentifier>
+        <caption><langstring language="de">Gesundheits- und Sozialwesen</langstring></caption>
+    
+        <term>
+            <termIdentifier>86</termIdentifier>
+            <caption><langstring language="de">Gesundheitswesen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>87</termIdentifier>
+            <caption><langstring language="de">Heime (ohne Erholungs- und Ferienheime)</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>88</termIdentifier>
+            <caption><langstring language="de">Sozialwesen (ohne Heime)</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>R</termIdentifier>
+        <caption><langstring language="de">Kunst, Unterhaltung und Erholung</langstring></caption>
+    
+        <term>
+            <termIdentifier>90</termIdentifier>
+            <caption><langstring language="de">Kreative, künstlerische und unterhaltende Tätigkeiten</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>91</termIdentifier>
+            <caption><langstring language="de">Bibliotheken, Archive, Museen, botanische und zoologische Gärten</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>92</termIdentifier>
+            <caption><langstring language="de">Spiel-, Wett- und Lotteriewesen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>93</termIdentifier>
+            <caption><langstring language="de">Erbringung von Dienstleistungen des Sports, der Unterhaltung und der 	Erholung</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>S</termIdentifier>
+        <caption><langstring language="de">Erbringung von sonstigen Dienstleistungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>94</termIdentifier>
+            <caption><langstring language="de">Interessenvertretungen sowie kirchliche und sonstige religiöse Vereinigungen 	(ohne Sozialwesen und Sport)</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>95</termIdentifier>
+            <caption><langstring language="de">Reparatur von Datenverarbeitungsgeräten und Gebrauchsgütern</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>96</termIdentifier>
+            <caption><langstring language="de">Erbringung von sonstigen überwiegend persönlichen Dienstleistungen</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>T</termIdentifier>
+        <caption><langstring language="de">Private Haushalte mit Hauspersonal, Herstellung von Waren und Erbringung von Dienstleistungen durch private Haushalte für den Eigenbedarf ohne ausgeprägten Schwerpunkt</langstring></caption>
+    
+        <term>
+            <termIdentifier>97</termIdentifier>
+            <caption><langstring language="de">Private Haushalte mit Hauspersonal</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>98</termIdentifier>
+            <caption><langstring language="de">Herstellung von Waren und Erbringung von Dienstleistungen durch private 	Haushalte für den Eigenbedarf ohne ausgeprägten Schwerpunkt</langstring></caption>
+        </term>
+    </term>
+
+    <term>
+        <termIdentifier>U</termIdentifier>
+        <caption><langstring language="de">Exterritoriale Organisationen und Körperschaften</langstring></caption>
+    
+        <term>
+            <termIdentifier>99</termIdentifier>
+            <caption><langstring language="de">Exterritoriale Organisationen und Körperschaften</langstring></caption>
+        </term>
+    </term>
+    
+    
+</vdex>
