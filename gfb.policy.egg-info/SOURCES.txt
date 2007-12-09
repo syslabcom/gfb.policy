@@ -20,7 +20,11 @@ gfb/policy/configure.zcml
 gfb/policy/setuphandlers.py
 gfb/policy/Extensions/Install.py
 gfb/policy/Extensions/__init__.py
+gfb/policy/data/RAProvider.zexp
+gfb/policy/data/RiskAssessmentContents.zexp
 gfb/policy/data/vocabularies/ISCO.vdex
+gfb/policy/data/vocabularies/NACE.vdex
+gfb/policy/data/vocabularies/RiskFactors.vdex
 gfb/policy/profiles/default/gfb.policy_various.txt
 gfb/policy/profiles/default/import_steps.xml
 gfb/policy/profiles/default/properties.xml

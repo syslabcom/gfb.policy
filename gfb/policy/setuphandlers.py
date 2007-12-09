@@ -29,6 +29,7 @@ def importVarious(context):
     quickinst.installProduct('ProxyIndex')
     quickinst.installProduct('VocabularyPickerWidget')
     quickinst.installProduct('Clouseau')
+    quickinst.installProduct('DataGridField')
 
     importVocabularies(site)
 
@@ -79,6 +80,11 @@ def importVocabularies(self):
             createSimpleVocabs(pvm, vocabstruct)
             logger.info("Dump Import of %s" % vocabname)
             
+            
+    # import the simple vocablaries from zexp
+    if 'RiskAssessmentContents' not in pvm.objectIds():
+        RAC = os.path.join(basedir, 'data', 'RiskAssessmentContents.zexp')
+        pvm._importObjectFromFile(RAC, verify=False)
 
 def addProxyIndexes(self, index_data):
     logger = logging.getLogger("ProxyIndex")
