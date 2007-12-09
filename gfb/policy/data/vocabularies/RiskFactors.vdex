@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 
+                          imsvdex_v1p0.xsd imsvdex_v1p0_thesaurus.xsd 
+                          http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 
+                          imsmd_rootv1p2p1.xsd" 
+      orderSignificant="true" 
+      profileType="flatTokenTerms" 
+      language="de">
+    <vocabName>
+	   <langstring language="de">Gefährdungsfaktoren</langstring>
+    </vocabName>
+    <vocabIdentifier>RiskFactors</vocabIdentifier>
+    
+    <term>
+        <termIdentifier>1</termIdentifier>
+        <caption><langstring language="de">Mechanische Gefährdungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>1.1</termIdentifier>
+            <caption><langstring language="de">Gefährdung durch ungeschützte bewegte Maschinenteile</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>1.2</termIdentifier>
+            <caption><langstring language="de">Gefährdung durch Teile mit gefährlicher Oberfläche</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>1.3</termIdentifier>
+            <caption><langstring language="de">Gefährdung durch Transport und bewegte Arbeitsmittel</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>1.4</termIdentifier>
+            <caption><langstring language="de">Gefährdung durch unkontrollierte bewegte Teile</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>1.5</termIdentifier>
+            <caption><langstring language="de">Sturzgefährdungen</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>1.6</termIdentifier>
+            <caption><langstring language="de">Absturzgefährdungen</langstring></caption>
+        </term>
+    
+    </term>
+    
+    <term>
+        <termIdentifier>2</termIdentifier>
+        <caption><langstring language="de">Elektrische Gefährdungen</langstring></caption>    
+    </term>    
+    <term>
+        <termIdentifier>3</termIdentifier>
+        <caption><langstring language="de">Gefahrstoffe</langstring></caption>    
+    </term>    
+    <term>
+        <termIdentifier>4</termIdentifier>
+        <caption><langstring language="de">Biologische Arbeitsstoffe</langstring></caption>    
+    </term>    
+    <term>
+        <termIdentifier>5</termIdentifier>
+        <caption><langstring language="de">Brand- und Explosionsgefährdungen</langstring></caption>    
+    </term>    
+    <term>
+        <termIdentifier>6</termIdentifier>
+        <caption><langstring language="de">Kalte und heiße Medien</langstring></caption>    
+        <term>
+            <termIdentifier>6.1</termIdentifier>
+            <caption><langstring language="de">Kalte Medien</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>6.2</termIdentifier>
+            <caption><langstring language="de">Heiße Medien</langstring></caption>
+        </term>
+    </term>   
+
+    <term>
+        <termIdentifier>7</termIdentifier>
+        <caption><langstring language="de">Klima</langstring></caption>
+    
+        <term>
+            <termIdentifier>7.1</termIdentifier>
+            <caption><langstring language="de">Kälte</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>7.2</termIdentifier>
+            <caption><langstring language="de">Hitze</langstring></caption>
+        </term>    
+    </term>    
+
+    <term>
+        <termIdentifier>8</termIdentifier>
+        <caption><langstring language="de">Beleuchtung</langstring></caption>
+    </term>
+    
+    <term>
+        <termIdentifier>9</termIdentifier>
+        <caption><langstring language="de">Lärm</langstring></caption>
+    
+    </term>    
+    
+    <term>
+        <termIdentifier>10</termIdentifier>
+        <caption><langstring language="de">Vibration</langstring></caption>
+    </term>
+
+    <term>
+        <termIdentifier>11</termIdentifier>
+        <caption><langstring language="de">Strahlung</langstring></caption>
+    </term>
+
+    <term>
+        <termIdentifier>12</termIdentifier>
+        <caption><langstring language="de">Aufnahme von Informationen, Handhabung und Stellteilen</langstring></caption>
+    </term>
+
+    <term>
+        <termIdentifier>13</termIdentifier>
+        <caption><langstring language="de">Physische Belastungen</langstring></caption>
+    
+        <term>
+            <termIdentifier>13.1</termIdentifier>
+            <caption><langstring language="de">Manuelle Handhabung von Lasten</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>13.2</termIdentifier>
+            <caption><langstring language="de">Erzwungene Körperhaltung</langstring></caption>
+        </term>
+        <term>
+            <termIdentifier>13.3</termIdentifier>
+            <caption><langstring language="de">Bewegung unter überhöhter Kraftanstrengung</langstring></caption>
+        </term>
+    </term>
+    
+    <term>
+        <termIdentifier>14</termIdentifier>
+        <caption><langstring language="de">Psychische Belastungen</langstring></caption>
+    </term>
+</vdex>
