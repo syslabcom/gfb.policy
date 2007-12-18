@@ -1,5 +1,9 @@
 from Products.CMFCore.utils import getToolByName
 import logging, os
+from zope.component import getUtility
+from simplon.plone.ldap.engine.schema import LDAPProperty
+from simplon.plone.ldap.engine.interfaces import ILDAPConfiguration
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 vocabdir = os.path.join(basedir, 'data', 'vocabularies')
@@ -30,6 +34,7 @@ def importVarious(context):
     quickinst.installProduct('VocabularyPickerWidget')
     quickinst.installProduct('Clouseau')
     quickinst.installProduct('DataGridField')
+    quickinst.installProduct('gfb.theme')
 
     importVocabularies(site)
 
@@ -48,9 +53,39 @@ def importVarious(context):
 
     addProxyIndexes(site, index_data)
 
+    addCatalogMetadata(site, ['Category'])
+
+    props = [
+        dict(id='localityName', value='', type='string', plone_name='Locality', multi_valued=False),
+        dict(id='stateOrProvinceName', value='', type='string', plone_name='Country', multi_valued=False),
+        dict(id='postalAddress', value='', type='string', plone_name='Address', multi_valued=False),
+        dict(id='telephoneNumber', value='', type='string', plone_name='Telephone', multi_valued=False),
+        dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
+        ]
+    addMemberdataProperties(site, props)
+    
 
 
+def addMemberdataProperties(site, props):
+    logger = logging.getLogger("MemberdataProperties")
+    logger.info("Adding Memberdata Properties")
 
+    pm = getToolByName(site, 'portal_memberdata')
+    config=getUtility(ILDAPConfiguration)
+    availableldapprops = [x.ldap_name for x in config.schema.values()]
+    for prop in props:
+        if not pm.hasProperty(prop['id']):
+            pm._setProperty(prop['id'], prop['value'], prop['type'])     
+        if prop['id'] not in availableldapprops:
+            logger.info("adding %s" % prop['id'])
+            config.schema.addItem(LDAPProperty(
+                                       ldap_name=prop['id'],
+                                       plone_name=prop['plone_name'], 
+                                       description=prop['id'],
+                                       multi_valued=prop['multi_valued']))
+        else:
+            logger.info("not adding %s" % prop['id'])
+            logger.info(availableldapprops)
 
 
 def importVocabularies(self):
@@ -105,3 +140,14 @@ def addProxyIndexes(self, index_data):
         cat.manage_addProduct['ProxyIndex'].manage_addProxyIndex(
             id=data['idx_id'],
             extra=extra)            
+
+
+def addCatalogMetadata(site, metadata):
+    logger = logging.getLogger("CatalogMetadata")
+    logger.info("Adding Catalog Metadata")
+
+    cat = getToolByName(site, 'portal_catalog')
+    for md in metadata:
+        if md not in cat.schema():
+            cat.manage_addColumn(md)
+            
