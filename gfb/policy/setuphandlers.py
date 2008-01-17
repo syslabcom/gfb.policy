@@ -1,9 +1,13 @@
 from Products.CMFCore.utils import getToolByName
 import logging, os
-from zope.component import getUtility
+from zope.component import getMultiAdapter, getUtility
 from simplon.plone.ldap.engine.schema import LDAPProperty
 from simplon.plone.ldap.engine.interfaces import ILDAPConfiguration
-
+from plone.portlets.constants import CONTEXT_CATEGORY, GROUP_CATEGORY, CONTENT_TYPE_CATEGORY
+from plone.portlets.interfaces import IPortletManager, ILocalPortletAssignmentManager
+from plone.app.portlets.utils import assignment_mapping_from_key
+from plone.app.portlets.portlets import navigation, news, classic, events, search
+from plone.portlet.static import static as staticportlet
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 vocabdir = os.path.join(basedir, 'data', 'vocabularies')
@@ -35,7 +39,8 @@ def importVarious(context):
     quickinst.installProduct('Clouseau')
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
-
+    quickinst.installProduct('simplon.plone.ldap')
+    
     importVocabularies(site)
 
     index_data = [
@@ -63,8 +68,7 @@ def importVarious(context):
         dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
         ]
     addMemberdataProperties(site, props)
-    
-
+    setupContent(site)
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
@@ -151,3 +155,54 @@ def addCatalogMetadata(site, metadata):
         if md not in cat.schema():
             cat.manage_addColumn(md)
             
+#################################
+# PORTLET MANAGEMENT & CONTENT
+
+def _blockPortlets(context, manager, CAT, status):
+    portletManager = getUtility(IPortletManager, name=manager)
+    assignable = getMultiAdapter((context, portletManager,), ILocalPortletAssignmentManager)
+    assignable.setBlacklistStatus(CAT, status)
+                
+
+def portletAssignmentPortal(context):
+    """ assign portlets as they should be set on the portal root """
+    path = "/"
+    left = assignment_mapping_from_key(context, 'plone.leftcolumn', CONTEXT_CATEGORY, path)
+    right = assignment_mapping_from_key(context, 'plone.rightcolumn', CONTEXT_CATEGORY, path)
+    for x in list(left.keys()):
+        del left[x]    
+    for x in list(right.keys()):
+        del right[x]    
+    left['navtree'] = navigation.Assignment()
+    left['events'] = events.Assignment() 
+    right['news'] = news.Assignment()
+    
+def portletAssignmentDB(context):
+    """ assign portlets as they should be set on the database folder """
+    path = '/'.join(context.getPhysicalPath())
+    left = assignment_mapping_from_key(context, 'plone.leftcolumn', CONTEXT_CATEGORY, path)
+    right = assignment_mapping_from_key(context, 'plone.rightcolumn', CONTEXT_CATEGORY, path)
+    for x in list(right.keys()):
+        del right[x]    
+    _blockPortlets(context, 'plone.leftcolumn', CONTEXT_CATEGORY, True)
+    _blockPortlets(context, 'plone.rightcolumn', CONTEXT_CATEGORY, True)
+    
+def portletAssignmentRAL(context):
+    right = context.restrictedTraverse('++contenttypeportlets++plone.rightcolumn+RiskAssessmentLink')
+    right['ral_details'] = classic.Assignment(template='portlet_riskassessmentlink_details', macro='portlet')
+    
+    
+def setupContent(site):
+    """ Adds the db folder and registers the filter view as default as well as the portlets """
+    # enable addition of large folders
+    getattr(site.portal_types, 'Large Plone Folder').global_allow = True
+    _ = site.invokeFactory('Large Plone Folder', 'db')
+    db = getattr(site, 'db')
+    db.setLayout('riskassessmentlink_db_view')
+    
+    portletAssignmentPortal(site)
+    portletAssignmentDB(db)
+    portletAssignmentRAL(site)
+    
+    
+    
