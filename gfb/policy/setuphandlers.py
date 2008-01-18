@@ -8,6 +8,10 @@ from plone.portlets.interfaces import IPortletManager, ILocalPortletAssignmentMa
 from plone.app.portlets.utils import assignment_mapping_from_key
 from plone.app.portlets.portlets import navigation, news, classic, events, search
 from plone.portlet.static import static as staticportlet
+from gfb.policy.config import PROVIDER_ROLE
+from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PERMISSIONS
+from Products.CMFCore.permissions import AddPortalContent
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 vocabdir = os.path.join(basedir, 'data', 'vocabularies')
@@ -15,9 +19,9 @@ vocabdir = os.path.join(basedir, 'data', 'vocabularies')
 def importVarious(context):
     """Miscellanous steps import handle
     """
-    
+
     # Ordinarily, GenericSetup handlers check for the existence of XML files.
-    # Here, we are not parsing an XML file, but we use this text file as a 
+    # Here, we are not parsing an XML file, but we use this text file as a
     # flag to check that we actually meant for this import step to be run.
     # The file is found in profiles/default.
     if context.readDataFile('gfb.policy_various.txt') is None:
@@ -33,14 +37,14 @@ def importVarious(context):
     quickinst.installProduct('UserAndGroupSelectionWidget')
     quickinst.installProduct('plone.app.iterate')
     quickinst.installProduct('ATVocabularyManager')
-    quickinst.installProduct('RiskAssessmentLink') 
+    quickinst.installProduct('RiskAssessmentLink')
     quickinst.installProduct('ProxyIndex')
     quickinst.installProduct('VocabularyPickerWidget')
     quickinst.installProduct('Clouseau')
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('simplon.plone.ldap')
-    
+
     importVocabularies(site)
 
     index_data = [
@@ -54,7 +58,7 @@ def importVarious(context):
             , 'extra' : dict(idx_type = "KeywordIndex",
                 )
             }
-        ]    
+        ]
 
     addProxyIndexes(site, index_data)
 
@@ -69,6 +73,7 @@ def importVarious(context):
         ]
     addMemberdataProperties(site, props)
     setupContent(site)
+    setupSecurity(site)
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
@@ -79,12 +84,12 @@ def addMemberdataProperties(site, props):
     availableldapprops = [x.ldap_name for x in config.schema.values()]
     for prop in props:
         if not pm.hasProperty(prop['id']):
-            pm._setProperty(prop['id'], prop['value'], prop['type'])     
+            pm._setProperty(prop['id'], prop['value'], prop['type'])
         if prop['id'] not in availableldapprops:
             logger.info("adding %s" % prop['id'])
             config.schema.addItem(LDAPProperty(
                                        ldap_name=prop['id'],
-                                       plone_name=prop['plone_name'], 
+                                       plone_name=prop['plone_name'],
                                        description=prop['id'],
                                        multi_valued=prop['multi_valued']))
         else:
@@ -108,7 +113,7 @@ def importVocabularies(self):
             pvm.invokeFactory('VdexFileVocabulary', vocabname)
             pvm[vocabname].importXMLBinding(data)
             logger.info("VDEX Import of %s" % vocabname)
-    
+
         elif vocabname.endswith('.dump'):
             fh = open(vocabpath, "r")
             data = fh.read()
@@ -118,8 +123,8 @@ def importVocabularies(self):
             vocabstruct = cPickle.loads(data)
             createSimpleVocabs(pvm, vocabstruct)
             logger.info("Dump Import of %s" % vocabname)
-            
-            
+
+
     # import the simple vocablaries from zexp
     if 'RiskAssessmentContents' not in pvm.objectIds():
         RAC = os.path.join(basedir, 'data', 'RiskAssessmentContents.zexp')
@@ -143,7 +148,7 @@ def addProxyIndexes(self, index_data):
         logger.info("Adding Proxy Index %s" % data['idx_id'])
         cat.manage_addProduct['ProxyIndex'].manage_addProxyIndex(
             id=data['idx_id'],
-            extra=extra)            
+            extra=extra)
 
 
 def addCatalogMetadata(site, metadata):
@@ -154,7 +159,7 @@ def addCatalogMetadata(site, metadata):
     for md in metadata:
         if md not in cat.schema():
             cat.manage_addColumn(md)
-            
+
 #################################
 # PORTLET MANAGEMENT & CONTENT
 
@@ -162,7 +167,7 @@ def _blockPortlets(context, manager, CAT, status):
     portletManager = getUtility(IPortletManager, name=manager)
     assignable = getMultiAdapter((context, portletManager,), ILocalPortletAssignmentManager)
     assignable.setBlacklistStatus(CAT, status)
-                
+
 
 def portletAssignmentPortal(context):
     """ assign portlets as they should be set on the portal root """
@@ -170,39 +175,45 @@ def portletAssignmentPortal(context):
     left = assignment_mapping_from_key(context, 'plone.leftcolumn', CONTEXT_CATEGORY, path)
     right = assignment_mapping_from_key(context, 'plone.rightcolumn', CONTEXT_CATEGORY, path)
     for x in list(left.keys()):
-        del left[x]    
+        del left[x]
     for x in list(right.keys()):
-        del right[x]    
+        del right[x]
     left['navtree'] = navigation.Assignment()
-    left['events'] = events.Assignment() 
+    left['events'] = events.Assignment()
     right['news'] = news.Assignment()
-    
+
 def portletAssignmentDB(context):
     """ assign portlets as they should be set on the database folder """
     path = '/'.join(context.getPhysicalPath())
     left = assignment_mapping_from_key(context, 'plone.leftcolumn', CONTEXT_CATEGORY, path)
     right = assignment_mapping_from_key(context, 'plone.rightcolumn', CONTEXT_CATEGORY, path)
     for x in list(right.keys()):
-        del right[x]    
+        del right[x]
     _blockPortlets(context, 'plone.leftcolumn', CONTEXT_CATEGORY, True)
     _blockPortlets(context, 'plone.rightcolumn', CONTEXT_CATEGORY, True)
-    
+
 def portletAssignmentRAL(context):
     right = context.restrictedTraverse('++contenttypeportlets++plone.rightcolumn+RiskAssessmentLink')
     right['ral_details'] = classic.Assignment(template='portlet_riskassessmentlink_details', macro='portlet')
-    
-    
+
+
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
     # enable addition of large folders
     getattr(site.portal_types, 'Large Plone Folder').global_allow = True
     _ = site.invokeFactory('Large Plone Folder', 'db')
     db = getattr(site, 'db')
+    db.setTitle('Datenbank')
     db.setLayout('riskassessmentlink_db_view')
+    pwt = getToolByName('portal_workflow')
+    pwt.doActionFor(db, 'publish')
     
     portletAssignmentPortal(site)
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
-    
-    
-    
+
+def setupSecurity(site):
+    """ Adds role and permission for the providers """
+    site._addRole(PROVIDER_ROLE)
+    db = getattr(site, 'db')
+    db.manage_role(PROVIDER_ROLE, permissions=[RAL_PERMISSIONS['RiskAssessmentLink'], AddPortalContent])
