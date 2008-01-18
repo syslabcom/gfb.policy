@@ -207,7 +207,7 @@ def setupContent(site):
     db.setLayout('riskassessmentlink_db_view')
     pwt = getToolByName('portal_workflow')
     pwt.doActionFor(db, 'publish')
-    
+
     portletAssignmentPortal(site)
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
