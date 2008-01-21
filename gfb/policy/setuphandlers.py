@@ -36,7 +36,12 @@ def importVarious(context):
     quickinst.installProduct('PloneHelpCenter')
     quickinst.installProduct('UserAndGroupSelectionWidget')
     quickinst.installProduct('plone.app.iterate')
+
     quickinst.installProduct('ATVocabularyManager')
+    # This needs to run before Riskassessment Link, otherwise a broken vocab will be imported
+    # archgenxml2b6 currently only can import vdex and not vdexfiles
+    importVocabularies(site)
+
     quickinst.installProduct('RiskAssessmentLink')
     quickinst.installProduct('ProxyIndex')
     quickinst.installProduct('VocabularyPickerWidget')
@@ -45,7 +50,6 @@ def importVarious(context):
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('simplon.plone.ldap')
 
-    importVocabularies(site)
 
     index_data = [
             { 'idx_id' : 'nace'
@@ -98,18 +102,21 @@ def addMemberdataProperties(site, props):
 
 
 def importVocabularies(self):
-    logger = logging.getLogger("VocabularyImporter")
-    logger.info("Importing Vocabularies")
+    logger = logging.getLogger("gfb policy VocabularyImporter")
+    logger.info("Importing Vocabularies for gfb")
     vocabs = os.listdir(vocabdir)
     pvm = self.portal_vocabularies
     for vocabname in vocabs:
         vocabpath = os.path.join(vocabdir, vocabname)
+        logger.info("Trying %s" % vocabpath)
         if vocabname.endswith('.vdex'):
             fh = open(vocabpath, "r")
             data = fh.read()
             fh.close()
             vocabname = vocabname[:-5]
-            if vocabname in pvm.objectIds(): continue
+            if vocabname in pvm.objectIds():
+                logger.info("Vocabulary already in place")
+                continue
             pvm.invokeFactory('VdexFileVocabulary', vocabname)
             pvm[vocabname].importXMLBinding(data)
             logger.info("VDEX Import of %s" % vocabname)
@@ -123,7 +130,8 @@ def importVocabularies(self):
             vocabstruct = cPickle.loads(data)
             createSimpleVocabs(pvm, vocabstruct)
             logger.info("Dump Import of %s" % vocabname)
-
+        else:
+            logger.info("No vocabfile found")
 
     # import the simple vocablaries from zexp
     if 'RiskAssessmentContents' not in pvm.objectIds():
