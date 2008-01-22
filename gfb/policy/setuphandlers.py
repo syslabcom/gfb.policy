@@ -78,6 +78,7 @@ def importVarious(context):
     addMemberdataProperties(site, props)
     setupContent(site)
     setupSecurity(site)
+    configureCountryTool(site)
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
@@ -202,20 +203,24 @@ def portletAssignmentDB(context):
 
 def portletAssignmentRAL(context):
     right = context.restrictedTraverse('++contenttypeportlets++plone.rightcolumn+RiskAssessmentLink')
-    right['ral_details'] = classic.Assignment(template='portlet_riskassessmentlink_details', macro='portlet')
+    if 'ral_details' not in right.keys():
+        right['ral_details'] = classic.Assignment(template='portlet_riskassessmentlink_details', macro='portlet')
 
 
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
     # enable addition of large folders
     getattr(site.portal_types, 'Large Plone Folder').global_allow = True
-    _ = site.invokeFactory('Large Plone Folder', 'db')
+    if 'db' not in site.objectIds():
+        _ = site.invokeFactory('Large Plone Folder', 'db')
     db = getattr(site, 'db')
     db.setTitle('Datenbank')
     db.setLayout('riskassessmentlink_db_view')
-    pwt = getToolByName(site, 'portal_workflow')
-    pwt.doActionFor(db, 'publish')
-
+    try:
+        pwt = getToolByName(site, 'portal_workflow')
+        pwt.doActionFor(db, 'publish')
+    except: pass
+        
     portletAssignmentPortal(site)
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
@@ -225,3 +230,11 @@ def setupSecurity(site):
     site._addRole(PROVIDER_ROLE)
     db = getattr(site, 'db')
     db.manage_role(PROVIDER_ROLE, permissions=[RAL_PERMISSIONS['RiskAssessmentLink'], AddPortalContent])
+
+def configureCountryTool(site):
+    """ Adds the relevant countries to the countrytool """
+    ct = getToolByName(site, 'portal_countryutils')
+    ct.manage_countries_reset()
+    ct.manage_countries_addArea('Europa')
+    ct.manage_countries_addCountryToArea('Europa', ['DK','FI','FR','IT','NL','PT','ES','GB','IS','IE','LI','LU','NO','SE','AT','DE','CH','MT','BE','CZ','HU','PL','RO','SK','HR','BG','BA','GR','SI','MK','EE','LV','LT'])
+    ct.manage_countries_sortArea('Europa')
