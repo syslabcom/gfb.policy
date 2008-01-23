@@ -8,7 +8,7 @@ from plone.portlets.interfaces import IPortletManager, ILocalPortletAssignmentMa
 from plone.app.portlets.utils import assignment_mapping_from_key
 from plone.app.portlets.portlets import navigation, news, classic, events, search
 from plone.portlet.static import static as staticportlet
-from gfb.policy.config import PROVIDER_ROLE
+from gfb.policy.config import PROVIDER_ROLE, INSTALL_LDAP
 from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PERMISSIONS
 from Products.CMFCore.permissions import AddPortalContent
 
@@ -57,14 +57,13 @@ def importVarious(context):
             , 'extra' : dict(idx_type = "KeywordIndex",
                 )
             }
-          , { 'idx_id' : 'country'
-            , 'meta_id' : 'country'
-            , 'extra' : dict(idx_type = "KeywordIndex",
-                )
-            }
         ]
 
     addProxyIndexes(site, index_data)
+
+
+    addExtraIndexes(site)                
+
 
     addCatalogMetadata(site, ['Category'])
 
@@ -76,6 +75,7 @@ def importVarious(context):
         dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
         ]
     addMemberdataProperties(site, props)
+    configurePortal(site)
     setupContent(site)
     setupSecurity(site)
     configureCountryTool(site)
@@ -159,6 +159,20 @@ def addProxyIndexes(self, index_data):
             id=data['idx_id'],
             extra=extra)
 
+def addExtraIndexes(self):
+    logger = logging.getLogger("ExtraIndexes")
+    logger.info("Adding Extra Indexes")
+    
+    cat = getToolByName(self, 'portal_catalog')
+    available = cat.indexes()
+    
+    if 'getTarget_language' not in available:
+        logger.info('Adding KeywordIndex getTarget_language')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTarget_language')
+
+    if 'country' not in available:
+        logger.info('Adding KeywordIndex country')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='country', extra={'indexed_attrs': 'getCountry'})
 
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
@@ -206,6 +220,10 @@ def portletAssignmentRAL(context):
     if 'ral_details' not in right.keys():
         right['ral_details'] = classic.Assignment(template='portlet_riskassessmentlink_details', macro='portlet')
 
+def configurePortal(site):
+    """ Config steps that cannot be done by generic setup yet """
+    pmembership = getToolByName(site, 'portal_membership')
+    pmembership.memberareaCreationFlag = True
 
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
@@ -231,6 +249,8 @@ def setupSecurity(site):
     db = getattr(site, 'db')
     db.manage_role(PROVIDER_ROLE, permissions=[RAL_PERMISSIONS['RiskAssessmentLink'], AddPortalContent])
 
+
+
 def configureCountryTool(site):
     """ Adds the relevant countries to the countrytool """
     ct = getToolByName(site, 'portal_countryutils')
@@ -238,3 +258,4 @@ def configureCountryTool(site):
     ct.manage_countries_addArea('Europa')
     ct.manage_countries_addCountryToArea('Europa', ['DK','FI','FR','IT','NL','PT','ES','GB','IS','IE','LI','LU','NO','SE','AT','DE','CH','MT','BE','CZ','HU','PL','RO','SK','HR','BG','BA','GR','SI','MK','EE','LV','LT'])
     ct.manage_countries_sortArea('Europa')
+

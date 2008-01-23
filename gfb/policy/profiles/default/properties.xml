@@ -2,4 +2,20 @@
 <site>
  <property name="title">GFB Portal</property>
  <property name="description">Welcome to the GFB portal</property>
+ <property name="default_page" type="string">front-page</property>
+ <property name="selectable_views" type="lines">
+  <element value="folder_listing"/>
+  <element value="news_listing"/>
+ </property>
+ <property name="email_from_address"
+    type="string">Mantei.Dieter@baua.bund.de</property>
+ <property name="email_from_name"
+    type="string">Dieter Mantei, BAuA</property>
+ <property name="validate_email" type="boolean">False</property>
+ <property name="default_charset" type="string">utf-8</property>
+ <property name="enable_permalink" type="boolean">True</property>
+ <property name="left_slots" type="lines">
+ </property>
+ <property name="right_slots" type="lines">
+ </property>
 </site>
