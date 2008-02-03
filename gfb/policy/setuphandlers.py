@@ -10,7 +10,7 @@ from plone.app.portlets.portlets import navigation, news, classic, events, searc
 from plone.portlet.static import static as staticportlet
 from gfb.policy.config import PROVIDER_ROLE, INSTALL_LDAP
 from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PERMISSIONS
-from Products.CMFCore.permissions import AddPortalContent
+from Products.CMFCore.permissions import AddPortalContent, ReviewPortalContent
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -62,7 +62,7 @@ def importVarious(context):
     addProxyIndexes(site, index_data)
 
 
-    addExtraIndexes(site)                
+    addExtraIndexes(site)
 
 
     addCatalogMetadata(site, ['Category'])
@@ -162,10 +162,10 @@ def addProxyIndexes(self, index_data):
 def addExtraIndexes(self):
     logger = logging.getLogger("ExtraIndexes")
     logger.info("Adding Extra Indexes")
-    
+
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
-    
+
     if 'getTarget_language' not in available:
         logger.info('Adding KeywordIndex getTarget_language')
         cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTarget_language')
@@ -225,6 +225,11 @@ def configurePortal(site):
     pmembership = getToolByName(site, 'portal_membership')
     pmembership.memberareaCreationFlag = True
 
+    # Members have the right to publish their own content
+    # So we set the Review portal content permission on the Owner role on the Members folder
+    Members = site.Members
+    Members.manage_permission(ReviewPortalContent, ['Owner'], acquire=1)
+
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
     # enable addition of large folders
@@ -238,7 +243,7 @@ def setupContent(site):
         pwt = getToolByName(site, 'portal_workflow')
         pwt.doActionFor(db, 'publish')
     except: pass
-        
+
     portletAssignmentPortal(site)
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
@@ -258,4 +263,3 @@ def configureCountryTool(site):
     ct.manage_countries_addArea('Europa')
     ct.manage_countries_addCountryToArea('Europa', ['DK','FI','FR','IT','NL','PT','ES','GB','IS','IE','LI','LU','NO','SE','AT','DE','CH','MT','BE','CZ','HU','PL','RO','SK','HR','BG','BA','GR','SI','MK','EE','LV','LT'])
     ct.manage_countries_sortArea('Europa')
-

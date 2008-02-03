@@ -16,9 +16,9 @@ gfb.policy.egg-info/paster_plugins.txt
 gfb.policy.egg-info/requires.txt
 gfb.policy.egg-info/top_level.txt
 gfb/policy/__init__.py
-gfb/policy/adapter.py
 gfb/policy/config.py
 gfb/policy/configure.zcml
+gfb/policy/dashboard.py
 gfb/policy/setuphandlers.py
 gfb/policy/Extensions/Install.py
 gfb/policy/Extensions/__init__.py
