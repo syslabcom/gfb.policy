@@ -77,7 +77,7 @@ def importVarious(context):
     addMemberdataProperties(site, props)
     configurePortal(site)
     setupContent(site)
-    setupSecurity(site)
+    #setupSecurity(site)
     configureCountryTool(site)
 
 def addMemberdataProperties(site, props):
@@ -166,13 +166,13 @@ def addExtraIndexes(self):
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
 
-    if 'getTarget_language' not in available:
-        logger.info('Adding KeywordIndex getTarget_language')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTarget_language')
+    if 'getTargetLanguage' not in available:
+        logger.info('Adding KeywordIndex getTargetLanguage')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTargetLanguage')
 
-    if 'country' not in available:
-        logger.info('Adding KeywordIndex country')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='country', extra={'indexed_attrs': 'getCountry'})
+    if 'getCountry' not in available:
+        logger.info('Adding KeywordIndex getCountry')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getCountry', extra={'indexed_attrs': 'getCountry'})
 
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
@@ -248,11 +248,11 @@ def setupContent(site):
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
 
-def setupSecurity(site):
-    """ Adds role and permission for the providers """
-    site._addRole(PROVIDER_ROLE)
-    db = getattr(site, 'db')
-    db.manage_role(PROVIDER_ROLE, permissions=[RAL_PERMISSIONS['RiskAssessmentLink'], AddPortalContent])
+#def setupSecurity(site):
+#    """ Adds role and permission for the providers """
+#    site._addRole(PROVIDER_ROLE)
+#    db = getattr(site, 'db')
+#    db.manage_role(PROVIDER_ROLE, permissions=[RAL_PERMISSIONS['RiskAssessmentLink'], AddPortalContent])
 
 
 
