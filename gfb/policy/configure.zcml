@@ -13,5 +13,8 @@
       description="Turn a Plone Site into a GFB Site."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-      
+
+
+    <adapter factory=".adapter.GFBDefaultDashboard" />
+
 </configure>

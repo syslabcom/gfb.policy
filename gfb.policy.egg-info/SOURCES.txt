@@ -16,6 +16,7 @@ gfb.policy.egg-info/paster_plugins.txt
 gfb.policy.egg-info/requires.txt
 gfb.policy.egg-info/top_level.txt
 gfb/policy/__init__.py
+gfb/policy/adapter.py
 gfb/policy/config.py
 gfb/policy/configure.zcml
 gfb/policy/setuphandlers.py
@@ -29,6 +30,8 @@ gfb/policy/data/vocabularies/NACE.vdex
 gfb/policy/data/vocabularies/RiskFactors.vdex
 gfb/policy/profiles/default/gfb.policy_various.txt
 gfb/policy/profiles/default/import_steps.xml
+gfb/policy/profiles/default/memberdata_properties.xml
+gfb/policy/profiles/default/membership_properties.xml
 gfb/policy/profiles/default/properties.xml
 gfb/policy/tests/__init__.py
 gfb/policy/tests/base.py
