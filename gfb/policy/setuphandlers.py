@@ -74,11 +74,11 @@ def importVarious(context):
     addCatalogMetadata(site, ['Category'])
 
     props = [
-        dict(id='localityName', value='', type='string', plone_name='Locality', multi_valued=False),
-        dict(id='stateOrProvinceName', value='', type='string', plone_name='Country', multi_valued=False),
-        dict(id='postalAddress', value='', type='string', plone_name='Address', multi_valued=False),
-        dict(id='telephoneNumber', value='', type='string', plone_name='Telephone', multi_valued=False),
-        dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
+#        dict(id='localityName', value='', type='string', plone_name='Locality', multi_valued=False),
+#        dict(id='stateOrProvinceName', value='', type='string', plone_name='Country', multi_valued=False),
+#        dict(id='postalAddress', value='', type='string', plone_name='Address', multi_valued=False),
+#        dict(id='telephoneNumber', value='', type='string', plone_name='Telephone', multi_valued=False),
+#        dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
         ]
     addMemberdataProperties(site, props)
     configurePortal(site)
