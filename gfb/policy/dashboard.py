@@ -19,7 +19,7 @@ from plone.app.portlets.storage import UserPortletAssignmentMapping
 # Adapter to configure users Dashboard
 
 
-class GFBDefaultDashboard(object):
+class DefaultDashboard(object):
     """Define an adapter from the user/principal type (by default, this is
     Products.PluggableAuthService.interfaces.authservice.IBasicUser) to
     this interface and implement __call__ to return a mapping of dashboard
@@ -28,8 +28,7 @@ class GFBDefaultDashboard(object):
     """
 
     implements(IDefaultDashboard)
-    #adapts(IPropertiedUser)
-    adapts(IBasicUser)
+    adapts(IPropertiedUser)
 
     def __init__(self, principal):
         self.principal = principal

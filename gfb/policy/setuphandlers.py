@@ -49,6 +49,7 @@ def importVarious(context):
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('simplon.plone.ldap')
+    quickinst.installProduct('syslabcom.filter')
 
 
     index_data = [
@@ -165,14 +166,14 @@ def addExtraIndexes(self):
 
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
-
+    
     if 'getTargetLanguage' not in available:
-        logger.info('Adding KeywordIndex getTargetLanguage')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTargetLanguage')
+        logger.info('Adding KeywordIndex getTarget_language')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTargetLanguage', extra={'indexed_attrs': 'getTargetLanguage'})
 
     if 'getCountry' not in available:
-        logger.info('Adding KeywordIndex getCountry')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getCountry', extra={'indexed_attrs': 'getCountry'})
+        logger.info('Adding KeywordIndex Country')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getCountry', extra={'indexed_attrs': 'getCountry'})   
 
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
