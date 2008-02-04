@@ -49,6 +49,11 @@ def importVarious(context):
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('simplon.plone.ldap')
+    quickinst.installProduct('TextIndexNG3')
+    quickinst.installProduct('collective.portlet.tal')
+    quickinst.installProduct('plone.portlet.collection')
+    quickinst.installProduct('plone.portlet.static')
+    quickinst.installProduct('collective.portlet.feedmixer')
     quickinst.installProduct('syslabcom.filter')
 
 
