@@ -85,6 +85,7 @@ def importVarious(context):
     setupContent(site)
     #setupSecurity(site)
     configureCountryTool(site)
+    configureRiskAssessmentLink(site)
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
@@ -269,3 +270,8 @@ def configureCountryTool(site):
     ct.manage_countries_addArea('Europa')
     ct.manage_countries_addCountryToArea('Europa', ['DK','FI','FR','IT','NL','PT','ES','GB','IS','IE','LI','LU','NO','SE','AT','DE','CH','MT','BE','CZ','HU','PL','RO','SK','HR','BG','BA','GR','SI','MK','EE','LV','LT'])
     ct.manage_countries_sortArea('Europa')
+
+
+def configureRiskAssessmentLink(site):
+    from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink_schema as schema
+    schema['provider'].widget.visible['edit'] = 'invisible'
