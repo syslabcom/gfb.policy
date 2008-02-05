@@ -237,6 +237,14 @@ def configurePortal(site):
     Members = site.Members
     Members.manage_permission(ReviewPortalContent, ['Owner'], acquire=1)
 
+    # Add the help page
+    if 'dhasboard_help' not in site.objectIds():
+        site.invokeFactory('Document', 'dashboard_help')
+        dh = getattr(site, 'dashboard_help')
+        dh.setTitle('Hilfe')
+        dh.setDescription('Hilfe zum Umgang mit der GFB Site')
+
+
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
     # enable addition of large folders

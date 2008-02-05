@@ -11,7 +11,7 @@ from plone.portlets.constants import USER_CATEGORY
 
 from plone.app.portlets.interfaces import IDefaultDashboard
 from plone.app.portlets import portlets
-from gfb.theme.portlets import myral, myprovider
+from gfb.theme.portlets import myral, myprovider, help
 
 from plone.app.portlets.storage import UserPortletAssignmentMapping
 
@@ -37,6 +37,6 @@ class DefaultDashboard(object):
         return {
             'plone.dashboard1' : (myprovider.Assignment(),),
             'plone.dashboard2' : (myral.Assignment(),),
-            'plone.dashboard3' : (),
+            'plone.dashboard3' : (help.Assignment(), ),
             'plone.dashboard4' : (portlets.review.Assignment(),),
         }
