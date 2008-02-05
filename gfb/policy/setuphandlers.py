@@ -237,7 +237,7 @@ def configurePortal(site):
     Members.manage_permission(ReviewPortalContent, ['Owner'], acquire=1)
 
     # Add the help page
-    if 'dhasboard_help' not in site.objectIds():
+    if 'dashboard_help' not in site.objectIds():
         site.invokeFactory('Document', 'dashboard_help')
         dh = getattr(site, 'dashboard_help')
         dh.setTitle('Hilfe')
