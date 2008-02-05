@@ -243,7 +243,8 @@ def configurePortal(site):
         dh = getattr(site, 'dashboard_help')
         dh.setTitle('Hilfe')
         dh.setDescription('Hilfe zum Umgang mit der GFB Site')
-
+        pw = getToolByName(site, 'portal_workflow')
+        pw.doActionFor(dh, 'publish')
 
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
