@@ -11,6 +11,7 @@ from plone.portlet.static import static as staticportlet
 from gfb.policy.config import PROVIDER_ROLE, INSTALL_LDAP
 from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PERMISSIONS
 from Products.CMFCore.permissions import AddPortalContent, ReviewPortalContent
+from Products.ATVocabularyManager.utils.vocabs import createSimpleVocabs
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -139,6 +140,14 @@ def importVocabularies(self):
             logger.info("Dump Import of %s" % vocabname)
         else:
             logger.info("No vocabfile found")
+    # manually created vocabulary
+    manualVocab = dict()
+    manualVocab['provider_category'] = (
+                ('bl', 'Bund und L\xc3\xa4nder')
+              , ('uvt', 'Unfallversicherungstr\xc3\xa4ger')
+              , ('misc', 'Weitere')
+              )
+    createSimpleVocabs(pvm, manualVocab)
 
     # import the simple vocablaries from zexp
     if 'RiskAssessmentContents' not in pvm.objectIds():
