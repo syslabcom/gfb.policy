@@ -8,228 +8,342 @@
       orderSignificant="true" 
       profileType="flatTokenTerms" 
       language="de">
-    <vocabName>
-	   <langstring language="de">Gefährdungsfaktoren</langstring>
-    </vocabName>
-    <vocabIdentifier>RiskFactors</vocabIdentifier>
-    
-    <term>
-        <termIdentifier>1</termIdentifier>
-        <caption><langstring language="de">1 Mechanische Gefährdungen</langstring></caption>
-    
-        <term>
-            <termIdentifier>1.1</termIdentifier>
-            <caption><langstring language="de">1.1	ungeschützt bewegte Maschinenteile</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>1.2</termIdentifier>
-            <caption><langstring language="de">1.2	Teile mit gefährlichen Oberflächen</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>1.3</termIdentifier>
-            <caption><langstring language="de">1.3	bewegte Transportmittel, bewegte Arbeitsmittel</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>1.4</termIdentifier>
-            <caption><langstring language="de">1.4	unkontrolliert bewegte Teile</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>1.5</termIdentifier>
-            <caption><langstring language="de">1.5	Sturz, Ausrutschen, Stolpern, Umknicken</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>1.6</termIdentifier>
-            <caption><langstring language="de">1.6	Absturz</langstring></caption>
-        </term>
-    
+  <vocabName>
+    <langstring language="de">Klassifikation der Gefährdungsfaktoren</langstring>
+  </vocabName>
+  <vocabIdentifier>RiskFactors</vocabIdentifier>
+  
+<term>    
+    <termIdentifier>1</termIdentifier>
+    <caption>
+        <langstring language="de">Mechanische Gefährdungen</langstring>
+    </caption>
+
+    <term>    
+        <termIdentifier>1.1</termIdentifier>
+        <caption>
+            <langstring language="de">ungeschützt bewegte Maschinenteile</langstring>
+        </caption>
     </term>
-    
-    <term>
-        <termIdentifier>2</termIdentifier>
-        <caption><langstring language="de">2 Elektrische Gefährdungen</langstring></caption>    
-        <term>
-            <termIdentifier>2.1</termIdentifier>
-            <caption><langstring language="de">2.1	Elektrischer Schlag</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>2.2</termIdentifier>
-            <caption><langstring language="de">2.2	Lichtbögen</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>2.3</termIdentifier>
-            <caption><langstring language="de">2.3	Elektrostatische Aufladungen</langstring></caption>
-        </term>
-
-    </term>    
-    <term>
-        <termIdentifier>3</termIdentifier>
-        <caption><langstring language="de">3 Gefahrstoffe</langstring></caption>    
-        <term>
-            <termIdentifier>3.1</termIdentifier>
-            <caption><langstring language="de">3.1	Hautkontakt mit Gefahrstoffen (Feststoffe, Flüssigkeiten, Feuchtarbeit)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>3.2</termIdentifier>
-            <caption><langstring language="de">3.2	Einatmen von Gefahrstoffen (Gase, Dämpfe, Nebel, Stäube einschl. Rauche)</langstring></caption>
-        </term>
-
-    </term>    
-    <term>
-        <termIdentifier>4</termIdentifier>
-        <caption><langstring language="de">4 Biologische Arbeitsstoffe</langstring></caption>    
-        <term>
-            <termIdentifier>4.1</termIdentifier>
-            <caption><langstring language="de">4.1	Infektionsgefährdung durch pathogene Mikroorganismen (z.B. Bakterien, Viren, Pilze) </langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>4.2</termIdentifier>
-            <caption><langstring language="de">4.2	sensibilisierende und toxische Wirkungen von Mikroorganismen</langstring></caption>
-        </term>
-
-    </term>    
-    <term>
-        <termIdentifier>5</termIdentifier>
-        <caption><langstring language="de">5 Brand- und Explosionsgefährdungen</langstring></caption>    
-        <term>
-            <termIdentifier>5.1</termIdentifier>
-            <caption><langstring language="de">5.1	brennbare Feststoffe, Flüssigkeiten, Gase</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>5.2</termIdentifier>
-            <caption><langstring language="de">5.2	Explosionsfähige Atmosphäre</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>5.3</termIdentifier>
-            <caption><langstring language="de">5.3	Explosivstoffe</langstring></caption>
-        </term>
-
-    </term>    
-    <term>
-        <termIdentifier>6</termIdentifier>
-        <caption><langstring language="de">6 Thermische Gefährdungen</langstring></caption>    
-        <term>
-            <termIdentifier>6.1</termIdentifier>
-            <caption><langstring language="de">6.1	heiße Medien/Oberflächen</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>6.2</termIdentifier>
-            <caption><langstring language="de">6.2	kalte Medien/Oberflächen</langstring></caption>
-        </term>
-    </term>   
-
-    <term>
-        <termIdentifier>7</termIdentifier>
-        <caption><langstring language="de">7 Gefährdung durch spezielle physikalische Einwirkungen</langstring></caption>
-    
-        <term>
-            <termIdentifier>7.1</termIdentifier>
-            <caption><langstring language="de">7.1	Lärm</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>7.2</termIdentifier>
-            <caption><langstring language="de">7.2	Ultraschall, Infraschall</langstring></caption>
-        </term>    
-        <term>
-            <termIdentifier>7.3</termIdentifier>
-            <caption><langstring language="de">7.3	Ganzkörpervibrationen</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>7.4</termIdentifier>
-            <caption><langstring language="de">7.4	Hand-Arm-Vibrationen</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>7.5</termIdentifier>
-            <caption><langstring language="de">7.5	nicht ionisierende Strahlung (z.B. UV-,Infrarote, ultraviolette Strahlung, Laserstrahlung)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>7.6</termIdentifier>
-            <caption><langstring language="de">7.6	ionisierende Strahlung (z.B. Röntgenstrahlen, Gammastrahlung, Teilchenstrahlung)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>7.7</termIdentifier>
-            <caption><langstring language="de">7.7	elektromagnetische Felder</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>7.8</termIdentifier>
-            <caption><langstring language="de">7.8	Unter- oder Überdruck</langstring></caption>
-        </term>
-    </term>    
-
-    <term>
-        <termIdentifier>8</termIdentifier>
-        <caption><langstring language="de">8 Gefährdungen durch Arbeitsumgebungsbedingungen</langstring></caption>
-        <term>
-            <termIdentifier>8.1</termIdentifier>
-            <caption><langstring language="de">8.1	Klima (z.B. Hitze, Kälte)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>8.2</termIdentifier>
-            <caption><langstring language="de">8.2	Beleuchtung, Licht</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>8.3</termIdentifier>
-            <caption><langstring language="de">8.3	Ertrinken</langstring></caption>
-        </term>
+    <term>    
+        <termIdentifier>1.2</termIdentifier>
+        <caption>
+            <langstring language="de">Teile mit gefährlichen Oberflächen</langstring>
+        </caption>
     </term>
-    
-    <term>
-        <termIdentifier>9</termIdentifier>
-        <caption><langstring language="de">9 Physische Belastung/ Arbeitsschwere</langstring></caption>
-        <term>
-            <termIdentifier>9.1</termIdentifier>
-            <caption><langstring language="de">9.1	schwere dynamische Arbeit (z.B. manuelle Handhabung von Lasten)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>9.2</termIdentifier>
-            <caption><langstring language="de">9.2	einseitige dynamische Arbeit, Körperbewegung (z.B. häufig wiederholte Bewegungen)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>9.3</termIdentifier>
-            <caption><langstring language="de">9.3	Haltungsarbeit (Zwangshaltung), Haltearbeit </langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>9.4</termIdentifier>
-            <caption><langstring language="de">9.4	Kombination aus statischer und dynamischer Arbeit </langstring></caption>
-        </term>
-    
-    </term>    
-    
-    <term>
-        <termIdentifier>10</termIdentifier>
-        <caption><langstring language="de">10 Psychische Faktoren</langstring></caption>
-        <term>
-            <termIdentifier>10.1</termIdentifier>
-            <caption><langstring language="de">10.1	ungenügend gestaltete Arbeitsaufgabe (z.B. überwiegende Routineaufgaben, Über- und Unterqualifikation)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>10.2</termIdentifier>
-            <caption><langstring language="de">10.2	ungenügend gestaltete Arbeitsorganisation (z.B. kein durchdachter Arbeitsablauf) </langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>10.3</termIdentifier>
-            <caption><langstring language="de">10.3	ungenügend gestaltete soziale Bedingungen (z.B. fehlende soziale Kontakte, ungünstiges Führungsverhalten)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>10.4</termIdentifier>
-            <caption><langstring language="de">10.4	ungenügend gestaltete Arbeitsplatz- und Arbeitsumgebungsbedingungen (z.B. Lärm, Klima, räuml. Enge, unzureichende Softwaregestaltung) </langstring></caption>
-        </term>
+    <term>    
+        <termIdentifier>1.3</termIdentifier>
+        <caption>
+            <langstring language="de">bewegte Transportmittel, bewegte Arbeitsmittel</langstring>
+        </caption>
     </term>
+    <term>    
+        <termIdentifier>1.4</termIdentifier>
+        <caption>
+            <langstring language="de">unkontrolliert bewegte Teile</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>1.5</termIdentifier>
+        <caption>
+            <langstring language="de">Sturz, Ausrutschen, Stolpern, Umknicken</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>1.6</termIdentifier>
+        <caption>
+            <langstring language="de">Absturz</langstring>
+        </caption>
+    </term>
+</term>
 
-    <term>
-        <termIdentifier>11</termIdentifier>
-        <caption><langstring language="de">11 Sonstige Gefährdungen</langstring></caption>
-        <term>
-            <termIdentifier>11.1</termIdentifier>
-            <caption><langstring language="de">11.1	durch Menschen (z.B. Überfall)</langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>11.2</termIdentifier>
-            <caption><langstring language="de">11.2	durch Tiere (z.B. gebissen werden) </langstring></caption>
-        </term>
-        <term>
-            <termIdentifier>11.3</termIdentifier>
-            <caption><langstring language="de">11.3	durch Pflanzen und pflanzliche Produkte</langstring></caption>
-        </term>
+<term>    
+    <termIdentifier>2</termIdentifier>
+    <caption>
+        <langstring language="de">Elektrische Gefährdungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>2.1</termIdentifier>
+        <caption>
+            <langstring language="de">Elektrischer Schlag</langstring>
+        </caption>
     </term>
+    <term>    
+        <termIdentifier>2.2</termIdentifier>
+        <caption>
+            <langstring language="de">Lichtbögen</langstring>
+        </caption>
+    </term>
+</term>
+
+<term>    
+    <termIdentifier>3</termIdentifier>
+    <caption>
+        <langstring language="de">Gefahrstoffe</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>3.1</termIdentifier>
+        <caption>
+            <langstring language="de">Hautkontakt mit Gefahrstoffen (Feststoffe, Flüssigkeiten, Feuchtarbeit)</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>3.2</termIdentifier>
+        <caption>
+            <langstring language="de">Einatmen von Gefahrstoffen (Gase, Dämpfe, Nebel, Stäube einschl. Rauche)</langstring>
+        </caption>
+    </term>
+</term>
+
+<term>    
+    <termIdentifier>4</termIdentifier>
+    <caption>
+        <langstring language="de">Biologische Gefährdungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>4.1</termIdentifier>
+        <caption>
+            <langstring language="de">Infektionsgefährdung durch biologische Arbeitsstoffe (z.B. Bakterien, Viren, Pilze)</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>4.2</termIdentifier>
+        <caption>
+            <langstring language="de">sensibilisierende und toxische Wirkungen von biologischen Arbeitsstoffen</langstring>
+        </caption>
+    </term>
+</term>
+
+
+<term>    
+    <termIdentifier>5</termIdentifier>
+    <caption>
+        <langstring language="de">Brand und Explosionsgefährdungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>5.1</termIdentifier>
+        <caption>
+            <langstring language="de">brennbare Feststoffe, Flüssigkeiten, Gase</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>5.2</termIdentifier>
+        <caption>
+            <langstring language="de">Explosionsfähige Atmosphäre</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>5.3</termIdentifier>
+        <caption>
+            <langstring language="de">Explosivstoffe</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>5.4</termIdentifier>
+        <caption>
+            <langstring language="de">Elektrostatische Aufladungen</langstring>
+        </caption>
+    </term>
+</term>
+
+
+<term>    
+    <termIdentifier>6</termIdentifier>
+    <caption>
+        <langstring language="de">Thermische Gefährdungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>6.1</termIdentifier>
+        <caption>
+            <langstring language="de">heiße Medien/Oberflächen</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>6.2</termIdentifier>
+        <caption>
+            <langstring language="de">kalte Medien/Oberflächen</langstring>
+        </caption>
+    </term>
+</term>
+
+<term>    
+    <termIdentifier>7</termIdentifier>
+    <caption>
+        <langstring language="de">Gefährdung durch spezielle physikalische Einwirkungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>7.1</termIdentifier>
+        <caption>
+            <langstring language="de">Lärm</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.2</termIdentifier>
+        <caption>
+            <langstring language="de">Ultraschall, Infraschall</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.3</termIdentifier>
+        <caption>
+            <langstring language="de">Ganzkörpervibrationen</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.4</termIdentifier>
+        <caption>
+            <langstring language="de">Hand-Arm-Vibrationen</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.5</termIdentifier>
+        <caption>
+            <langstring language="de">nicht ionisierende Strahlung (z.B. UV-,Infrarote, ultraviolette Strahlung, Laserstrahlung)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.6</termIdentifier>
+        <caption>
+            <langstring language="de">ionisierende Strahlung (z.B. Röntgenstrahlen, Gammastrahlung, Teilchenstrahlung)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.7</termIdentifier>
+        <caption>
+            <langstring language="de">elektromagnetische Felder</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>7.8</termIdentifier>
+        <caption>
+            <langstring language="de">Unter- oder Überdruck</langstring>
+        </caption>
+    </term>    
+</term>
+
+<term>    
+    <termIdentifier>8</termIdentifier>
+    <caption>
+        <langstring language="de">Gefährdungen durch Arbeitsumgebungsbedingungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>8.1</termIdentifier>
+        <caption>
+            <langstring language="de">Klima (z.B. Hitze, Kälte)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>8.2</termIdentifier>
+        <caption>
+            <langstring language="de">Beleuchtung, Licht</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>8.3</termIdentifier>
+        <caption>
+            <langstring language="de">Ertrinken</langstring>
+        </caption>
+    </term>    
+</term>
+
+
+<term>    
+    <termIdentifier>9</termIdentifier>
+    <caption>
+        <langstring language="de">Physische Belastung/ Arbeitsschwere</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>9.1</termIdentifier>
+        <caption>
+            <langstring language="de">schwere dynamische Arbeit (z.B. manuelle Handhabung von Lasten)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>9.2</termIdentifier>
+        <caption>
+            <langstring language="de">einseitige dynamische Arbeit, Körperbewegung (z.B. häufig wiederholte Bewegungen)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>9.3</termIdentifier>
+        <caption>
+            <langstring language="de">Haltungsarbeit (Zwangshaltung), Haltearbeit</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>9.4</termIdentifier>
+        <caption>
+            <langstring language="de">Kombination aus statischer und dynamischer Arbeit </langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>9.5</termIdentifier>
+        <caption>
+            <langstring language="de">erschwerte Handhabbarkeit von Arbeitsmitteln, Greifräume</langstring>
+        </caption>
+    </term>    
+</term>
+    
+<term>    
+    <termIdentifier>10</termIdentifier>
+    <caption>
+        <langstring language="de">Psychische Faktoren</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>10.1</termIdentifier>
+        <caption>
+            <langstring language="de">ungenügend gestaltete Arbeitsaufgabe (z.B. überwiegende Routineaufgaben, Über- und Unterqualifikation)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>10.2</termIdentifier>
+        <caption>
+            <langstring language="de">ungenügend gestaltete Arbeitsorganisation (z.B. kein durchdachter Arbeitsablauf)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>10.3</termIdentifier>
+        <caption>
+            <langstring language="de">ungenügend gestaltete soziale Bedingungen (z.B. fehlende soziale Kontakte, ungünstiges Führungsverhalten)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>10.4</termIdentifier>
+        <caption>
+            <langstring language="de">ungenügend gestaltete Arbeitsplatz- und Arbeitsumgebungsbedingungen (z.B. Lärm, Klima, räuml. Enge)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>10.5</termIdentifier>
+        <caption>
+            <langstring language="de">Wahrnehmung von Signalen und Prozessmerkmalen (z. B. unzureichende Softwaregestaltung)</langstring>
+        </caption>
+    </term>    
+</term>
+
+<term>    
+    <termIdentifier>11</termIdentifier>
+    <caption>
+        <langstring language="de">Sonstige Gefährdungen</langstring>
+    </caption>
+    <term>    
+        <termIdentifier>11.1</termIdentifier>
+        <caption>
+            <langstring language="de">durch Menschen (z.B. Überfall)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>11.2</termIdentifier>
+        <caption>
+            <langstring language="de">durch Tiere (z.B. gebissen werden)</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>11.3</termIdentifier>
+        <caption>
+            <langstring language="de">durch Pflanzen und pflanzliche Produkte</langstring>
+        </caption>
+    </term>    
+</term>
 
 </vdex>
