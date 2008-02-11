@@ -124,7 +124,7 @@ def importVocabularies(self):
             vocabname = vocabname[:-5]
             if vocabname in pvm.objectIds():
                 logger.info("Vocabulary already in place")
-                continue
+                pvm._delObject(vocabname)
             pvm.invokeFactory('VdexFileVocabulary', vocabname)
             pvm[vocabname].importXMLBinding(data)
             logger.info("VDEX Import of %s" % vocabname)
