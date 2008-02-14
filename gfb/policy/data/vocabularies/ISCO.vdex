@@ -15,172 +15,172 @@
     
     
     <term>
-       <termIdentifier> 1 </termIdentifier>
-       <caption><langstring language="de"> 1 -  Angehörige gesetzgebender Körperschaften, leitende Verwaltungsbedienstete und Führungskräfte in der Privatwirtschaft </langstring></caption>
+       <termIdentifier>1</termIdentifier>
+       <caption><langstring language="de">1 -  Angehörige gesetzgebender Körperschaften, leitende Verwaltungsbedienstete und Führungskräfte in der Privatwirtschaft </langstring></caption>
 
        <term>
-           <termIdentifier> 11 </termIdentifier><caption><langstring language="de"> 11 - Angehörige gesetzgebender Körperschaften und leitende Verwaltungsbedienstete </langstring></caption>
+           <termIdentifier>11</termIdentifier><caption><langstring language="de">11 - Angehörige gesetzgebender Körperschaften und leitende Verwaltungsbedienstete </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 12 </termIdentifier><caption><langstring language="de"> 12 - Geschäftsleiter und Geschäftsbereichsleiter in großen Unternehmen </langstring></caption>
+           <termIdentifier>12</termIdentifier><caption><langstring language="de">12 - Geschäftsleiter und Geschäftsbereichsleiter in großen Unternehmen </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 13 </termIdentifier><caption><langstring language="de"> 13 - Leiter kleiner Unternehmen </langstring></caption>
-       </term>
-
-   </term>
-
-
-   <term>
-       <termIdentifier> 2 </termIdentifier>
-       <caption><langstring language="de"> 2 - Wissenschaftler </langstring></caption>
-
-       <term>
-           <termIdentifier> 21 </termIdentifier><caption><langstring language="de"> 21 - Physiker, Mathematiker und Ingenieurwissenschaftler </langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 22 </termIdentifier><caption><langstring language="de"> 22 - Biowissenschaftler und Mediziner </langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 23 </termIdentifier><caption><langstring language="de"> 23 - Wissenschaftliche Lehrkräfte </langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 24 </termIdentifier><caption><langstring language="de"> 24 - Sonstige Wissenschaftler und verwandte Berufe </langstring></caption>
-       </term>
-
-   </term>
-
-   <term>
-       <termIdentifier> 3 </termIdentifier>
-       <caption><langstring language="de"> 3 - Techniker und gleichrangige nichttechnische Berufe </langstring></caption>
-
-       <term>
-           <termIdentifier> 31 </termIdentifier><caption><langstring language="de"> 31 - Technische Fachkräfte</langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 32 </termIdentifier><caption><langstring language="de"> 32 - Biowissenschaftliche und Gesundheitsfachkräfte</langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 33 </termIdentifier><caption><langstring language="de"> 33 - Nicht-wissenschaftliche Lehrkräfte </langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 34 </termIdentifier><caption><langstring language="de"> 34 - Sonstige Fachkräfte (mittlere Qualifikation) </langstring></caption>
-       </term>
-
-   </term>
-
-   <term>
-       <termIdentifier> 4 </termIdentifier>
-       <caption><langstring language="de"> 4 - Bürokräfte, kaufmännische Angestellte </langstring></caption>
-
-       <term>
-           <termIdentifier> 41 </termIdentifier><caption><langstring language="de"> 41 - Büroangestellte ohne Kundenkontakt </langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 42 </termIdentifier><caption><langstring language="de"> 42 - Büroangestellte mit Kundenkontakt </langstring></caption>
-       </term>
-
-   </term>
-
-   <term>
-       <termIdentifier> 5 </termIdentifier>
-       <caption><langstring language="de"> 5 - Dienstleistungsberufe, Verkäufer in Geschäften und auf Märkten </langstring></caption>
-
-       <term>
-           <termIdentifier> 51 </termIdentifier><caption><langstring language="de"> 51 - Personenbezogene Dienstleistungsberufe und Sicherheitsbedienstete </langstring></caption>
-       </term>
-
-       <term>
-           <termIdentifier> 52 </termIdentifier><caption><langstring language="de"> 52 - Modelle, Verkäufer und Vorführer </langstring></caption>
-       </term>
-
-   </term>
-
-   <term>
-       <termIdentifier> 6 </termIdentifier>
-       <caption><langstring language="de"> 6 - Fachkräfte in der Landwirtschaft und Fischerei </langstring></caption>
-
-       <term>
-           <termIdentifier> ID </termIdentifier><caption><langstring language="de"> 61 - Fachkräfte in der Landwirtschaft und Fischerei </langstring></caption>
+           <termIdentifier>13</termIdentifier><caption><langstring language="de">13 - Leiter kleiner Unternehmen </langstring></caption>
        </term>
 
    </term>
 
 
    <term>
-       <termIdentifier> 7 </termIdentifier>
-       <caption><langstring language="de"> 7 - Handwerks- und verwandte Berufe </langstring></caption>
+       <termIdentifier>2</termIdentifier>
+       <caption><langstring language="de">2 - Wissenschaftler </langstring></caption>
 
        <term>
-           <termIdentifier> 71 </termIdentifier><caption><langstring language="de"> 71 - Mineralgewinnungs- und Bauberufe </langstring></caption>
+           <termIdentifier>21</termIdentifier><caption><langstring language="de">21 - Physiker, Mathematiker und Ingenieurwissenschaftler </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 72 </termIdentifier><caption><langstring language="de"> 72 - Metallarbeiter, Mechaniker und verwandte Berufe </langstring></caption>
+           <termIdentifier>22</termIdentifier><caption><langstring language="de">22 - Biowissenschaftler und Mediziner </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 73 </termIdentifier><caption><langstring language="de"> 73 - Präzisionsarbeiter, Kunsthandwerker, Drucker und verwandte Berufe </langstring></caption>
+           <termIdentifier>23</termIdentifier><caption><langstring language="de">23 - Wissenschaftliche Lehrkräfte </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 74 </termIdentifier><caption><langstring language="de"> 74 - Sonstige Handwerks- und verwandte Berufe </langstring></caption>
+           <termIdentifier>24</termIdentifier><caption><langstring language="de">24 - Sonstige Wissenschaftler und verwandte Berufe </langstring></caption>
+       </term>
+
+   </term>
+
+   <term>
+       <termIdentifier>3</termIdentifier>
+       <caption><langstring language="de">3 - Techniker und gleichrangige nichttechnische Berufe </langstring></caption>
+
+       <term>
+           <termIdentifier>31</termIdentifier><caption><langstring language="de">31 - Technische Fachkräfte</langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>32</termIdentifier><caption><langstring language="de">32 - Biowissenschaftliche und Gesundheitsfachkräfte</langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>33</termIdentifier><caption><langstring language="de">33 - Nicht-wissenschaftliche Lehrkräfte </langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>34</termIdentifier><caption><langstring language="de">34 - Sonstige Fachkräfte (mittlere Qualifikation) </langstring></caption>
+       </term>
+
+   </term>
+
+   <term>
+       <termIdentifier>4</termIdentifier>
+       <caption><langstring language="de">4 - Bürokräfte, kaufmännische Angestellte </langstring></caption>
+
+       <term>
+           <termIdentifier>41</termIdentifier><caption><langstring language="de">41 - Büroangestellte ohne Kundenkontakt </langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>42</termIdentifier><caption><langstring language="de">42 - Büroangestellte mit Kundenkontakt </langstring></caption>
+       </term>
+
+   </term>
+
+   <term>
+       <termIdentifier>5</termIdentifier>
+       <caption><langstring language="de">5 - Dienstleistungsberufe, Verkäufer in Geschäften und auf Märkten </langstring></caption>
+
+       <term>
+           <termIdentifier>51</termIdentifier><caption><langstring language="de">51 - Personenbezogene Dienstleistungsberufe und Sicherheitsbedienstete </langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>52</termIdentifier><caption><langstring language="de">52 - Modelle, Verkäufer und Vorführer </langstring></caption>
+       </term>
+
+   </term>
+
+   <term>
+       <termIdentifier>6</termIdentifier>
+       <caption><langstring language="de">6 - Fachkräfte in der Landwirtschaft und Fischerei </langstring></caption>
+
+       <term>
+           <termIdentifier>ID</termIdentifier><caption><langstring language="de">61 - Fachkräfte in der Landwirtschaft und Fischerei </langstring></caption>
        </term>
 
    </term>
 
 
    <term>
-       <termIdentifier> 8 </termIdentifier>
-       <caption><langstring language="de"> 8 - Anlagen- und Maschinenbediener sowie Montierer</langstring></caption>
+       <termIdentifier>7</termIdentifier>
+       <caption><langstring language="de">7 - Handwerks- und verwandte Berufe </langstring></caption>
 
        <term>
-           <termIdentifier> 81 </termIdentifier><caption><langstring language="de"> 81 - Bediener und stationärer und verwandter Anlagen </langstring></caption>
+           <termIdentifier>71</termIdentifier><caption><langstring language="de">71 - Mineralgewinnungs- und Bauberufe </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 82 </termIdentifier><caption><langstring language="de"> 82 - Maschinenbediener und Montierer </langstring></caption>
+           <termIdentifier>72</termIdentifier><caption><langstring language="de">72 - Metallarbeiter, Mechaniker und verwandte Berufe </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 83 </termIdentifier><caption><langstring language="de"> 83 - Fahrzeugführer und Bediener mobiler Anlagen </langstring></caption>
+           <termIdentifier>73</termIdentifier><caption><langstring language="de">73 - Präzisionsarbeiter, Kunsthandwerker, Drucker und verwandte Berufe </langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>74</termIdentifier><caption><langstring language="de">74 - Sonstige Handwerks- und verwandte Berufe </langstring></caption>
+       </term>
+
+   </term>
+
+
+   <term>
+       <termIdentifier>8</termIdentifier>
+       <caption><langstring language="de">8 - Anlagen- und Maschinenbediener sowie Montierer</langstring></caption>
+
+       <term>
+           <termIdentifier>81</termIdentifier><caption><langstring language="de">81 - Bediener und stationärer und verwandter Anlagen </langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>82</termIdentifier><caption><langstring language="de">82 - Maschinenbediener und Montierer </langstring></caption>
+       </term>
+
+       <term>
+           <termIdentifier>83</termIdentifier><caption><langstring language="de">83 - Fahrzeugführer und Bediener mobiler Anlagen </langstring></caption>
        </term>
 
    </term>
 
    <term>
-       <termIdentifier> 9 </termIdentifier>
-       <caption><langstring language="de"> 9 - Hilfsarbeitskräfte </langstring></caption>
+       <termIdentifier>9</termIdentifier>
+       <caption><langstring language="de">9 - Hilfsarbeitskräfte </langstring></caption>
 
        <term>
-           <termIdentifier> 91</termIdentifier><caption><langstring language="de"> 91 - Verkaufs- und Dienstleistungskräfte </langstring></caption>
+           <termIdentifier>91</termIdentifier><caption><langstring language="de">91 - Verkaufs- und Dienstleistungskräfte </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 92 </termIdentifier><caption><langstring language="de"> 92 - Landwirtschaftliche, Fischerei- und verwandte Hilfsarbeiter </langstring></caption>
+           <termIdentifier>92</termIdentifier><caption><langstring language="de">92 - Landwirtschaftliche, Fischerei- und verwandte Hilfsarbeiter </langstring></caption>
        </term>
 
        <term>
-           <termIdentifier> 93 </termIdentifier><caption><langstring language="de"> 93 - Hilfsarbeiter im Bergbau, Baugewerbe, verarbeitenden Gewerbe und Transportwesen </langstring></caption>
+           <termIdentifier>93</termIdentifier><caption><langstring language="de">93 - Hilfsarbeiter im Bergbau, Baugewerbe, verarbeitenden Gewerbe und Transportwesen </langstring></caption>
        </term>
 
    </term>
 
    <term>
-       <termIdentifier> 10 </termIdentifier>
-       <caption><langstring language="de"> 10 - Soldaten </langstring></caption>
+       <termIdentifier>10</termIdentifier>
+       <caption><langstring language="de">10 - Soldaten </langstring></caption>
 
        <term>
-           <termIdentifier> 101 </termIdentifier><caption><langstring language="de"> 101 - Soldaten </langstring></caption>
+           <termIdentifier>101</termIdentifier><caption><langstring language="de">101 - Soldaten </langstring></caption>
        </term>
 
    </term>                
