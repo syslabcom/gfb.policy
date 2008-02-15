@@ -12,6 +12,7 @@ from gfb.policy.config import PROVIDER_ROLE, INSTALL_LDAP
 from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PERMISSIONS
 from Products.CMFCore.permissions import AddPortalContent, ReviewPortalContent
 from Products.ATVocabularyManager.utils.vocabs import createSimpleVocabs
+from gfb.theme.portlets import worknav
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -86,6 +87,7 @@ def importVarious(context):
     setupContent(site)
     #setupSecurity(site)
     configureCountryTool(site)
+    
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
@@ -271,6 +273,10 @@ def setupContent(site):
     portletAssignmentPortal(site)
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
+    
+    memberfolder = getattr(site, 'Members')
+    
+    portletAssignmentMembers(memberfolder)
 
 #def setupSecurity(site):
 #    """ Adds role and permission for the providers """
@@ -287,3 +293,20 @@ def configureCountryTool(site):
     ct.manage_countries_addArea('Europa')
     ct.manage_countries_addCountryToArea('Europa', ['DK','FI','FR','IT','NL','PT','ES','GB','IS','IE','LI','LU','NO','SE','AT','DE','CH','MT','BE','CZ','HU','PL','RO','SK','HR','BG','BA','GR','SI','MK','EE','LV','LT'])
     ct.manage_countries_sortArea('Europa')
+
+
+def portletAssignmentMembers(context):
+    path = '/'.join(context.getPhysicalPath())
+    
+    left = assignment_mapping_from_key(context, 'plone.leftcolumn', CONTEXT_CATEGORY, path)
+    right = assignment_mapping_from_key(context, 'plone.rightcolumn', CONTEXT_CATEGORY, path)
+
+    for x in list(left.keys()):
+        del left[x]
+
+    for x in list(right.keys()):
+        del right[x]
+    
+    _blockPortlets(context, 'plone.leftcolumn', CONTEXT_CATEGORY, True)
+    
+    left['navtree'] = worknav.Assignment()    
