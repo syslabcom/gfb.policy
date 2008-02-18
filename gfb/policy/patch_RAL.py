@@ -5,6 +5,9 @@ from Products.Archetypes.utils import DisplayList
 
 from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink, RiskAssessmentLink_schema as schema
 schema['provider'].widget.visible['edit'] = 'invisible'
+schema['provider'].widget.visible['view'] = 'invisible'
+schema['remoteProvider'].widget.visible['edit'] = 'invisible'
+schema['remoteProvider'].widget.visible['view'] = 'invisible'
 
 
 from Products.RemoteProvider.content.Provider import Provider, Provider_schema
@@ -14,6 +17,7 @@ unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'locat
 for name in unwantedFields:
     if Provider_schema.get(name):
         Provider_schema[name].widget.visible['edit'] = 'invisible'
+        Provider_schema[name].widget.visible['view'] = 'invisible'
         Provider_schema.changeSchemataForField(name, 'default')
 
 
@@ -35,7 +39,7 @@ def at_post_edit_script(self):
 
     provider = getMyProvider(self)
     if provider:
-        self.setProvider(provider.UID())
+        self.setRemoteProvider(provider.UID())
 
 
 
