@@ -11,8 +11,9 @@ from Products.RiskAssessmentLink.content.Provider import Provider, Provider_sche
 unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'location',
     'creators', 'effectiveDate', 'expirationDate', 'creation_date', 'modification_date', 'language', 'sme', 'email', 'targetLanguage')
 for name in unwantedFields:
-    Provider_schema[name].widget.visible['edit'] = 'invisible'
-    Provider_schema.changeSchemataForField(name, 'default')
+    if hasattr(Provider_schema, name):
+        Provider_schema[name].widget.visible['edit'] = 'invisible'
+        Provider_schema.changeSchemataForField(name, 'default')
 
 
 from AccessControl import ClassSecurityInfo
