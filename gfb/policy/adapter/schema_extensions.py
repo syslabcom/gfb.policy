@@ -123,15 +123,15 @@ class GFBTaggingSchemaExtender(object):
         return self._fields
 
     def getOrder(self, original):
-        other = original['other']
-        sector = original['Sector']
+        other = getattr(original, 'other', None)
+        if other:
+            other.remove('country')
+            other.insert(3, 'country')
 
-        sector.remove('nace')
-        sector.insert(0, 'nace')
-
-        other.remove('country')
-        other.insert(3, 'country')
-
+        sector = getattr(original, 'Sector', None)
+        if sector:
+            sector.remove('nace')
+            sector.insert(0, 'nace')
 
         return original
 
