@@ -7,11 +7,11 @@ from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmen
 schema['provider'].widget.visible['edit'] = 'invisible'
 
 
-from Products.RiskAssessmentLink.content.Provider import Provider, Provider_schema
+from Products.RemoteProvider.content.Provider import Provider, Provider_schema
 unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'location',
     'creators', 'effectiveDate', 'expirationDate', 'creation_date', 'modification_date', 'language', 'sme', 'email', 'targetLanguage')
 for name in unwantedFields:
-    if hasattr(Provider_schema, name):
+    if Provider_schema.get(name):
         Provider_schema[name].widget.visible['edit'] = 'invisible'
         Provider_schema.changeSchemataForField(name, 'default')
 

@@ -314,7 +314,9 @@ def portletAssignmentMembers(context):
 def configureMembersFolder(site):
     pm = getToolByName(site, 'portal_membership')
     f = pm.getMembersFolder()
-    f.manage_addProduct['ExternalMethod'].manage_addExternalMethod(id='notifyMemberAreaCreated',
-            title='',
-            module='gfb.policy.notifyMemberAreaCreated',
-            function='notifyMemberAreaCreated')
+    id = 'notifyMemberAreaCreated'
+    if not getattr(f.aq_base, id, None):
+        f.manage_addProduct['ExternalMethod'].manage_addExternalMethod(id=id,
+                title='',
+                module='gfb.policy.notifyMemberAreaCreated',
+                function='notifyMemberAreaCreated')
