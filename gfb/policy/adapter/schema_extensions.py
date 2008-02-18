@@ -11,15 +11,6 @@ from Products.Archetypes.utils import DisplayList
 
 from Products.ATCountryWidget.Widget import CountryWidget, MultiCountryWidget
 
-
-# Provider
-from Products.RemoteProvider.content.Provider import Provider
-zope.interface.classImplements(Provider, IGFBContent)
-
-# RiskAssessmentLink
-from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink
-zope.interface.classImplements(RiskAssessmentLink, IGFBContent)
-
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.VocabularyPickerWidget.VocabularyPickerWidget import VocabularyPickerWidget
 
@@ -29,11 +20,7 @@ from Products.CMFCore.utils import getToolByName
 
 # dummy
 DUMMY = False
-tags_default = ['A']
-tags_vocab = ['A', 'B', 'C']
 dummy_vocab = ['this', 'is', 'a', 'dummy', 'vocabulary']
-dummy_string = "this is a dummy string"
-
 
 
 class ExtensionFieldMixin:
@@ -84,7 +71,7 @@ class GFBTaggingSchemaExtender(object):
 
     _fields = [
             NACEField('nace',
-                schemata='categorization',
+                schemata='Sector',
                 languageIndependent=True,
                 multiValued=True,
                 widget=VocabularyPickerWidget(
@@ -98,7 +85,7 @@ class GFBTaggingSchemaExtender(object):
                 translation_mutator="translationMutator",
             ),
             CountryField('country',
-                schemata='categorization',
+                schemata='Other',
                 enforceVocabulary=False,
                 languageIndependent=True,
                 multiValued=True,
@@ -123,22 +110,65 @@ class GFBTaggingSchemaExtender(object):
         return self._fields
 
     def getOrder(self, original):
-        other = original.get('Other')
-        if other:
-            other.remove('country')
-            other.insert(3, 'country')
-
-        sector = original.get('Sector')
-        if sector:
-            sector.remove('nace')
-            sector.insert(0, 'nace')
-
         return original
+
 
 #NOTE: These methods are called quite frequently, so it pays to optimise
 #them.
 
-
 zope.component.provideAdapter(GFBTaggingSchemaExtender,
                               name=u"gfb.metadata")
 
+
+
+# RiskAssessmentLink
+class IGFBContentRAL(zope.interface.Interface):
+    """ IGFBContentRAL
+    """
+
+from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink
+zope.interface.classImplements(RiskAssessmentLink, IGFBContentRAL)
+
+class GFBTaggingSchemaExtenderRAL(GFBTaggingSchemaExtender):
+    
+    zope.component.adapts(IGFBContentRAL)
+
+    def getOrder(self, original):
+        other = original.get('Other') or list()
+        if hasattr(other, 'country'):
+            other.remove('country')
+        other.insert(3, 'country')
+        original['Other'] = other
+
+        sector = original.get('Sector') or list()
+        if hasattr(sector, 'nace'):
+            sector.remove('nace')
+        sector.insert(0, 'nace')
+        original['Sector'] = sector
+
+        return original
+
+zope.component.provideAdapter(GFBTaggingSchemaExtenderRAL,
+                              name=u"gfb.metadata.ral")
+
+
+# Provider
+class IGFBContentProvider(zope.interface.Interface):
+    """ IGFBContentProvider
+    """
+
+from Products.RemoteProvider.content.Provider import Provider
+zope.interface.classImplements(Provider, IGFBContentProvider)
+
+class GFBTaggingSchemaExtenderProvider(GFBTaggingSchemaExtender):
+    
+    zope.component.adapts(IGFBContentProvider)
+    
+    _fields = list()
+    
+    def getOrder(self, original):
+        return original
+
+
+zope.component.provideAdapter(GFBTaggingSchemaExtenderProvider,
+                              name=u"gfb.metadata.provider")
