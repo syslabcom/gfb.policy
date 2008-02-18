@@ -6,6 +6,15 @@ from Products.Archetypes.utils import DisplayList
 from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink, RiskAssessmentLink_schema as schema
 schema['provider'].widget.visible['edit'] = 'invisible'
 
+
+from Products.RiskAssessmentLink.content.Provider import Provider, Provider_schema
+unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'location',
+    'creators', 'effectiveDate', 'expirationDate', 'creation_date', 'modification_date', 'language', 'sme', 'email', 'targetLanguage')
+for name in unwantedFields:
+    Provider_schema[name].widget.visible['edit'] = 'invisible'
+    Provider_schema.changeSchemataForField(name, 'default')
+
+
 from AccessControl import ClassSecurityInfo
 security = ClassSecurityInfo()
 
