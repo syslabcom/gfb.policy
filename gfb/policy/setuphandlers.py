@@ -58,7 +58,6 @@ def importVarious(context):
     quickinst.installProduct('collective.portlet.feedmixer')
     quickinst.installProduct('syslabcom.filter')
 
-
     index_data = [
             { 'idx_id' : 'nace'
             , 'meta_id' : 'nace'
@@ -69,9 +68,7 @@ def importVarious(context):
 
     addProxyIndexes(site, index_data)
 
-
     addExtraIndexes(site)
-
 
     addCatalogMetadata(site, ['getProvider_category'])
 
@@ -87,6 +84,7 @@ def importVarious(context):
     setupContent(site)
     #setupSecurity(site)
     configureCountryTool(site)
+    configureMembersFolder(site)
     
 
 def addMemberdataProperties(site, props):
@@ -309,4 +307,13 @@ def portletAssignmentMembers(context):
     
     _blockPortlets(context, 'plone.leftcolumn', CONTEXT_CATEGORY, True)
     
-    left['navtree'] = worknav.Assignment()    
+    left['navtree'] = worknav.Assignment()
+
+
+def configureMembersFolder(site):
+    pm = getToolByName(site, 'portal_membership')
+    f = pm.getMembersFolder()
+    f.manage_addProduct['ExternalMethod'].manage_addExternalMethod(id='notifyMemberAreaCreated',
+            title='',
+            module='gfb.policy.notifyMemberAreaCreated',
+            function='notifyMemberAreaCreated')
