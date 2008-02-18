@@ -183,9 +183,9 @@ def addExtraIndexes(self):
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
     
-    if 'getTargetLanguage' not in available:
-        logger.info('Adding KeywordIndex getTarget_language')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getTargetLanguage', extra={'indexed_attrs': 'getTargetLanguage'})
+    if 'getRemoteLanguage' not in available:
+        logger.info('Adding KeywordIndex getRemoteLanguage')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRemoteLanguage', extra={'indexed_attrs': 'getRemoteLanguage'})
 
     if 'getCountry' not in available:
         logger.info('Adding KeywordIndex Country')

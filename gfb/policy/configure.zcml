@@ -5,7 +5,9 @@
     i18n_domain="gfb.policy">
 
     <five:registerPackage package="." initialize=".initialize" />
-
+    
+    <include package=".adapter" />
+    
     <genericsetup:registerProfile
       name="default"
       title="GFB Site Policy"
