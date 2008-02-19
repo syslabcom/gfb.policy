@@ -188,7 +188,13 @@ def addExtraIndexes(self):
 
     if 'getCountry' not in available:
         logger.info('Adding KeywordIndex Country')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getCountry', extra={'indexed_attrs': 'getCountry'})   
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getCountry', extra={'indexed_attrs': 'getCountry'})
+
+    if 'getRemoteProviderUID' not in available:
+        logger.info('Adding KeywordIndex getRemoteProviderUID')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRemoteProviderUID', 
+            extra=dict(indexed_attrs='getRemoteProviderUID'))
+
 
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
