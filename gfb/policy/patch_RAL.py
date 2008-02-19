@@ -33,8 +33,10 @@ def at_post_edit_script(self):
     def getMyProvider(self):
         pm = getToolByName(self, 'portal_membership')
         hf = pm.getHomeFolder()
-        name = pm.getAuthenticatedMember().getUserName()
-        res = self.portal_catalog(portal_type='Provider', Creator=name)
+        name = pm.getAuthenticatedMember().getUserid() 
+        f = pm.getMembersFolder()
+        path = "/".join( f.getPhysicalPath() ) + '/' + name
+        res = self.portal_catalog(portal_type='Provider', path=path)
         return len(res) > 0 and res[0].getObject() or None
 
     provider = getMyProvider(self)
