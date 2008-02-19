@@ -33,7 +33,7 @@ def at_post_edit_script(self):
     def getMyProvider(self):
         pm = getToolByName(self, 'portal_membership')
         hf = pm.getHomeFolder()
-        name = pm.getAuthenticatedMember().getUserid() 
+        name = pm.getAuthenticatedMember().getUserId() 
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + name
         res = self.portal_catalog(portal_type='Provider', path=path)
