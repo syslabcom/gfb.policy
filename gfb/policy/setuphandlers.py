@@ -65,6 +65,11 @@ def importVarious(context):
             , 'extra' : dict(idx_type = "KeywordIndex",
                 )
             }
+          , { 'idx_id' : 'getCountry'
+            , 'meta_id' : 'country'
+            , 'extra' : dict(idx_type = "KeywordIndex",
+                )
+            }
         ]
 
     addProxyIndexes(site, index_data)
