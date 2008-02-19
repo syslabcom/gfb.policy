@@ -13,7 +13,7 @@ schema['remoteProvider'].widget.visible['view'] = 'invisible'
 from Products.RemoteProvider.content.Provider import Provider, Provider_schema
 unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'location',
     'creators', 'effectiveDate', 'expirationDate', 'creation_date', 'modification_date', 'language', 'sme', 
-    'email', 'remoteLanguage', 'nace', 'country')
+    'email', 'remoteLanguage', 'nace', 'country', 'provider')
 for name in unwantedFields:
     if Provider_schema.get(name):
         Provider_schema[name].widget.visible['edit'] = 'invisible'
@@ -40,6 +40,7 @@ def at_post_edit_script(self):
     provider = getMyProvider(self)
     if provider:
         self.setRemoteProvider(provider.UID())
+        self.reindexObject()
 
 
 
