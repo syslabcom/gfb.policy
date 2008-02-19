@@ -135,16 +135,21 @@ class GFBTaggingSchemaExtenderRAL(GFBTaggingSchemaExtender):
 
     def getOrder(self, original):
         other = original.get('Other') or list()
-        if hasattr(other, 'country'):
+        if 'country' in other:
             other.remove('country')
         other.insert(3, 'country')
         original['Other'] = other
 
         sector = original.get('Sector') or list()
-        if hasattr(sector, 'nace'):
+        if 'nace' in sector:
             sector.remove('nace')
         sector.insert(0, 'nace')
         original['Sector'] = sector
+        
+        keys = original._keys
+        keys.remove('Sector')
+        keys.insert(1, 'Sector')
+        original._keys = keys
 
         return original
 
