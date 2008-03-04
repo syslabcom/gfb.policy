@@ -20,6 +20,8 @@ for name in unwantedFields:
         Provider_schema[name].widget.visible['view'] = 'invisible'
         Provider_schema.changeSchemataForField(name, 'default')
 
+# make providerCategory required
+Provider_schema['providerCategory'].required = True
 
 from AccessControl import ClassSecurityInfo
 security = ClassSecurityInfo()
