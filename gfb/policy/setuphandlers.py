@@ -91,7 +91,7 @@ def importVarious(context):
     #setupSecurity(site)
     configureCountryTool(site)
     configureMembersFolder(site)
-    
+    configureNavigation(site)
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
@@ -331,3 +331,13 @@ def configureMembersFolder(site):
                 title='',
                 module='gfb.policy.notifyMemberAreaCreated',
                 function='notifyMemberAreaCreated')
+
+
+def configureNavigation(site):
+    excludes = ['news', 'events', 'Members']
+    for x in excludes:
+        obj = getattr(site, x, None)
+        if not obj:
+            continue
+        obj.setExcludeFromNav(True)
+        obj.reindexObject()
