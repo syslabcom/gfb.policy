@@ -13,6 +13,13 @@
     </vocabName>
     <vocabIdentifier>ISCO</vocabIdentifier>
     
+    <term>
+        <termIdentifier>0</termIdentifier>
+        <caption>
+            <langstring language="en">0 -  Not occupation specific</langstring>
+            <langstring language="de">0 -  Berufsgruppenunabhängig</langstring>
+        </caption>
+    </term>
     
     <term>
        <termIdentifier>1</termIdentifier>
