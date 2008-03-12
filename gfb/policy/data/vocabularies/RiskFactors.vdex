@@ -12,7 +12,15 @@
     <langstring language="de">Klassifikation der Gefährdungsfaktoren</langstring>
   </vocabName>
   <vocabIdentifier>RiskFactors</vocabIdentifier>
-  
+
+<term>
+    <termIdentifier>0</termIdentifier>
+    <caption>
+        <langstring language="en">Not risk specific</langstring>
+        <langstring language="de">Risikoübergreifend</langstring>
+    </caption>
+</term>
+
 <term>    
     <termIdentifier>1</termIdentifier>
     <caption>
