@@ -44,9 +44,20 @@ def at_post_edit_script(self):
         res = self.portal_catalog(portal_type='Provider', path=path)
         return len(res) > 0 and res[0].getObject() or None
 
+    doReindex = False
+    riskfactors = self.getRiskfactors()
+    occupation = self.getOccupation()
+    nace =self.getField('nace').getAccessor(self)()
+    if '0' in riskfactors and '0' in occupation and '0' in nace:
+        self.setCategoryIndependent(True)
+        doReindex = True
+
     provider = getMyProvider(self)
     if provider:
         self.setRemoteProvider(provider.UID())
+        doReindex = True
+
+    if doReindex:
         self.reindexObject()
 
 
