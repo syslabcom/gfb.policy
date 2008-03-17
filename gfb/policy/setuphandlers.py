@@ -200,6 +200,10 @@ def addExtraIndexes(self):
         cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRemoteProviderUID', 
             extra=dict(indexed_attrs='getRemoteProviderUID'))
 
+    if 'getCategoryIndependent' not in available:
+        logger.info('Adding FieldIndex getCategoryIndependent')
+        cat.manage_addProduct['PluginIndexes'].manage_addFieldIndex(id='getCategoryIndependent')
+
 
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
