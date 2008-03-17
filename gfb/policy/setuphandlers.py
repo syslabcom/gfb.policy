@@ -204,6 +204,9 @@ def addExtraIndexes(self):
         logger.info('Adding FieldIndex getCategoryIndependent')
         cat.manage_addProduct['PluginIndexes'].manage_addFieldIndex(id='getCategoryIndependent')
 
+    if 'getRiskfactors' not in available:
+        logger.info('Adding KeywordIndex getRiskfactors')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRiskfactors', extra=dict(indexed_attrs='getRiskfactors'))
 
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
