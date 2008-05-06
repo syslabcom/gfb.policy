@@ -31,6 +31,7 @@ def importVarious(context):
 
     site=context.getSite()
     quickinst = getToolByName(site, 'portal_quickinstaller')
+    quickinst.installProduct('LinguaPlone')
     quickinst.installProduct('ATCountryWidget')
     quickinst.installProduct('AddRemoveWidget')
     quickinst.installProduct('CMFPlacefulWorkflow')
