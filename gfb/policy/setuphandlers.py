@@ -76,7 +76,7 @@ def importVarious(context):
 
     addExtraIndexes(site)
 
-    addCatalogMetadata(site, ['getProvider_category', 'getCategoryIndependent'])
+    addCatalogMetadata(site, ['getProvider_category', 'getCategoryIndependent', 'getDateOfEditing'])
 
     props = [
 #        dict(id='localityName', value='', type='string', plone_name='Locality', multi_valued=False),
