@@ -1,5 +1,5 @@
 from Products.CMFCore.utils import getToolByName
-from config import AVAILABLE_LANGUAGES_RAL
+from gfb.policy.config import AVAILABLE_LANGUAGES_RAL
 from zope.i18n import translate
 from Products.Archetypes.utils import DisplayList
 from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink
