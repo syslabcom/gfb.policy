@@ -282,7 +282,7 @@ def setupContent(site):
         _ = site.invokeFactory('Large Plone Folder', 'db')
     db = getattr(site, 'db')
     db.setTitle('Datenbank')
-    db.setLayout('riskassessmentlink_db_view')
+    db.setLayout('radb_filter')
     try:
         pwt = getToolByName(site, 'portal_workflow')
         pwt.doActionFor(db, 'publish')
@@ -349,3 +349,4 @@ def configureNavigation(site):
             continue
         obj.setExcludeFromNav(True)
         obj.reindexObject()
+
