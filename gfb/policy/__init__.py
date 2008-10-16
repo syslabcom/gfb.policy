@@ -1,4 +1,5 @@
 import patches
+import os, sys
 
 from AccessControl import ModuleSecurityInfo
 ModuleSecurityInfo('gfb.policy.utils').declarePublic('logit')
