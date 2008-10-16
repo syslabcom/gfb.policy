@@ -59,6 +59,7 @@ def importVarious(context):
     quickinst.installProduct('plone.portlet.static')
     quickinst.installProduct('collective.portlet.feedmixer')
     quickinst.installProduct('syslabcom.filter')
+    quickinst.installProduct('Products.RichDocument')
 
     index_data = [
             { 'idx_id' : 'nace'
