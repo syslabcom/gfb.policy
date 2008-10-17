@@ -49,7 +49,6 @@ def importVarious(context):
     quickinst.installProduct('RemoteProvider')
     quickinst.installProduct('ProxyIndex')
     quickinst.installProduct('VocabularyPickerWidget')
-    quickinst.installProduct('Clouseau')
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('simplon.plone.ldap')
@@ -69,6 +68,11 @@ def importVarious(context):
             }
           , { 'idx_id' : 'getCountry'
             , 'meta_id' : 'country'
+            , 'extra' : dict(idx_type = "KeywordIndex",
+                )
+            }
+          , { 'idx_id' : 'getRiskfactors'
+            , 'meta_id' : 'riskfactors'
             , 'extra' : dict(idx_type = "KeywordIndex",
                 )
             }
@@ -166,7 +170,7 @@ def addProxyIndexes(self, index_data):
     logger = logging.getLogger("ProxyIndex")
     logger.info("Adding Proxy Indexes")
 
-    VALUE_EXPR = "python:object.getField('%(meta_id)s').getAccessor(object)()"
+    VALUE_EXPR = "python:object.restrictedTraverse('@@getVocabularyPath')('%(meta_id)s')"
 
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
