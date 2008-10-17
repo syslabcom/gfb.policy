@@ -210,6 +210,11 @@ def addExtraIndexes(self):
         logger.info('Adding KeywordIndex getRiskfactors')
         cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRiskfactors', extra=dict(indexed_attrs='getRiskfactors'))
 
+    if 'getProvider_category' not in available:
+        logger.info('Adding KeywordIndex getProvider_category')
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getProvider_category',
+            extra=dict(indexed_attrs='getProvider_category'))
+
 def addCatalogMetadata(site, metadata):
     logger = logging.getLogger("CatalogMetadata")
     logger.info("Adding Catalog Metadata")
