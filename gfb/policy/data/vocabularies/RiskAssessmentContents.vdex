@@ -10,6 +10,8 @@
       language="de">
       
    <vocabName>
+
+         <langstring language="en">Risk assessment contents</langstring>
          <langstring language="de">Inhalte von Gefährdungsbeurteilungsmaterial</langstring>
    </vocabName>
    <vocabIdentifier>RiskAssessmentContents</vocabIdentifier>
@@ -17,6 +19,7 @@
    <term>    
        <termIdentifier>identify</termIdentifier>
        <caption>
+           <langstring language="en">Identifying hazards and those at risk</langstring>
            <langstring language="de">Ermitteln</langstring>
        </caption>
    </term>
@@ -24,6 +27,7 @@
    <term>    
        <termIdentifier>evaluate</termIdentifier>
        <caption>
+           <langstring language="en">Evaluating and prioritising risks </langstring>
            <langstring language="de">Bewerten</langstring>
        </caption>
    </term>
@@ -31,6 +35,7 @@
    <term>    
        <termIdentifier>define</termIdentifier>
        <caption>
+           <langstring language="en">Deciding on preventive action</langstring>
            <langstring language="de">Festlegen von Maßnahmen</langstring>
        </caption>
    </term>
@@ -38,6 +43,7 @@
    <term>    
        <termIdentifier>verify</termIdentifier>
        <caption>
+           <langstring language="en">Monitoring and reviewing</langstring>
            <langstring language="de">Überprüfen der Wirksamkeit</langstring>
        </caption>
    </term>
@@ -46,6 +52,7 @@
    <term>    
        <termIdentifier>resource</termIdentifier>
        <caption>
+           <langstring language="en">Tools for documentation</langstring>
            <langstring language="de">Hilfsmittel zur Dokumentation</langstring>
        </caption>
    </term>

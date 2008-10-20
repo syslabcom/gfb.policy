@@ -9,6 +9,7 @@
       profileType="flatTokenTerms" 
       language="de">
   <vocabName>
+    <langstring language="de">Classification the risk factors</langstring>
     <langstring language="de">Klassifikation der Gefährdungsfaktoren</langstring>
   </vocabName>
   <vocabIdentifier>RiskFactors</vocabIdentifier>
@@ -21,45 +22,52 @@
     </caption>
 </term>
 
-<term>    
+<term>
     <termIdentifier>1</termIdentifier>
     <caption>
+        <langstring language="en">Mechanical hazards</langstring>
         <langstring language="de">Mechanische Gefährdungen</langstring>
     </caption>
 
     <term>    
         <termIdentifier>1.1</termIdentifier>
         <caption>
-            <langstring language="de">ungeschützt bewegte Maschinenteile</langstring>
+            <langstring language="en">Unprotected moving machine parts</langstring>
+            <langstring language="de">Ungeschützt bewegte Maschinenteile</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>1.2</termIdentifier>
         <caption>
+            <langstring language="en">Parts with dangerous surfaces</langstring>
             <langstring language="de">Teile mit gefährlichen Oberflächen</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>1.3</termIdentifier>
         <caption>
-            <langstring language="de">bewegte Transportmittel, bewegte Arbeitsmittel</langstring>
+            <langstring language="en">Moving means of transport, moving work equipment</langstring>
+            <langstring language="de">Bewegte Transportmittel, bewegte Arbeitsmittel</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>1.4</termIdentifier>
         <caption>
-            <langstring language="de">unkontrolliert bewegte Teile</langstring>
+            <langstring language="en">Uncontrolled moving components</langstring>
+            <langstring language="de">Unkontrolliert bewegte Teile</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>1.5</termIdentifier>
         <caption>
+            <langstring language="de">Tumble, slipping, tripping, to sprain one's foot</langstring>
             <langstring language="de">Sturz, Ausrutschen, Stolpern, Umknicken</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>1.6</termIdentifier>
         <caption>
+            <langstring language="en">Fall</langstring>
             <langstring language="de">Absturz</langstring>
         </caption>
     </term>
@@ -68,18 +76,28 @@
 <term>    
     <termIdentifier>2</termIdentifier>
     <caption>
+        <langstring language="en">Electrical hazards</langstring>
         <langstring language="de">Elektrische Gefährdungen</langstring>
     </caption>
     <term>    
         <termIdentifier>2.1</termIdentifier>
         <caption>
+            <langstring language="en">Electric shock</langstring>
             <langstring language="de">Elektrischer Schlag</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>2.2</termIdentifier>
         <caption>
+            <langstring language="en">electric arc</langstring>
             <langstring language="de">Lichtbögen</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>2.3</termIdentifier>
+        <caption>
+            <langstring language="en">Electrostatic charges</langstring>
+            <langstring language="de">Elektrostatische Aufladungen</langstring>
         </caption>
     </term>
 </term>
@@ -87,18 +105,35 @@
 <term>    
     <termIdentifier>3</termIdentifier>
     <caption>
+        <langstring language="en">Dangerous substances</langstring>
         <langstring language="de">Gefahrstoffe</langstring>
     </caption>
     <term>    
         <termIdentifier>3.1</termIdentifier>
         <caption>
-            <langstring language="de">Hautkontakt mit Gefahrstoffen (Feststoffe, Flüssigkeiten, Feuchtarbeit)</langstring>
+            <langstring language="en">Lack of hygiene when handling dangerous substances</langstring>
+            <langstring language="de">Mangelnde Hygiene beim Umgang mit Gefahrstoffen</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>3.2</termIdentifier>
         <caption>
+            <langstring language="en">Inhalation of dangerous substances (gases, fumes, smoke, dust, including fumes)</langstring>
             <langstring language="de">Einatmen von Gefahrstoffen (Gase, Dämpfe, Nebel, Stäube einschl. Rauche)</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>3.3</termIdentifier>
+        <caption>
+            <langstring language="en">Skin contact with dangerous substances (solids, liquids, wet work</langstring>
+            <langstring language="de">Hautkontakt mit Gefahrstoffen (Feststoffe, Flüssigkeiten, Feuchtarbeit)</langstring>
+        </caption>
+    </term>
+    <term>    
+        <termIdentifier>3.4</termIdentifier>
+        <caption>
+            <langstring language="en">Physico-chemical hazards (eg fire and explosion hazards, uncontrolled chemical reactions)</langstring>
+            <langstring language="de">physikal.-chemische Gefährdungen (z.B. Brand und Explosionsgefährdungen, unkontrolliert chem. Reaktionen)</langstring>
         </caption>
     </term>
 </term>
@@ -106,18 +141,21 @@
 <term>    
     <termIdentifier>4</termIdentifier>
     <caption>
-        <langstring language="de">Biologische Gefährdungen</langstring>
+        <langstring language="en">Biological hazards</langstring>
+        <langstring language="de">Biologische Arbeitsstoffe</langstring>
     </caption>
     <term>    
         <termIdentifier>4.1</termIdentifier>
         <caption>
-            <langstring language="de">Infektionsgefährdung durch biologische Arbeitsstoffe (z.B. Bakterien, Viren, Pilze)</langstring>
+            <langstring language="en">Infection risks from pathogenic microorganisms (eg bacteria, viruses, fungi)</langstring>
+            <langstring language="de">Infektionsgefährdung durch pathogene Mikroorganismen (z.B. Bakterien, Viren, Pilze)</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>4.2</termIdentifier>
         <caption>
-            <langstring language="de">sensibilisierende und toxische Wirkungen von biologischen Arbeitsstoffen</langstring>
+            <langstring language="en">Sensitizing and toxic effects of microorganisms</langstring>
+            <langstring language="de">Sensibilisierende und toxische Wirkungen von Mikroorganismen</langstring>
         </caption>
     </term>
 </term>
@@ -126,30 +164,28 @@
 <term>    
     <termIdentifier>5</termIdentifier>
     <caption>
+        <langstring language="en">Fire and explosion hazards</langstring>
         <langstring language="de">Brand und Explosionsgefährdungen</langstring>
     </caption>
     <term>    
         <termIdentifier>5.1</termIdentifier>
         <caption>
-            <langstring language="de">brennbare Feststoffe, Flüssigkeiten, Gase</langstring>
+            <langstring language="en">Flammable solids, liquids, gases</langstring>
+            <langstring language="de">Brennbare Feststoffe, Flüssigkeiten, Gase</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>5.2</termIdentifier>
         <caption>
+            <langstring language="en">Explosive Atmosphere</langstring>
             <langstring language="de">Explosionsfähige Atmosphäre</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>5.3</termIdentifier>
         <caption>
+            <langstring language="en">Explosives</langstring>
             <langstring language="de">Explosivstoffe</langstring>
-        </caption>
-    </term>
-    <term>    
-        <termIdentifier>5.4</termIdentifier>
-        <caption>
-            <langstring language="de">Elektrostatische Aufladungen</langstring>
         </caption>
     </term>
 </term>
@@ -158,18 +194,21 @@
 <term>    
     <termIdentifier>6</termIdentifier>
     <caption>
+        <langstring language="en">Thermal hazards</langstring>
         <langstring language="de">Thermische Gefährdungen</langstring>
     </caption>
     <term>    
         <termIdentifier>6.1</termIdentifier>
         <caption>
-            <langstring language="de">heiße Medien/Oberflächen</langstring>
+            <langstring language="en">Hot media/surfaces</langstring>
+            <langstring language="de">Heiße Medien/Oberflächen</langstring>
         </caption>
     </term>
     <term>    
         <termIdentifier>6.2</termIdentifier>
         <caption>
-            <langstring language="de">kalte Medien/Oberflächen</langstring>
+            <langstring language="en">Cold  media/surfaces</langstring>
+            <langstring language="de">Kalte Medien/Oberflächen</langstring>
         </caption>
     </term>
 </term>
@@ -177,53 +216,62 @@
 <term>    
     <termIdentifier>7</termIdentifier>
     <caption>
+        <langstring language="en">Physical hazards</langstring>
         <langstring language="de">Gefährdung durch spezielle physikalische Einwirkungen</langstring>
     </caption>
     <term>    
         <termIdentifier>7.1</termIdentifier>
         <caption>
+            <langstring language="en">Noise</langstring>
             <langstring language="de">Lärm</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>7.2</termIdentifier>
         <caption>
+            <langstring language="en">Ultrasound, Subsonic noise</langstring>
             <langstring language="de">Ultraschall, Infraschall</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>7.3</termIdentifier>
         <caption>
+            <langstring language="en">Whole-body vibration</langstring>
             <langstring language="de">Ganzkörpervibrationen</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>7.4</termIdentifier>
         <caption>
+            <langstring language="en">Hand-arm vibration</langstring>
             <langstring language="de">Hand-Arm-Vibrationen</langstring>
         </caption>
-    </term>    
-    <term>    
+    </term> 
+	<term>   
         <termIdentifier>7.5</termIdentifier>
         <caption>
-            <langstring language="de">nicht ionisierende Strahlung (z.B. UV-,Infrarote, ultraviolette Strahlung, Laserstrahlung)</langstring>
+            <langstring language="en">Optical Radiation</langstring>
+            <langstring language="de">Optische Strahlung (z.B. Infrarote Strahlung (IR), ultraviolette Strahlung (UV), Laserstrahlung)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>7.6</termIdentifier>
         <caption>
-            <langstring language="de">ionisierende Strahlung (z.B. Röntgenstrahlen, Gammastrahlung, Teilchenstrahlung)</langstring>
+            <langstring language="en">Ionising radiation</langstring>
+            <langstring language="de">ionisierende Strahlung (z.B. Röntgenstrahlen, Gammastrahlung, Teilchenstrahlung (Alpha-, Beta- und Neutronenstrahlung))</langstring>
         </caption>
-    </term>    
+    </term>       
     <term>    
         <termIdentifier>7.7</termIdentifier>
         <caption>
+            <langstring language="en">Electromagnetic radiation</langstring>
             <langstring language="de">elektromagnetische Felder</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>7.8</termIdentifier>
         <caption>
+            <langstring language="en">Under- or over pressure</langstring>
             <langstring language="de">Unter- oder Überdruck</langstring>
         </caption>
     </term>    
@@ -232,24 +280,42 @@
 <term>    
     <termIdentifier>8</termIdentifier>
     <caption>
+        <langstring language="en">Hazards caused by working environment conditions</langstring>
         <langstring language="de">Gefährdungen durch Arbeitsumgebungsbedingungen</langstring>
     </caption>
     <term>    
         <termIdentifier>8.1</termIdentifier>
         <caption>
-            <langstring language="de">Klima (z.B. Hitze, Kälte)</langstring>
+            <langstring language="en">Climate)</langstring>
+            <langstring language="de">Klima (z.B. Hitze, Kälte, unzureichende Lüftung)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>8.2</termIdentifier>
         <caption>
+            <langstring language="en">Lighting, light</langstring>
             <langstring language="de">Beleuchtung, Licht</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>8.3</termIdentifier>
         <caption>
-            <langstring language="de">Ertrinken</langstring>
+            <langstring language="en">Suffocation, drowning</langstring>
+            <langstring language="de">Ersticken (z.B. durch sauerstoffreduzierte Atmosphäre), Ertrinken</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>8.4</termIdentifier>
+        <caption>
+            <langstring language="en">Insufficient escape- and transportation route, insufficient safety and health signs</langstring>
+            <langstring language="de">Unzureichende Flucht- und Verkehrswege, unzureichende Sicherheits- und Gesundheitsschutzkennzeichnung</langstring>
+        </caption>
+    </term>    
+    <term>    
+        <termIdentifier>8.5</termIdentifier>
+        <caption>
+            <langstring language="en">Insufficient movement area at the workplace, awkward workplace arrangement, insufficient break-, sanitary facilities</langstring>
+            <langstring language="de">Unzureichende Bewegungsfläche am Arbeitsplatz, ungünstige Anordnung des Arbeitsplatzes, unzureichende Pausen-, Sanitärräume</langstring>
         </caption>
     </term>    
 </term>
@@ -258,36 +324,42 @@
 <term>    
     <termIdentifier>9</termIdentifier>
     <caption>
+        <langstring language="en">Physical strain/ work intensity</langstring>
         <langstring language="de">Physische Belastung/ Arbeitsschwere</langstring>
     </caption>
     <term>    
         <termIdentifier>9.1</termIdentifier>
         <caption>
-            <langstring language="de">schwere dynamische Arbeit (z.B. manuelle Handhabung von Lasten)</langstring>
+            <langstring language="en">Lifting, holding, carrying</langstring>
+            <langstring language="de">Heben, Halten, Tragen</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>9.2</termIdentifier>
         <caption>
-            <langstring language="de">einseitige dynamische Arbeit, Körperbewegung (z.B. häufig wiederholte Bewegungen)</langstring>
+            <langstring language="en">Pulling, Pushing</langstring>
+            <langstring language="de">Ziehen, Schieben</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>9.3</termIdentifier>
         <caption>
-            <langstring language="de">Haltungsarbeit (Zwangshaltung), Haltearbeit</langstring>
+            <langstring language="en">Manual work (with low body forces)</langstring>
+            <langstring language="de">Manuelle Arbeit (mit geringen Körperkräften)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>9.4</termIdentifier>
         <caption>
-            <langstring language="de">Kombination aus statischer und dynamischer Arbeit </langstring>
+            <langstring language="en">Strenuous posture (enforced posture)</langstring>
+            <langstring language="de">Zwangshaltung (erzwungene Körperhaltung)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>9.5</termIdentifier>
         <caption>
-            <langstring language="de">erschwerte Handhabbarkeit von Arbeitsmitteln, Greifräume</langstring>
+            <langstring language="en">Ascending, climbing</langstring>
+            <langstring language="de">Steigen, Klettern</langstring>
         </caption>
     </term>    
 </term>
@@ -295,61 +367,64 @@
 <term>    
     <termIdentifier>10</termIdentifier>
     <caption>
+        <langstring language="en">Psychological and organisational hazards </langstring>
         <langstring language="de">Psychische Faktoren</langstring>
     </caption>
     <term>    
         <termIdentifier>10.1</termIdentifier>
         <caption>
-            <langstring language="de">ungenügend gestaltete Arbeitsaufgabe (z.B. überwiegende Routineaufgaben, Über- und Unterqualifikation)</langstring>
+            <langstring language="en">Insufficiently designed task</langstring>
+            <langstring language="de">Ungenügend gestaltete Arbeitsaufgabe (z.B. überwiegende Routineaufgaben, Über- und Unterqualifikation)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>10.2</termIdentifier>
         <caption>
-            <langstring language="de">ungenügend gestaltete Arbeitsorganisation (z.B. kein durchdachter Arbeitsablauf)</langstring>
+            <langstring language="en">Insufficiently designed work organization (eg work under high pressure, changing and / or long working time, frequent night work, no sophisticated workflow)</langstring>
+            <langstring language="de">Ungenügend gestaltete Arbeitsorganisation (z.B. Arbeiten unter hohem Zeitdruck, wechselnde und /oder lange Arbeitszeiten, häufige Nachtarbeit, kein durchdachter Arbeitsablauf)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>10.3</termIdentifier>
         <caption>
-            <langstring language="de">ungenügend gestaltete soziale Bedingungen (z.B. fehlende soziale Kontakte, ungünstiges Führungsverhalten)</langstring>
+            <langstring language="e">Insufficiently designed social conditions (eg lack of social contacts, poor leadership, conflict)</langstring>
+            <langstring language="de">Ungenügend gestaltete soziale Bedingungen (z.B. fehlende soziale Kontakte, ungünstiges Führungsverhalten, Konflikte)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>10.4</termIdentifier>
         <caption>
-            <langstring language="de">ungenügend gestaltete Arbeitsplatz- und Arbeitsumgebungsbedingungen (z.B. Lärm, Klima, räuml. Enge)</langstring>
+            <langstring language="en">Insufficiently designed work conditions and work environments (eg noise, climate, geographical narrowness, poor perception of signals and process characteristics, poor software design)</langstring>
+            <langstring language="de">ungenügend gestaltete Arbeitsplatz- und Arbeitsumgebungsbedingungen (z.B. Lärm, Klima, räuml. Enge, unzureichende Wahrnehmung von Signalen und Prozessmerkmalen, unzureichende Softwaregestaltung)</langstring>
         </caption>
-    </term>    
-    <term>    
-        <termIdentifier>10.5</termIdentifier>
-        <caption>
-            <langstring language="de">Wahrnehmung von Signalen und Prozessmerkmalen (z. B. unzureichende Softwaregestaltung)</langstring>
-        </caption>
-    </term>    
+    </term>
+    
 </term>
-
 <term>    
     <termIdentifier>11</termIdentifier>
     <caption>
+        <langstring language="en">Other hazards</langstring>
         <langstring language="de">Sonstige Gefährdungen</langstring>
     </caption>
     <term>    
         <termIdentifier>11.1</termIdentifier>
         <caption>
-            <langstring language="de">durch Menschen (z.B. Überfall)</langstring>
+            <langstring language="en">By people (e.g. raid)</langstring>
+            <langstring language="de">Durch Menschen (z.B. Überfall)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>11.2</termIdentifier>
         <caption>
-            <langstring language="de">durch Tiere (z.B. gebissen werden)</langstring>
+            <langstring language="en">By animals (for example, be bitten)</langstring>
+            <langstring language="de">Durch Tiere (z.B. gebissen werden)</langstring>
         </caption>
     </term>    
     <term>    
         <termIdentifier>11.3</termIdentifier>
         <caption>
-            <langstring language="de">durch Pflanzen und pflanzliche Produkte</langstring>
+            <langstring language="en">By plants and herbal products (such as sensitizing and toxic effects)</langstring>
+            <langstring language="de">Durch Pflanzen und pflanzliche Produkte (z.B. sensibilisierende und toxische Wirkungen)</langstring>
         </caption>
     </term>    
 </term>
