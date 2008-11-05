@@ -5,18 +5,18 @@ from Products.Archetypes.utils import DisplayList
 from Products.RiskAssessmentLink.content.RiskAssessmentLink import RiskAssessmentLink
 
 
-from Products.RemoteProvider.content.Provider import Provider, Provider_schema
-unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'location',
-    'creators', 'effectiveDate', 'expirationDate', 'creation_date', 'modification_date', 'language', 'sme', 
-    'email', 'remoteLanguage', 'nace', 'country', 'provider')
-for name in unwantedFields:
-    if Provider_schema.get(name):
-        Provider_schema[name].widget.visible['edit'] = 'invisible'
-        Provider_schema[name].widget.visible['view'] = 'invisible'
-        Provider_schema.changeSchemataForField(name, 'default')
-
-# make providerCategory required
-Provider_schema['providerCategory'].required = True
+#from Products.RemoteProvider.content.Provider import Provider, Provider_schema
+#unwantedFields = ('rights', 'subject', 'contributors', 'allowDiscussion', 'location',
+#    'creators', 'effectiveDate', 'expirationDate', 'creation_date', 'modification_date', 'language', 'sme', 
+#    'email', 'remoteLanguage', 'nace', 'country', 'provider')
+#for name in unwantedFields:
+#    if Provider_schema.get(name):
+#        Provider_schema[name].widget.visible['edit'] = 'invisible'
+#        Provider_schema[name].widget.visible['view'] = 'invisible'
+#        Provider_schema.changeSchemataForField(name, 'default')
+#
+## make providerCategory required
+#Provider_schema['providerCategory'].required = True
 
 
 def getFilteredLanguages(self):
