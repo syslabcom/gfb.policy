@@ -59,6 +59,7 @@ def importVarious(context):
     quickinst.installProduct('collective.portlet.feedmixer')
     quickinst.installProduct('syslabcom.filter')
     quickinst.installProduct('Products.RichDocument')
+    quickinst.installProduct('webcouturier.dropdownmenu')
 
     index_data = [
             { 'idx_id' : 'nace'
