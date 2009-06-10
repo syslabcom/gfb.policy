@@ -1,6 +1,11 @@
 gfb.policy Changelog
 ====================
 
+gfb.policy 1.2 (2009-05-12)
+---------------------------
+
+- included zcml include to theme to make it a dependency
+
 gfb.policy 1.1 (2009-05-12)
 ---------------------------
 
