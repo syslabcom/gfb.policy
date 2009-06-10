@@ -5,6 +5,7 @@
     i18n_domain="gfb.policy">
 
     <five:registerPackage package="." initialize=".initialize" />
+    <include package="gfb.theme" />
     
     <genericsetup:registerProfile
       name="default"
