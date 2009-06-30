@@ -1,6 +1,12 @@
 gfb.policy Changelog
 ====================
 
+gfb.policy 1.2.1 (2009-06-30)
+-----------------------------
+
+- removed patch_RAL.py; we no longer need to patch getFilteredLanguages() of
+  RiskAssessmentLink (thomasw)
+
 gfb.policy 1.2 (2009-06-19)
 ---------------------------
 
