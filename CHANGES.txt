@@ -1,7 +1,7 @@
 gfb.policy Changelog
 ====================
 
-1.2.2 (unreleased)
+1.2.2 (2010-06-09)
 ------------------
 
 - added a patch for PloneHelpCenter that fixes a UnicodeDecodeError on glossary
