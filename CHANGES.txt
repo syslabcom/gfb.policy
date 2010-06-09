@@ -4,7 +4,8 @@ gfb.policy Changelog
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- added a patch for PloneHelpCenter that fixes a UnicodeDecodeError on glossary
+  items, caused by the use of non-ASCII Subject strings [thomasw]
 
 
 gfb.policy 1.2.1 (2009-06-30)
