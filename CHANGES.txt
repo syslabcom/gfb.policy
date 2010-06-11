@@ -4,7 +4,7 @@ gfb.policy Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bugfix in PHC_Vocabulay_patch: don't attempt to decode unicode (thomasw)
 
 
 1.2.2 (2010-06-09)

@@ -7,7 +7,7 @@ def getSubjectVocab(self):
     catalog = getToolByName(self, 'portal_catalog')
     values = catalog.uniqueValuesFor('Subject')
     enc = getSiteEncoding(self)
-    values = [unicode(x, enc) for x in values]
+    values = [unicode(x, enc) for x in values if type(x) != type(u'')]
     return values
 
 PHCContent.getSubjectVocab = getSubjectVocab
