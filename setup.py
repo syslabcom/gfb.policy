@@ -56,7 +56,7 @@ setup(name='gfb.policy',
       install_requires=[
           'setuptools',
           'gfb.theme',
-          
+          'Products.ProxyIndex',
           # -*- Extra requirements: -*-
       ],
       tests_require=tests_require,
