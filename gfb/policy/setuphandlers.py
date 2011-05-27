@@ -1,8 +1,8 @@
 from Products.CMFCore.utils import getToolByName
 import logging, os
 from zope.component import getMultiAdapter, getUtility
-from simplon.plone.ldap.engine.schema import LDAPProperty
-from simplon.plone.ldap.engine.interfaces import ILDAPConfiguration
+from plone.app.ldap.engine.schema import LDAPProperty
+from plone.app.ldap.engine.interfaces import ILDAPConfiguration
 from plone.portlets.constants import CONTEXT_CATEGORY, GROUP_CATEGORY, CONTENT_TYPE_CATEGORY
 from plone.portlets.interfaces import IPortletManager, ILocalPortletAssignmentManager
 from plone.app.portlets.utils import assignment_mapping_from_key
@@ -51,7 +51,7 @@ def importVarious(context):
     quickinst.installProduct('VocabularyPickerWidget')
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
-    quickinst.installProduct('simplon.plone.ldap')
+    quickinst.installProduct('plone.app.ldap')
     quickinst.installProduct('TextIndexNG3')
     quickinst.installProduct('collective.portlet.tal')
     quickinst.installProduct('plone.portlet.collection')
