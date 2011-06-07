@@ -18,6 +18,24 @@ from gfb.theme.portlets import worknav
 basedir = os.path.abspath(os.path.dirname(__file__))
 vocabdir = os.path.join(basedir, 'data', 'vocabularies')
 
+index_data = [
+        { 'idx_id' : 'nace'
+        , 'meta_id' : 'nace'
+        , 'extra' : dict(idx_type = "KeywordIndex",
+            )
+        }
+      , { 'idx_id' : 'getCountry'
+        , 'meta_id' : 'country'
+        , 'extra' : dict(idx_type = "KeywordIndex",
+            )
+        }
+      , { 'idx_id' : 'getRiskfactors'
+        , 'meta_id' : 'riskfactors'
+        , 'extra' : dict(idx_type = "KeywordIndex",
+            )
+        }
+    ]
+
 def importVarious(context):
     """Miscellanous steps import handle
     """
@@ -61,25 +79,7 @@ def importVarious(context):
     quickinst.installProduct('Products.RichDocument')
     quickinst.installProduct('webcouturier.dropdownmenu')
 
-    index_data = [
-            { 'idx_id' : 'nace'
-            , 'meta_id' : 'nace'
-            , 'extra' : dict(idx_type = "KeywordIndex",
-                )
-            }
-          , { 'idx_id' : 'getCountry'
-            , 'meta_id' : 'country'
-            , 'extra' : dict(idx_type = "KeywordIndex",
-                )
-            }
-          , { 'idx_id' : 'getRiskfactors'
-            , 'meta_id' : 'riskfactors'
-            , 'extra' : dict(idx_type = "KeywordIndex",
-                )
-            }
-        ]
-
-    addProxyIndexes(site, index_data)
+    addProxyIndexes(site)
 
     addExtraIndexes(site)
 
@@ -167,7 +167,7 @@ def importVocabularies(self):
         RAC = os.path.join(basedir, 'data', 'RiskAssessmentContents.zexp')
         pvm._importObjectFromFile(RAC, verify=False)
 
-def addProxyIndexes(self, index_data):
+def addProxyIndexes(self):
     logger = logging.getLogger("ProxyIndex")
     logger.info("Adding Proxy Indexes")
 
@@ -186,6 +186,20 @@ def addProxyIndexes(self, index_data):
         cat.manage_addProduct['ProxyIndex'].manage_addProxyIndex(
             id=data['idx_id'],
             extra=extra)
+
+def replaceProxyIndexes(self):
+    logger = logging.getLogger("replaceProxyIndexes")
+    logger.info("Replacing Proxy Indexes")
+
+    cat = getToolByName(self, 'portal_catalog')
+    indexes = cat.indexes()
+    for ind in index_data:
+        if ind['idx_id'] in indexes:
+            logger.info('Deleting ProxyIndex %s' % ind['idx_id'])
+            cat.delIndex(ind['idx_id'])
+            logger.info('Adding KeywordIndex %s' % ind['idx_id'])
+            cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id=ind['idx_id'], extra=ind['extra'])
+    
 
 def addExtraIndexes(self):
     logger = logging.getLogger("ExtraIndexes")

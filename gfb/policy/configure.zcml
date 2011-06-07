@@ -15,5 +15,15 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+    <genericsetup:upgradeStep
+     title="Replace ProxyIndexes with custom indexes"
+     description="ProxyIndex is not available for Plone 4, use custom indexers instead"
+     source="*"
+     destination="2.0"
+     handler="gfb.policy.setuphandlers.replaceProxyIndexes"
+     sortkey="1"
+     profile="gfb.policy:default"
+    />
+
 
 </configure>
