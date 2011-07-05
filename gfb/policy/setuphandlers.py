@@ -13,7 +13,8 @@ from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PE
 from Products.CMFCore.permissions import AddPortalContent, ReviewPortalContent
 from Products.ATVocabularyManager.utils.vocabs import createSimpleVocabs
 from gfb.theme.portlets import worknav
-
+from gfb.policy.utility import ProviderVocabularyUtility
+from gfb.policy.interfaces import IVocabularyUtility
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 vocabdir = os.path.join(basedir, 'data', 'vocabularies')
@@ -62,11 +63,12 @@ def importVarious(context):
     # This needs to run before Riskassessment Link, otherwise a broken vocab will be imported
     # archgenxml2b6 currently only can import vdex and not vdexfiles
     importVocabularies(site)
+    registerVocabularyUtilities(site)
 
     quickinst.installProduct('RiskAssessmentLink')
     quickinst.installProduct('RemoteProvider')
     quickinst.installProduct('ProxyIndex')
-    quickinst.installProduct('VocabularyPickerWidget')
+#    quickinst.installProduct('VocabularyPickerWidget')
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('plone.app.ldap')
@@ -166,6 +168,14 @@ def importVocabularies(self):
     if 'RiskAssessmentContents' not in pvm.objectIds():
         RAC = os.path.join(basedir, 'data', 'RiskAssessmentContents.zexp')
         pvm._importObjectFromFile(RAC, verify=False)
+
+def registerVocabularyUtilities(portal):
+    sm = portal.getSiteManager()
+
+    if not sm.queryUtility(IVocabularyUtility, name='provider'):
+       sm.registerUtility(ProviderVocabularyUtility(),
+                       IVocabularyUtility,
+                       'provider')
 
 def addProxyIndexes(self):
     logger = logging.getLogger("ProxyIndex")
