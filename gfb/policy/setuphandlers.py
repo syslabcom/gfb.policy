@@ -81,7 +81,7 @@ def importVarious(context):
     quickinst.installProduct('Products.RichDocument')
     quickinst.installProduct('webcouturier.dropdownmenu')
 
-    addProxyIndexes(site)
+    #addProxyIndexes(site)
 
     addExtraIndexes(site)
 
@@ -304,18 +304,19 @@ def configurePortal(site):
 
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
-    if 'db' not in site.objectIds():
-        _ = site.invokeFactory('Folder', 'db')
-    db = getattr(site, 'db')
-    db.setTitle('Datenbank')
-    db.setLayout('radb_filter')
-    try:
-        pwt = getToolByName(site, 'portal_workflow')
-        pwt.doActionFor(db, 'publish')
-    except: pass
-
+    # enable addition of large folders
+    #getattr(site.portal_types, 'Folder').global_allow = True
+    #if 'db' not in site.objectIds():
+    #    _ = site.invokeFactory('Folder', 'db')
+    #db = getattr(site, 'db')
+    #db.setTitle('Datenbank')
+    #db.setLayout('radb_filter')
+    #try:
+    #    pwt = getToolByName(site, 'portal_workflow')
+    #    pwt.doActionFor(db, 'publish')
+    #except: pass
     portletAssignmentPortal(site)
-    portletAssignmentDB(db)
+    #portletAssignmentDB(db)
     portletAssignmentRAL(site)
     
     memberfolder = getattr(site, 'Members')
