@@ -94,7 +94,7 @@ def importVarious(context):
 #        dict(id='telephoneNumber', value='', type='string', plone_name='Telephone', multi_valued=False),
 #        dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
         ]
-    addMemberdataProperties(site, props)
+    # addMemberdataProperties(site, props)
     configurePortal(site)
     setupContent(site)
     #setupSecurity(site)
@@ -127,6 +127,10 @@ def addMemberdataProperties(site, props):
 def importVocabularies(self):
     logger = logging.getLogger("gfb policy VocabularyImporter")
     logger.info("Importing Vocabularies for gfb")
+    pvt_type = getattr(self.portal_types, 'VocabularyLibrary')
+    pvt_type.allowed_content_types = ('AliasVocabulary', 'SimpleVocabulary',
+        'SortedSimpleVocabulary', 'TreeVocabulary', 'VdexFileVocabulary',
+        'SimpleVocabularyTerm')
     vocabs = os.listdir(vocabdir)
     pvm = self.portal_vocabularies
     for vocabname in vocabs:
