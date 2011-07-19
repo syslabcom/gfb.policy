@@ -178,24 +178,17 @@ def registerVocabularyUtilities(portal):
                        'provider')
 
 def addProxyIndexes(self):
+    """ProxyIndex is no longer available, using KeywordIndex instead"""
     logger = logging.getLogger("ProxyIndex")
     logger.info("Adding Proxy Indexes")
-
-    VALUE_EXPR = "python:object.restrictedTraverse('@@getVocabularyPath')('%(meta_id)s')"
 
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
     for data in index_data:
         if data['idx_id'] in available:
             continue
-        extra = data['extra']
-        extra['value_expr'] = VALUE_EXPR %{'meta_id': data['meta_id']}
-        extra['key1'] = "indexed_attrs"
-        extra['value1'] = "proxy_value"
-        logger.info("Adding Proxy Index %s" % data['idx_id'])
-        cat.manage_addProduct['ProxyIndex'].manage_addProxyIndex(
-            id=data['idx_id'],
-            extra=extra)
+        logger.info('Adding KeywordIndex %s' % data['idx_id'])
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id=data['idx_id'], extra=data['extra'])
 
 def replaceProxyIndexes(self):
     logger = logging.getLogger("replaceProxyIndexes")
@@ -311,10 +304,8 @@ def configurePortal(site):
 
 def setupContent(site):
     """ Adds the db folder and registers the filter view as default as well as the portlets """
-    # enable addition of large folders
-    getattr(site.portal_types, 'Large Plone Folder').global_allow = True
     if 'db' not in site.objectIds():
-        _ = site.invokeFactory('Large Plone Folder', 'db')
+        _ = site.invokeFactory('Folder', 'db')
     db = getattr(site, 'db')
     db.setTitle('Datenbank')
     db.setLayout('radb_filter')
