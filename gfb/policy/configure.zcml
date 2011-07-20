@@ -16,16 +16,18 @@
       />
 
     <genericsetup:upgradeStep
-     title="Replace ProxyIndexes with custom indexes"
-     description="ProxyIndex is not available for Plone 4, use custom indexers instead"
+     title="Remove stale GS import and export handlers"
+     description="The ones that are displayed in red..."
      source="*"
      destination="2.0"
-     handler="gfb.policy.setuphandlers.replaceProxyIndexes"
-     sortkey="1"
+     handler="gfb.policy.upgrade.fixGenericSetup"
+     sortkey="2"
      profile="gfb.policy:default"
     />
 
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
+
+  <!-- <include package="collective.dynatree.example" /> -->
 
 </configure>

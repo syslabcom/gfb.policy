@@ -170,19 +170,19 @@ def addProxyIndexes(self):
         logger.info('Adding KeywordIndex %s' % data['idx_id'])
         cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id=data['idx_id'], extra=data['extra'])
 
-def replaceProxyIndexes(self):
-    logger = logging.getLogger("replaceProxyIndexes")
-    logger.info("Replacing Proxy Indexes")
+# def replaceProxyIndexes(self):
+#     logger = logging.getLogger("replaceProxyIndexes")
+#     logger.info("Replacing Proxy Indexes")
+# 
+#     cat = getToolByName(self, 'portal_catalog')
+#     indexes = cat.indexes()
+#     for ind in index_data:
+#         if ind['idx_id'] in indexes:
+#             logger.info('Deleting ProxyIndex %s' % ind['idx_id'])
+#             cat.delIndex(ind['idx_id'])
+#             logger.info('Adding KeywordIndex %s' % ind['idx_id'])
+#             cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id=ind['idx_id'], extra=ind['extra'])
 
-    cat = getToolByName(self, 'portal_catalog')
-    indexes = cat.indexes()
-    for ind in index_data:
-        if ind['idx_id'] in indexes:
-            logger.info('Deleting ProxyIndex %s' % ind['idx_id'])
-            cat.delIndex(ind['idx_id'])
-            logger.info('Adding KeywordIndex %s' % ind['idx_id'])
-            cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id=ind['idx_id'], extra=ind['extra'])
-    
 
 def addExtraIndexes(self):
     logger = logging.getLogger("ExtraIndexes")
