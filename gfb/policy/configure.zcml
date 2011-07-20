@@ -25,5 +25,7 @@
      profile="gfb.policy:default"
     />
 
+  <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
+  <adapter name="nace" factory=".indexer.nace" />
 
 </configure>
