@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0 
+                          imsvdex_v1p0.xsd imsvdex_v1p0_thesaurus.xsd 
+                          http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 
+                          imsmd_rootv1p2p1.xsd" 
+      orderSignificant="true" 
+      profileType="flatTokenTerms" 
+      language="en">
+  <vocabName>
+    <langstring language="en">Media of Risk Assessment</langstring>
+    <langstring language="de">Medien der Gefährdungsbeurteilung</langstring>
+  </vocabName>
+  <vocabIdentifier>Media of Risk Assessment</vocabIdentifier>
+  
+<term>
+    <termIdentifier>print</termIdentifier>
+    <caption>
+        <langstring language="en">Print</langstring>
+        <langstring language="de">Druckschrift</langstring>
+    </caption>
+</term>
+
+<term>
+    <termIdentifier>download</termIdentifier>
+    <caption>
+        <langstring language="en">Download</langstring>
+        <langstring language="de">Download</langstring>
+    </caption>
+</term>
+
+<term>    
+    <termIdentifier>cd</termIdentifier>
+    <caption>
+        <langstring language="en">CD</langstring>
+        <langstring language="de">CD</langstring>
+    </caption>
+</term>
+
+<term>    
+    <termIdentifier>dvd</termIdentifier>
+    <caption>
+        <langstring language="en">DVD</langstring>
+        <langstring language="de">DVD</langstring>
+    </caption>
+</term>
+
+<term>    
+    <termIdentifier>software</termIdentifier>
+    <caption>
+        <langstring language="en">Software</langstring>
+        <langstring language="de">Software</langstring>
+    </caption>
+</term>
+
+<term>    
+    <termIdentifier>internet</termIdentifier>
+    <caption>
+        <langstring language="en">Internet application</langstring>
+        <langstring language="de">Internetanwendung</langstring>
+    </caption>
+</term>
+
+
+</vdex>
