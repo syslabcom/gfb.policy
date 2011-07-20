@@ -11,7 +11,6 @@ from plone.portlet.static import static as staticportlet
 from gfb.policy.config import PROVIDER_ROLE, INSTALL_LDAP
 from Products.RiskAssessmentLink.config import ADD_CONTENT_PERMISSIONS as RAL_PERMISSIONS
 from Products.CMFCore.permissions import AddPortalContent, ReviewPortalContent
-from Products.ATVocabularyManager.utils.vocabs import createSimpleVocabs
 from gfb.theme.portlets import worknav
 from gfb.policy.utility import ProviderVocabularyUtility
 from gfb.policy.interfaces import IVocabularyUtility
@@ -129,8 +128,7 @@ def importVocabularies(self):
     logger.info("Importing Vocabularies for gfb")
     pvt_type = getattr(self.portal_types, 'VocabularyLibrary')
     pvt_type.allowed_content_types = ('AliasVocabulary', 'SimpleVocabulary',
-        'SortedSimpleVocabulary', 'TreeVocabulary', 'VdexFileVocabulary',
-        'SimpleVocabularyTerm')
+        'SortedSimpleVocabulary', 'TreeVocabulary', 'VdexFileVocabulary')
     vocabs = os.listdir(vocabdir)
     pvm = self.portal_vocabularies
     for vocabname in vocabs:
@@ -142,36 +140,14 @@ def importVocabularies(self):
             fh.close()
             vocabname = vocabname[:-5]
             if vocabname in pvm.objectIds():
-                logger.info("Vocabulary already in place")
+                logger.info("Vocabulary already in place, deleting...")
                 pvm._delObject(vocabname)
             pvm.invokeFactory('VdexFileVocabulary', vocabname)
             pvm[vocabname].importXMLBinding(data)
             logger.info("VDEX Import of %s" % vocabname)
-
-        elif vocabname.endswith('.dump'):
-            fh = open(vocabpath, "r")
-            data = fh.read()
-            fh.close()
-            vocabname = vocabname[:-5]
-            if vocabname in pvm.objectIds(): continue
-            vocabstruct = cPickle.loads(data)
-            createSimpleVocabs(pvm, vocabstruct)
-            logger.info("Dump Import of %s" % vocabname)
         else:
             logger.info("No vocabfile found")
-    # manually created vocabulary
-    manualVocab = dict()
-    manualVocab['provider_category'] = (
-                ('bl', 'Bund und L\xc3\xa4nder')
-              , ('uvt', 'Unfallversicherungstr\xc3\xa4ger')
-              , ('misc', 'Weitere')
-              )
-    createSimpleVocabs(pvm, manualVocab)
 
-    # import the simple vocablaries from zexp
-    if 'RiskAssessmentContents' not in pvm.objectIds():
-        RAC = os.path.join(basedir, 'data', 'RiskAssessmentContents.zexp')
-        pvm._importObjectFromFile(RAC, verify=False)
 
 def registerVocabularyUtilities(portal):
     sm = portal.getSiteManager()
