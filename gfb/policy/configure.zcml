@@ -21,6 +21,16 @@
      source="*"
      destination="2.0"
      handler="gfb.policy.upgrade.fixGenericSetup"
+     sortkey="1"
+     profile="gfb.policy:default"
+    />
+
+    <genericsetup:upgradeStep
+     title="Configure the language tool"
+     description="Set the necessary options"
+     source="*"
+     destination="2.0"
+     handler="gfb.policy.upgrade.configureLanguageTool"
      sortkey="2"
      profile="gfb.policy:default"
     />
