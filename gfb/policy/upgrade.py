@@ -22,7 +22,7 @@ def fixGenericSetup(self):
 
 def configureLanguageTool(self):
     plt = getToolByName(self, 'portal_languages')
-    settings = {'use_path_negotiation': 0,
+    settings = {'use_path_negotiation': 1,
         'use_cookie_negotiation': 1,
         'display_flags': 1,
         'force_language_urls': 0,
