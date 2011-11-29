@@ -1,3 +1,4 @@
 - Wolfgang Thomas (Syslab.com GmbH)
 - Alexander Pilz (Syslab.com GmbH)
+- Manuel Reinhardt (Syslab.com GmbH)
 
