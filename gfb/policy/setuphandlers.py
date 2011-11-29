@@ -67,7 +67,6 @@ def importVarious(context):
     quickinst.installProduct('RiskAssessmentLink')
     quickinst.installProduct('RemoteProvider')
     quickinst.installProduct('ProxyIndex')
-#    quickinst.installProduct('VocabularyPickerWidget')
     quickinst.installProduct('DataGridField')
     quickinst.installProduct('gfb.theme')
     quickinst.installProduct('plone.app.ldap')
@@ -76,7 +75,6 @@ def importVarious(context):
     quickinst.installProduct('plone.portlet.collection')
     quickinst.installProduct('plone.portlet.static')
     quickinst.installProduct('collective.portlet.feedmixer')
-    quickinst.installProduct('syslabcom.filter')
     quickinst.installProduct('Products.RichDocument')
     quickinst.installProduct('webcouturier.dropdownmenu')
 
