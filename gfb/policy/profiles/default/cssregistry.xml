@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<object name="portal_css" meta_type="Stylesheets Registry">
+ <stylesheet title="" authenticated="True" cacheable="True" compression="safe"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="member.css" media="screen" rel="stylesheet" rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="python:portal.restrictedTraverse('@@plone_portal_state').is_rtl()"
+    id="RTL.css" media="screen" rel="stylesheet" rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="base.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
+    expression="" id="public.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="columns.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="authoring.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
+    expression="" id="portlets.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="controlpanel.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="1" expression="" id="++resource++tinymce.stylesheets/tinymce.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="print.css" media="print" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="1"
+    expression="" id="mobile.css"
+    media="handheld, screen and (max-device-width: 480px)" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="deprecated.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
+    expression="" id="navtree.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="invisibles.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="forms.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="1" expression="" id="dropdown-menu.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="ploneKss.css" media="screen" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="riskassessment_styles.css" media="all" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="remoteprovider_styles.css" media="all" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="jquery.treeview.css" media="all" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="jquery.autocomplete.css" media="all" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="++resource++linkcollection.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="Edit Mode without right column" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="on" expression="python:object.isEditMode()" id="edit_mode.css"
+    media="all" rel="stylesheet" rendering="inline"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="helpcenter.css" media="all" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="helpcenter_print.css" media="print" rel="stylesheet"
+    rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="lt IE 8"
+    cookable="True" enabled="1" expression="" id="IEFixes.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="False" compression="safe" conditionalcomment="" cookable="True"
+    enabled="False" expression=""
+    id="++resource++plone.app.jquerytools.overlays.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="False" compression="safe" conditionalcomment="" cookable="True"
+    enabled="0" expression=""
+    id="++resource++plone.app.jquerytools.dateinput.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="True" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" expression="context/@@jqueryui-include-condition"
+    id="++resource++jquery-ui-themes/sunburst/jqueryui.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" expression="context/@@jqueryui-include-condition"
+    id="++resource++jquery-ui-themes/sunburst-patch.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="1" expression=""
+    id="++resource++jquery.dynatree/skin/ui.dynatree.css" media="screen"
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="1" expression="" id="++resource++gfb.theme.stylesheets/main.css"
+    media="screen" rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" expression=""
+    id="++resource++quickupload_static/uploadify.css" media=""
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
+    enabled="True" expression=""
+    id="++resource++quickupload_static/fileuploader.css" media=""
+    rel="stylesheet" rendering="import"/>
+ <stylesheet title="" authenticated="False" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="on"
+    expression="" id="ploneCustom.css" media="all" rel="stylesheet"
+    rendering="import"/>
+</object>
