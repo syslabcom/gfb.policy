@@ -1,11 +1,10 @@
 gfb.policy Changelog
 ====================
 
-1.3.4 (unreleased)
+1.3.4 (2011-12-21)
 ------------------
 
-- Nothing changed yet.
-
+- Make sure Wysiwyg editor is set to CKEditor for all new users [thomasw]
 
 1.3.3 (2011-12-19)
 ------------------
