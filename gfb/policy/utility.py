@@ -11,16 +11,28 @@ class ProviderVocabularyUtility(object):
         # else filter to those that are assigned to at least one data object (RiskAssessmentLink)
         context = getSite()
         pc = getToolByName(context, 'portal_catalog')
+        plt = getToolByName(context, 'portal_languages')
+        lang = plt.getPreferredLanguage()
+        deflang = plt.getDefaultLanguage()
         if context.portal_membership.getAuthenticatedMember().allowed(context, ['Manager']):
-            provRes = pc(portal_type='Provider')
+            provRes = pc(portal_type='Provider', Language=lang)
         else:
             rc = getToolByName(context, 'reference_catalog')
             res = rc(relationship='provider_of')
             uids = set()
             for r in res:
                 uids.add(r.targetUID)
-            
-            provRes = pc(UID = list(uids))
+            provRes = pc(UID = list(uids), Language=deflang)
+            # if we are not dealing with the canonical language, we need to
+            # find all available translations, and keep the canonicals if no
+            # translation is present. Then do a second catalog query
+            if lang!=deflang:
+                uids = set()
+                for prov in provRes:
+                    obj = prov.getObject()
+                    obj = obj.getTranslation(lang) or obj
+                    uids.add(obj.UID())
+                    provRes = pc(UID = list(uids))
         return provRes
 
     def getVocabularyDict(self):
@@ -56,4 +68,4 @@ class ProviderVocabularyUtility(object):
                 results[res.UID] = (res.Title, None)
         return results
 
-        
+
