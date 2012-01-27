@@ -1,10 +1,10 @@
 gfb.policy Changelog
 ====================
 
-1.3.5 (unreleased)
+1.3.5 (2012-01-27)
 ------------------
 
-- Nothing changed yet.
+- handle the fact that reference fields are now language-aware #4120
 
 
 1.3.4 (2011-12-21)
