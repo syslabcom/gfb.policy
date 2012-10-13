@@ -121,7 +121,8 @@ def addMemberdataProperties(site, props):
             logger.info(availableldapprops)
 
 
-def importVocabularies(self):
+def importVocabularies(context):
+    self = context.getSite()
     logger = logging.getLogger("gfb policy VocabularyImporter")
     logger.info("Importing Vocabularies for gfb")
     pvt_type = getattr(self.portal_types, 'VocabularyLibrary')
@@ -171,7 +172,7 @@ def addProxyIndexes(self):
 # def replaceProxyIndexes(self):
 #     logger = logging.getLogger("replaceProxyIndexes")
 #     logger.info("Replacing Proxy Indexes")
-# 
+#
 #     cat = getToolByName(self, 'portal_catalog')
 #     indexes = cat.indexes()
 #     for ind in index_data:
@@ -188,7 +189,7 @@ def addExtraIndexes(self):
 
     cat = getToolByName(self, 'portal_catalog')
     available = cat.indexes()
-    
+
     if 'getRemoteLanguage' not in available:
         logger.info('Adding KeywordIndex getRemoteLanguage')
         cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRemoteLanguage', extra={'indexed_attrs': 'getRemoteLanguage'})
@@ -199,7 +200,7 @@ def addExtraIndexes(self):
 
     if 'getRemoteProviderUID' not in available:
         logger.info('Adding KeywordIndex getRemoteProviderUID')
-        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRemoteProviderUID', 
+        cat.manage_addProduct['PluginIndexes'].manage_addKeywordIndex(id='getRemoteProviderUID',
             extra=dict(indexed_attrs='getRemoteProviderUID'))
 
     if 'getCategoryIndependent' not in available:
@@ -295,9 +296,9 @@ def setupContent(site):
     portletAssignmentPortal(site)
     portletAssignmentDB(db)
     portletAssignmentRAL(site)
-    
+
     memberfolder = getattr(site, 'Members')
-    
+
     portletAssignmentMembers(memberfolder)
 
 #def setupSecurity(site):
@@ -319,7 +320,7 @@ def configureCountryTool(site):
 
 def portletAssignmentMembers(context):
     path = '/'.join(context.getPhysicalPath())
-    
+
     left = assignment_mapping_from_key(context, 'plone.leftcolumn', CONTEXT_CATEGORY, path)
     right = assignment_mapping_from_key(context, 'plone.rightcolumn', CONTEXT_CATEGORY, path)
 
@@ -328,9 +329,9 @@ def portletAssignmentMembers(context):
 
     for x in list(right.keys()):
         del right[x]
-    
+
     _blockPortlets(context, 'plone.leftcolumn', CONTEXT_CATEGORY, True)
-    
+
     left['navtree'] = worknav.Assignment()
 
 
