@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.imsglobal.org/xsd/imsvdex_v1p0
+                          imsvdex_v1p0.xsd imsvdex_v1p0_thesaurus.xsd
+                          http://www.imsglobal.org/xsd/imsmd_rootv1p2p1
+                          imsmd_rootv1p2p1.xsd"
+      orderSignificant="true"
+      profileType="flatTokenTerms"
+      language="de">
+
+   <vocabName>
+
+         <langstring language="en">Eventlist - preselection</langstring>
+         <langstring language="de">Veranstaltungssuche - Vorauswahl</langstring>
+   </vocabName>
+   <vocabIdentifier>eventlist_preselection</vocabIdentifier>
+
+   <term>
+       <termIdentifier>arbeitsschutzmanagement</termIdentifier>
+       <caption>
+           <langstring language="en">Arbeitsschutzmanagement</langstring>
+           <langstring language="de">Arbeitsschutzmanagement</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>arbeitsstaetten</termIdentifier>
+       <caption>
+           <langstring language="en">Arbeitsstätten</langstring>
+           <langstring language="de">Arbeitsstätten</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>anlagensicherheit</termIdentifier>
+       <caption>
+           <langstring language="en">Anlagensicherheit</langstring>
+           <langstring language="de">Anlagensicherheit</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>befaehigte_personen</termIdentifier>
+       <caption>
+           <langstring language="en">Befähigte Personen</langstring>
+           <langstring language="de">Befähigte Personen</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>betriebliche_gesundheitsfoerderung</termIdentifier>
+       <caption>
+           <langstring language="en">Betriebliche Gesundheitsförderung</langstring>
+           <langstring language="de">Betriebliche Gesundheitsförderung</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>betriebssicherheit</termIdentifier>
+       <caption>
+           <langstring language="en">Betriebssicherheit</langstring>
+           <langstring language="de">Betriebssicherheit</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>brandschutz</termIdentifier>
+       <caption>
+           <langstring language="en">Brandschutz</langstring>
+           <langstring language="de">Brandschutz</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>elektrische_anlagen</termIdentifier>
+       <caption>
+           <langstring language="en">Elektrische Anlagen Betriebsmittel</langstring>
+           <langstring language="de">Elektrische Anlagen Betriebsmittel</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>gefaehrdungsbeurteilung</termIdentifier>
+       <caption>
+           <langstring language="en">Gefährdungsbeurteilung</langstring>
+           <langstring language="de">Gefährdungsbeurteilung</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>gefahrstoffe_gefaehrdungsbeurteilung</termIdentifier>
+       <caption>
+           <langstring language="en">Gefahrstoffe Gefährdungsbeurteilung</langstring>
+           <langstring language="de">Gefahrstoffe Gefährdungsbeurteilung</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>geraetesicherheit</termIdentifier>
+       <caption>
+           <langstring language="en">Gerätesicherheit</langstring>
+           <langstring language="de">Gerätesicherheit</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>immissionsschutz</termIdentifier>
+       <caption>
+           <langstring language="en">Immissionsschutz</langstring>
+           <langstring language="de">Immissionsschutz</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>maschinen_geraetesicherheit</termIdentifier>
+       <caption>
+           <langstring language="en">Maschinen- und Gerätesicherheit</langstring>
+           <langstring language="de">Maschinen- und Gerätesicherheit</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>mobbing</termIdentifier>
+       <caption>
+           <langstring language="en">Mobbing</langstring>
+           <langstring language="de">Mobbing</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>produktsicherheit</termIdentifier>
+       <caption>
+           <langstring language="en">Produktsicherheit</langstring>
+           <langstring language="de">Produktsicherheit</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>persoenliche_schutzausruestung</termIdentifier>
+       <caption>
+           <langstring language="en">Persönliche Schutzausrüstung</langstring>
+           <langstring language="de">Persönliche Schutzausrüstung</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>psychische_belastungen</termIdentifier>
+       <caption>
+           <langstring language="en">Psychische Belastungen</langstring>
+           <langstring language="de">Psychische Belastungen</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>REACH</termIdentifier>
+       <caption>
+           <langstring language="en">REACH</langstring>
+           <langstring language="de">REACH</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>sicherheitsbeauftragte</termIdentifier>
+       <caption>
+           <langstring language="en">Sicherheitsbeauftragte</langstring>
+           <langstring language="de">Sicherheitsbeauftragte</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>strahlenschutz</termIdentifier>
+       <caption>
+           <langstring language="en">Strahlenschutz</langstring>
+           <langstring language="de">Strahlenschutz</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>ueberwachungsbeduerftigen_anlagen</termIdentifier>
+       <caption>
+           <langstring language="en">Überwachungsbedürftigen Anlagen</langstring>
+           <langstring language="de">Überwachungsbedürftigen Anlagen</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>umweltschutzbeauftragte</termIdentifier>
+       <caption>
+           <langstring language="en">Umweltschutzbeauftragte</langstring>
+           <langstring language="de">Umweltschutzbeauftragte</langstring>
+       </caption>
+   </term>
+   <term>
+       <termIdentifier>wartungsarbeiten</termIdentifier>
+       <caption>
+           <langstring language="en">Wartungsarbeiten</langstring>
+           <langstring language="de">Wartungsarbeiten</langstring>
+       </caption>
+   </term>
+
+</vdex>
