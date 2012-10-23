@@ -1,10 +1,10 @@
 gfb.policy Changelog
 ====================
 
-1.3.6 (unreleased)
+1.3.6 (2012-10-23)
 ------------------
 
-- Nothing changed yet.
+- Added a vocabulary for the iwwb.evenlist search [thomasw]
 
 
 1.3.5 (2012-01-27)
