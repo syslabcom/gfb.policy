@@ -55,7 +55,7 @@ setup(name='gfb.policy',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          'Products.PloneGlossary',
           'gfb.theme',
       ],
       tests_require=tests_require,
