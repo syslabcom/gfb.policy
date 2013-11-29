@@ -1,4 +1,5 @@
 from Products.CMFCore.utils import getToolByName
+from zope.app.component.hooks import getSite
 import logging
 
 
@@ -37,4 +38,20 @@ def configureLanguageTool(self):
         'use_cctld_negotiation': 0}
     for k, v in settings.items():
         setattr(plt, k, v)
-       
+
+
+def migrateGlossary(self):
+    """Migrate the PloneHelpCentre Definitions to
+    PloneGlossary Glossary definitions"""
+    pc = getToolByName(self, 'portal_catalog')
+    definitions = pc.searchResults(Type="Definition")
+    portal = getSite()
+    glossary = portal.de.service.glossar.glossary
+    for definition in definitions:
+        glossary.invokeFactory(
+            type_name="PloneGlossaryDefinition",
+            id=definition.id,
+        )
+        new_definition = glossary[definition.id]
+        new_definition.setTitle(definition.Title)
+        new_definition.setDefinition(definition.Description)

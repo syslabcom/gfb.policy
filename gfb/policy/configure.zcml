@@ -35,6 +35,16 @@
      profile="gfb.policy:default"
     />
 
+    <genericsetup:upgradeStep
+     title="Migrate the PloneHelpCentre Definitions to PloneGlossary Glossary definition"
+     description="Set the necessary options"
+     source="*"
+     destination="3.0"
+     handler="gfb.policy.upgrade.migrateGlossary"
+     sortkey="3"
+     profile="gfb.policy:default"
+    />
+
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
 
