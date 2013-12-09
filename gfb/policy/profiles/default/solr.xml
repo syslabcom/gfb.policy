@@ -29,7 +29,7 @@
       <parameter name="SearchableText" />
     </highlight_fields>
     <highlight_formatter_pre
-        value="&lt;cite class=&quot;highlight&quot;&gt;" />
+        value="&lt;cite class=&quot;highlighted&quot;&gt;" />
     <highlight_formatter_post
         value="&lt;/cite&gt;" />
     <highlight_fragsize value="500" />
