@@ -4,8 +4,9 @@ gfb.policy Changelog
 1.3.8 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- #4410 add PloneGlossary and upgrade step to migrate PHC Glossary
+  Definitions to PloneGlossary Definitions [deroiste]
+- Solr config [thomasw]
 
 1.3.7 (2013-02-08)
 ------------------
