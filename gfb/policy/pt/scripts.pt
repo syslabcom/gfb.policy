@@ -1,0 +1,17 @@
+<tal:script replace='structure string:<script type="text/javascript">' />
+function downloadJSAtOnload() {
+<tal:scripts define="view context/@@resourceregistries_scripts_view"
+             repeat="script view/scripts">
+  var element = document.createElement("script");
+  element.src = '<tal:src replace="script/src" />'
+  document.body.appendChild(element);
+</tal:scripts>
+}
+
+ // Check for browser support of event handling capability
+ if (window.addEventListener)
+ window.addEventListener("load", downloadJSAtOnload, false);
+ else if (window.attachEvent)
+ window.attachEvent("onload", downloadJSAtOnload);
+ else window.onload = downloadJSAtOnload;
+<tal:close_script replace='structure string:</script>' />
