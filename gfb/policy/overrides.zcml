@@ -4,14 +4,6 @@
     xmlns:five="http://namespaces.zope.org/five">
 
 
-    <!-- Defered loading for JavaScript -->
-    <browser:viewletManager
-        name="plone.resourceregistries.scripts"
-        provides="Products.ResourceRegistries.interfaces.IHtmlHeadScripts"
-        template="pt/scripts.pt"
-        permission="zope2.View"
-        />
-
 
 
 
