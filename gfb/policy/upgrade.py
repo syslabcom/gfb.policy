@@ -55,3 +55,7 @@ def migrateGlossary(self):
         new_definition = glossary[definition.id]
         new_definition.setTitle(definition.Title)
         new_definition.setDefinition(definition.Description)
+
+
+def reload_actions(self):
+    self.runImportStepFromProfile('profile-gfb.policy:default', 'actions')

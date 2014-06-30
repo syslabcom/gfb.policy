@@ -4,7 +4,7 @@
 
 
     <object name="site_actions" meta_type="CMF Action Category">
-      <object name="sitemap" meta_type="CMF Action" i18n:domain="osha">
+      <object name="sitemap" meta_type="CMF Action" i18n:domain="gfb">
        <property name="title" i18n:translate="">Site Map</property>
        <property name="description" i18n:translate=""></property>
        <property
@@ -16,10 +16,8 @@
        </property>
        <property name="visible">True</property>
       </object>
-    </object>
 
-    <object name="site_actions" meta_type="CMF Action Category">
-      <object name="contact" meta_type="CMF Action" i18n:domain="osha">
+      <object name="contact" meta_type="CMF Action" i18n:domain="gfb">
        <property name="title" i18n:translate="">Contact</property>
        <property name="description" i18n:translate=""></property>
        <property
@@ -31,6 +29,41 @@
        </property>
        <property name="visible">True</property>
       </object>
+
+      <object name="sign_language" meta_type="CMF Action" i18n:domain="gfb">
+       <property name="title" i18n:translate="">Sign Language</property>
+       <property name="description" i18n:translate=""></property>
+       <property
+          name="url_expr">string:${request/BASE2}/sign_language</property>
+       <property name="icon_expr"></property>
+       <property name="available_expr"></property>
+       <property name="permissions">
+        <element value="View"/>
+       </property>
+       <property name="visible">False</property>
+      </object>
+
+      <object name="simple_language" meta_type="CMF Action" i18n:domain="gfb">
+       <property name="title" i18n:translate="">Simple Language</property>
+       <property name="description" i18n:translate=""></property>
+       <property
+          name="url_expr">string:${request/BASE2}/simple_language</property>
+       <property name="icon_expr"></property>
+       <property name="available_expr"></property>
+       <property name="permissions">
+        <element value="View"/>
+       </property>
+       <property name="visible">False</property>
+      </object>
+
+      <!-- Remove or only set to invisible?-->
+      <!--
+      <object name="homepage" meta_type="CMF Action" remove="True">
+      </object>
+
+      <object name="accessibility" meta_type="CMF Action" remove="True">
+      </object>
+      -->
     </object>
 
 </object>

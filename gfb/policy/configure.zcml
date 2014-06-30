@@ -45,6 +45,16 @@
      profile="gfb.policy:default"
     />
 
+    <genericsetup:upgradeStep
+     title="Activate new Site Actions"
+     description="Simple Language and Sign Language have been added"
+     source="*"
+     destination="4.0"
+     handler="gfb.policy.upgrade.reload_actions"
+     sortkey="4"
+     profile="gfb.policy:default"
+    />
+
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
 
