@@ -4,7 +4,9 @@ gfb.policy Changelog
 1.3.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- new site action plus upgrade step #10141 [reinhardt]
+- Update solr.xml to match production settings [deroiste]
+- don't include folders in search results #9044 [deroiste]
 
 
 1.3.8 (2013-12-18)

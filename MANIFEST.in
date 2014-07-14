@@ -1,0 +1,8 @@
+include *.txt
+recursive-include docs *.GPL
+recursive-include docs *.txt
+recursive-include gfb *.pt
+recursive-include gfb *.txt
+recursive-include gfb *.vdex
+recursive-include gfb *.xml
+recursive-include gfb *.zcml
