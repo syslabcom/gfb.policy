@@ -40,7 +40,7 @@
        <property name="permissions">
         <element value="View"/>
        </property>
-       <property name="visible">False</property>
+       <property name="visible">True</property>
       </object>
 
       <object name="simple_language" meta_type="CMF Action" i18n:domain="gfb">
@@ -53,7 +53,7 @@
        <property name="permissions">
         <element value="View"/>
        </property>
-       <property name="visible">False</property>
+       <property name="visible">True</property>
       </object>
 
       <!-- Remove or only set to invisible?-->
