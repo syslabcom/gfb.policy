@@ -34,7 +34,7 @@
        <property name="title" i18n:translate="">Sign Language</property>
        <property name="description" i18n:translate=""></property>
        <property
-          name="url_expr">string:${portal_url}/${object/portal_languages/getPreferredLanguage}/sign_language</property>
+          name="url_expr">string:${portal_url}/${object/portal_languages/getPreferredLanguage}/gebaerdensprache</property>
        <property name="icon_expr"></property>
        <property name="available_expr"></property>
        <property name="permissions">
@@ -47,7 +47,7 @@
        <property name="title" i18n:translate="">Simple Language</property>
        <property name="description" i18n:translate=""></property>
        <property
-          name="url_expr">string:${portal_url}/${object/portal_languages/getPreferredLanguage}/simple_language</property>
+          name="url_expr">string:${portal_url}/${object/portal_languages/getPreferredLanguage}/leichte_sprache</property>
        <property name="icon_expr"></property>
        <property name="available_expr"></property>
        <property name="permissions">
