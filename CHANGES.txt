@@ -4,8 +4,7 @@ gfb.policy Changelog
 1.3.11 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Fix #10843 by patching LinguaPlone
 
 1.3.10 (2014-09-08)
 -------------------
