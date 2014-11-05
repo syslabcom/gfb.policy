@@ -6,7 +6,7 @@
 
     <five:registerPackage package="." initialize=".initialize" />
     <include package="gfb.theme" />
-    
+
     <genericsetup:registerProfile
       name="default"
       title="GFB Site Policy"
@@ -57,6 +57,8 @@
 
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
+
+  <interface interface=".interfaces.INewsListing" />
 
   <!-- <include package="collective.dynatree.example" /> -->
 
