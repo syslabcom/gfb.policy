@@ -55,11 +55,26 @@
      profile="gfb.policy:default"
     />
 
+    <genericsetup:upgradeStep
+        title="Set sort order"
+        description="Sort folders in reverse chronological order of creation"
+        source="*"
+        destination="5.0"
+        handler="gfb.policy.upgrade.set_folder_order"
+        sortkey="5"
+        profile="gfb.policy:default"
+        />
+
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
 
   <interface interface=".interfaces.INewsListing" />
 
-  <!-- <include package="collective.dynatree.example" /> -->
+  <adapter factory=".order.PrependOrdering" name="prepend" />
+
+  <subscriber for="plone.folder.interfaces.IOrderableFolder
+                   zope.lifecycleevent.IObjectCreatedEvent"
+              handler=".order.set_prepend"
+              />
 
 </configure>

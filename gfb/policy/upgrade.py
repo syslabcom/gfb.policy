@@ -59,3 +59,14 @@ def migrateGlossary(self):
 
 def reload_actions(self):
     self.runImportStepFromProfile('profile-gfb.policy:default', 'actions')
+
+
+def set_folder_order(self):
+    pc = getToolByName(self, 'portal_catalog')
+    folders = pc.searchResults(portal_type="Folder")
+    for folder_brain in folders:
+        folder = folder_brain.getObject()
+        folder.orderObjects("creation_date", reverse=True)
+        folder.setOrdering("prepend")
+    logger = logging.getLogger("gfb.policy")
+    logger.info("Set order for folder items")
