@@ -65,6 +65,16 @@
         profile="gfb.policy:default"
         />
 
+    <genericsetup:upgradeStep
+        title="Configure versioning and diffing"
+        description="Adds checkin-checkout"
+        source="*"
+        destination="6.0"
+        handler="gfb.policy.upgrade.configure_versioning_and_diffing"
+        sortkey="6"
+        profile="gfb.policy:default"
+        />
+
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
 
