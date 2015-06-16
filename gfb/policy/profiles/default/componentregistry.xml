@@ -5,6 +5,10 @@
       <utility
        interface="gfb.policy.interfaces.IVocabularyUtility"
       />
+    <utility
+      interface="plone.app.users.userdataschema.IUserDataSchemaProvider"
+      factory="gfb.policy.userdataschema.UserDataSchemaProvider"
+      />
     </utilities>
 </componentregistry>
 
