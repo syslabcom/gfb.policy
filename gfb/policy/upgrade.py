@@ -66,6 +66,8 @@ def set_folder_order(self):
     folders = pc.searchResults(portal_type="Folder")
     for folder_brain in folders:
         folder = folder_brain.getObject()
+        if folder.getId() == 'Members':
+            continue
         folder.orderObjects("creation_date", reverse=True)
         folder.setOrdering("prepend")
     logger = logging.getLogger("gfb.policy")
