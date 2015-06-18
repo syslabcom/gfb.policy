@@ -3,8 +3,10 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five">
 
-
-
-
+  <adapter
+      provides="gfb.policy.userdataschema.IUserDataSchema"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      factory=".userdataschema.UserDataPanelAdapter"
+      />
 
 </configure>

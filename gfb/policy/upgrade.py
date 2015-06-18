@@ -13,7 +13,7 @@ def fixGenericSetup(self):
     ids = [x['id'] for x in invalid_steps]
     gs.manage_deleteImportSteps(ids)
     logger.info("Removed %d invalid import steps" % len(invalid_steps))
-    
+
     view = self.restrictedTraverse('@@manage_exportsteps')
     invalid_steps = view.invalidSteps()
     ids = [x['id'] for x in invalid_steps]
@@ -66,7 +66,16 @@ def set_folder_order(self):
     folders = pc.searchResults(portal_type="Folder")
     for folder_brain in folders:
         folder = folder_brain.getObject()
+        if folder.getId() == 'Members':
+            continue
         folder.orderObjects("creation_date", reverse=True)
         folder.setOrdering("prepend")
     logger = logging.getLogger("gfb.policy")
     logger.info("Set order for folder items")
+
+
+def configure_versioning_and_diffing(self):
+    self.runImportStepFromProfile('profile-gfb.policy:default', 'repositorytool')
+    diff_tool = getToolByName(self, 'portal_diff')
+    if "RichDocument" not in diff_tool.listDiffTypes():
+        diff_tool.setDiffField("RichDocument", "any", "Compound Diff for AT types")
