@@ -1,4 +1,5 @@
 from Acquisition import aq_base
+from Products.CMFDiffTool.libs.htmldiff import HTMLMatcher
 from Products.CMFEditions.ArchivistTool import ArchivistTool
 from Products.CMFEditions.CopyModifyMergeRepositoryTool import CopyModifyMergeRepositoryTool
 from Products.CMFCore.utils import getToolByName
@@ -24,7 +25,6 @@ def _cloneByPickle(self, obj):
     cmf_uid = getattr(obj, 'cmf_uid', None)
     if IUniqueIdAnnotation.providedBy(cmf_uid):
         setattr(obj, 'cmf_uid', cmf_uid())
-    # import pdb; pdb.set_trace( )
     try:
         p.dump(aq_base(obj))
     except TypeError:
@@ -80,3 +80,10 @@ def _recursiveSave(self, obj, app_metadata, sys_metadata, autoapply):
     prep.copyVersionIdFromClone()
 
 CopyModifyMergeRepositoryTool._recursiveSave = _recursiveSave
+
+
+def formatChangedTag(self, tag):
+        return ''
+
+HTMLMatcher.formatInsertTag = formatChangedTag
+HTMLMatcher.formatDeleteTag = formatChangedTag
