@@ -65,15 +65,21 @@
         profile="gfb.policy:default"
         />
 
-    <genericsetup:upgradeStep
-        title="Configure versioning and diffing"
-        description="Adds checkin-checkout"
+    <genericsetup:upgradeSteps
         source="*"
         destination="6.0"
-        handler="gfb.policy.upgrade.configure_versioning_and_diffing"
-        sortkey="6"
-        profile="gfb.policy:default"
-        />
+        profile="gfb.policy:default">
+        <genericsetup:upgradeStep
+            title="Configure versioning and diffing"
+            description="Adds checkin-checkout"
+            handler="gfb.policy.upgrade.configure_versioning_and_diffing"
+            />
+        <genericsetup:upgradeStep
+            title="Add worklists"
+            description="All Workflow definitions receive a worklists container"
+            handler="gfb.policy.upgrade.add_worklists"
+            />
+    </genericsetup:upgradeSteps>
 
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />

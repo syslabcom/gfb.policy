@@ -1,4 +1,6 @@
+from Products.CMFCore.interfaces import IWorkflowDefinition
 from Products.CMFCore.utils import getToolByName
+from Products.DCWorkflow.Worklists import Worklists
 from zope.app.component.hooks import getSite
 import logging
 
@@ -79,3 +81,12 @@ def configure_versioning_and_diffing(self):
     diff_tool = getToolByName(self, 'portal_diff')
     if "RichDocument" not in diff_tool.listDiffTypes():
         diff_tool.setDiffField("RichDocument", "any", "Compound Diff for AT types")
+
+
+def add_worklists(self):
+    wft = getToolByName(self, 'portal_workflow')
+    for wf in wft.objectValues():
+        if not IWorkflowDefinition.providedBy(wf):
+            continue
+        if not getattr(wf, 'worklists', None):
+            wf._addObject(Worklists('worklists'))
