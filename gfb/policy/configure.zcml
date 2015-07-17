@@ -83,6 +83,7 @@
 
   <adapter name="getRiskfactors" factory=".indexer.getRiskfactors" />
   <adapter name="nace" factory=".indexer.nace" />
+  <adapter name="editors" factory=".indexer.editors" />
 
   <interface interface=".interfaces.INewsListing" />
 
