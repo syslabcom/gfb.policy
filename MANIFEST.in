@@ -6,3 +6,4 @@ recursive-include gfb *.txt
 recursive-include gfb *.vdex
 recursive-include gfb *.xml
 recursive-include gfb *.zcml
+recursive-include gfb *.py
