@@ -4,7 +4,8 @@ gfb.policy Changelog
 1.3.14 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Remove the linkintegrity_unicode_patch so that p.a.linkintegrity can
+  be upgraded [deroiste]
 
 
 1.3.13 (2015-07-20)
