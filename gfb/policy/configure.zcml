@@ -94,4 +94,8 @@
               handler=".order.set_prepend"
               />
 
+  <subscriber for="Products.ATContentTypes.interfaces.document.IATDocument
+                   plone.app.iterate.interfaces.ICheckinEvent"
+              handler=".utils.handle_checkin" />
+
 </configure>
