@@ -23,6 +23,12 @@ def handle_checkin(obj, event):
     send_to_address = portal.portal_properties.site_properties.getProperty(
         'external_editor_address', send_from_address)
 
+    rt = getToolByName(obj, "portal_repository", None)
+    history = rt.getHistoryMetadata(event.baseline)
+    num = int(history.getLength(countPurged=False))
+    if num > 0:
+        num = num - 1
+
     obj_url = event.baseline.absolute_url()
     subject = "GFB: Artikel mit Änderungen wurde veröffentlicht"
     message = (
@@ -30,7 +36,8 @@ def handle_checkin(obj, event):
         u'Kommentar:\n%(comment)s\n\nDie Adresse lautet:\n%(url)s.\nHier '
         u'können Sie sich die Änderungen anzeigen lassen:\n%(history)s' % dict(
             title=safe_unicode(obj.Title()),
-            history=u"{0}/@@historyview".format(safe_unicode(obj_url)),
+            history=u"{0}/@@history?one=current&two={1}".format(
+                safe_unicode(obj_url), num),
             comment=safe_unicode(event.message),
             url=safe_unicode(obj_url)))
 
