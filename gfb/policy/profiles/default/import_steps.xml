@@ -5,11 +5,4 @@
               title="Additional GFB site policy setup">
   GFB site policy
  </import-step>
-  <import-step id="gfb_vocabularies"
-               version="20071021-01"
-               handler="gfb.policy.setuphandlers.importVocabularies"
-               title="GFB import vocabularies">
-    Policy vocabularies
-  </import-step>
-
 </import-steps>

@@ -47,42 +47,43 @@ def importVarious(context):
     if context.readDataFile('gfb.policy_various.txt') is None:
         return
 
-    site=context.getSite()
-    quickinst = getToolByName(site, 'portal_quickinstaller')
-    quickinst.installProduct('LinguaPlone')
-    quickinst.installProduct('ATCountryWidget')
-    quickinst.installProduct('AddRemoveWidget')
-    quickinst.installProduct('CMFPlacefulWorkflow')
-    quickinst.installProduct('Marshall')
-    quickinst.installProduct('PloneHelpCenter')
-    quickinst.installProduct('UserAndGroupSelectionWidget')
-    quickinst.installProduct('plone.app.iterate')
+    site = context.getSite()
+    # quickinst = getToolByName(site, 'portal_quickinstaller')
+    # quickinst.installProduct('LinguaPlone')
+    # quickinst.installProduct('ATCountryWidget')
+    # quickinst.installProduct('AddRemoveWidget')
+    # quickinst.installProduct('CMFPlacefulWorkflow')
+    # quickinst.installProduct('Marshall')
+    # quickinst.installProduct('PloneHelpCenter')
+    # quickinst.installProduct('UserAndGroupSelectionWidget')
+    # quickinst.installProduct('plone.app.iterate')
 
-    quickinst.installProduct('ATVocabularyManager')
+    # quickinst.installProduct('ATVocabularyManager')
     # This needs to run before Riskassessment Link, otherwise a broken vocab will be imported
     # archgenxml2b6 currently only can import vdex and not vdexfiles
-    importVocabularies(site)
-    registerVocabularyUtilities(site)
 
-    quickinst.installProduct('RiskAssessmentLink')
-    quickinst.installProduct('RemoteProvider')
-    quickinst.installProduct('ProxyIndex')
-    quickinst.installProduct('DataGridField')
-    quickinst.installProduct('gfb.theme')
-    quickinst.installProduct('plone.app.ldap')
-    quickinst.installProduct('TextIndexNG3')
-    quickinst.installProduct('collective.portlet.tal')
-    quickinst.installProduct('plone.portlet.collection')
-    quickinst.installProduct('plone.portlet.static')
-    quickinst.installProduct('collective.portlet.feedmixer')
-    quickinst.installProduct('Products.RichDocument')
-    quickinst.installProduct('webcouturier.dropdownmenu')
+    # importVocabularies(site)
+    # registerVocabularyUtilities(site)
 
-    addProxyIndexes(site)
+    # quickinst.installProduct('RiskAssessmentLink')
+    # quickinst.installProduct('RemoteProvider')
+    # quickinst.installProduct('ProxyIndex')
+    # quickinst.installProduct('DataGridField')
+    # quickinst.installProduct('gfb.theme')
+    # quickinst.installProduct('plone.app.ldap')
+    # quickinst.installProduct('TextIndexNG3')
+    # quickinst.installProduct('collective.portlet.tal')
+    # quickinst.installProduct('plone.portlet.collection')
+    # quickinst.installProduct('plone.portlet.static')
+    # quickinst.installProduct('collective.portlet.feedmixer')
+    # quickinst.installProduct('Products.RichDocument')
+    # quickinst.installProduct('webcouturier.dropdownmenu')
 
-    addExtraIndexes(site)
+    # addProxyIndexes(site)
 
-    addCatalogMetadata(site, ['getProvider_category', 'getCategoryIndependent', 'getDateOfEditing'])
+    # addExtraIndexes(site)
+
+    # addCatalogMetadata(site, ['getProvider_category', 'getCategoryIndependent', 'getDateOfEditing'])
 
     props = [
 #        dict(id='localityName', value='', type='string', plone_name='Locality', multi_valued=False),
@@ -92,12 +93,12 @@ def importVarious(context):
 #        dict(id='facsimileTelephoneNumber', value='', type='string', plone_name='Fax', multi_valued=False)
         ]
     # addMemberdataProperties(site, props)
-    configurePortal(site)
-    setupContent(site)
+    # configurePortal(site)
+    # setupContent(site)
     #setupSecurity(site)
-    configureCountryTool(site)
-    configureMembersFolder(site)
-    configureNavigation(site)
+    # configureCountryTool(site)
+    # configureMembersFolder(site)
+    # configureNavigation(site)
 
 def addMemberdataProperties(site, props):
     logger = logging.getLogger("MemberdataProperties")
