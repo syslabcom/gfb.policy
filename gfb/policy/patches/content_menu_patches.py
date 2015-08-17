@@ -3,7 +3,7 @@ from plone.browserlayer.utils import registered_layers
 from Products.CMFCore.utils import getToolByName
 from Products.LinguaPlone.browser.menu import TranslateSubMenuItem
 from Products.LinguaPlone.interfaces import ILinguaPloneProductLayer
-from plone.app.contentmenu.menu import DisplaySubMenuItem
+from plone.app.contentmenu.menu import DisplaySubMenuItem, ActionsSubMenuItem
 from plone.memoize.view import memoize
 from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.permissions import DeleteObjects
@@ -38,6 +38,17 @@ def display_menu_available(self):
 
 
 DisplaySubMenuItem.available = display_menu_available
+
+orig_actions_menu_available = ActionsSubMenuItem.available
+
+
+def actions_menu_available(self):
+    mtool = getToolByName(self.context, 'portal_membership')
+    if not mtool.checkPermission('Modify portal content', self):
+        return False
+    return orig_actions_menu_available(self)
+
+ActionsSubMenuItem.available = actions_menu_available
 
 
 @memoize

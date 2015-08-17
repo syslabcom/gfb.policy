@@ -123,6 +123,7 @@ def addMemberdataProperties(site, props):
 
 
 def importVocabularies(context):
+    return
     self = context.getSite()
     logger = logging.getLogger("gfb policy VocabularyImporter")
     logger.info("Importing Vocabularies for gfb")
