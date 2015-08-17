@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="Textagency"/>
+  </roles>
+  <permissions>
+    <permission name="GFB: View History" acquire="True">
+      <role name="Textagency"/>
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+    </permission>
+  </permissions>
+</rolemap>

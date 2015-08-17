@@ -98,4 +98,10 @@
                    plone.app.iterate.interfaces.ICheckinEvent"
               handler=".utils.handle_checkin" />
 
+    <permission
+        id="gfb.policy.ViewHistory"
+        title="GFB: View History"
+        />
+
+
 </configure>
