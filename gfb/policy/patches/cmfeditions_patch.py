@@ -50,6 +50,7 @@ def _recursiveSave(self, obj, app_metadata, sys_metadata, autoapply):
     # objects
     if sys_metadata['originator'] is None:
         clone = prep.clone.object
+        # PATCH: guard agains location_id being None
         sys_metadata['originator'] = "%s.%s.%s" % (prep.history_id,
                                                    clone.version_id,
                                                    getattr(clone, 'location_id', ''))
