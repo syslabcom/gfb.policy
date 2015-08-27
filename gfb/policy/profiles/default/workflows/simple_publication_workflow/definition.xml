@@ -132,7 +132,7 @@
   <description>If you submitted the item by mistake or want to perform additional edits, this will take it back.</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Retract</action>
   <guard>
-   <guard-permission>Modify portal content</guard-permission>
+   <guard-permission>Request review</guard-permission>
   </guard>
  </transition>
  <transition transition_id="submit" title="Member submits content for publication" new_state="pending" trigger="USER" before_script="" after_script="notify_admin">
