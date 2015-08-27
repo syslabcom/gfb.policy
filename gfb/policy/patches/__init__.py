@@ -6,3 +6,4 @@ import patch_copy_language_independent_fields
 import cmfeditions_patch
 import catalog_patches
 import content_menu_patches
+import plonefinder_patches
