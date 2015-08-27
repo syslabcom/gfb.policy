@@ -3,7 +3,9 @@ from plone.browserlayer.utils import registered_layers
 from Products.CMFCore.utils import getToolByName
 from Products.LinguaPlone.browser.menu import TranslateSubMenuItem
 from Products.LinguaPlone.interfaces import ILinguaPloneProductLayer
-from plone.app.contentmenu.menu import DisplaySubMenuItem, ActionsSubMenuItem
+from plone.app.contentmenu.menu import ActionsSubMenuItem
+from plone.app.contentmenu.menu import DisplaySubMenuItem
+from plone.app.contentmenu.menu import WorkflowMenu
 from plone.memoize.view import memoize
 from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.permissions import DeleteObjects
@@ -23,12 +25,10 @@ def translation_menu_available(self):
         return False
     return ILinguaPloneProductLayer in registered_layers()
 
-
 TranslateSubMenuItem.available = translation_menu_available
 
 
 orig_display_menu_available = DisplaySubMenuItem.available
-
 
 def display_menu_available(self):
     mtool = getToolByName(self.context, 'portal_membership')
@@ -36,11 +36,10 @@ def display_menu_available(self):
         return False
     return orig_display_menu_available(self)
 
-
 DisplaySubMenuItem.available = display_menu_available
 
-orig_actions_menu_available = ActionsSubMenuItem.available
 
+orig_actions_menu_available = ActionsSubMenuItem.available
 
 def actions_menu_available(self):
     mtool = getToolByName(self.context, 'portal_membership')
@@ -49,6 +48,18 @@ def actions_menu_available(self):
     return orig_actions_menu_available(self)
 
 ActionsSubMenuItem.available = actions_menu_available
+
+
+orig_wf_getMenuItems = WorkflowMenu.getMenuItems
+
+def wf_getMenuItems(self, context, request):
+    """Return menu item entries in a TAL-friendly form."""
+    mtool = getToolByName(context, 'portal_membership')
+    if not mtool.checkPermission('Manage portal', context):
+        return []
+    return orig_wf_getMenuItems(self, context, request)
+
+WorkflowMenu.getMenuItems = wf_getMenuItems
 
 
 @memoize
