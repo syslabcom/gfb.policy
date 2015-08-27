@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <repositorytool>
- <policymap purge="false">
+ <policymap>
+  <type name="ATDocument"/>
+  <type name="ATNewsItem"/>
+  <type name="Document">
+   <policy name="version_on_revert"/>
+  </type>
   <type name="RichDocument">
-   <policy name="at_edit_autoversion"/>
    <policy name="version_on_revert"/>
   </type>
  </policymap>
