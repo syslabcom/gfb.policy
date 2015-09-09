@@ -7,3 +7,4 @@ import cmfeditions_patch
 import catalog_patches
 import content_menu_patches
 import plonefinder_patches
+import membership_patches
