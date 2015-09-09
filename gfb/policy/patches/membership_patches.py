@@ -1,4 +1,4 @@
-from Products.PlonePAS.tools.membersip import MembershipTool
+from Products.PlonePAS.tools.membership import MembershipTool
 
 
 def testCurrentPassword(self, password):
