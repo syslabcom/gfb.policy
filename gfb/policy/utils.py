@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
+from plone.protect.utils import addTokenToUrl
 
 
 def logit(*kwargs):
@@ -31,13 +32,16 @@ def handle_checkin(obj, event):
 
     obj_url = event.baseline.absolute_url()
     subject = "GFB: Artikel mit Änderungen wurde veröffentlicht"
+    history_url = u"{0}/@@history?one=current&two={1}".format(
+        safe_unicode(obj_url), num)
+    history_url = addTokenToUrl(history_url)
+
     message = (
         u'Der Artikel "%(title)s" wurde neu veröffentlicht, mit folgendem '
         u'Kommentar:\n%(comment)s\n\nDie Adresse lautet:\n%(url)s.\nHier '
         u'können Sie sich die Änderungen anzeigen lassen:\n%(history)s' % dict(
             title=safe_unicode(obj.Title()),
-            history=u"{0}/@@history?one=current&two={1}".format(
-                safe_unicode(obj_url), num),
+            history=history_url,
             comment=safe_unicode(event.message),
             url=safe_unicode(obj_url)))
 
