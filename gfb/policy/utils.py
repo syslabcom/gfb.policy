@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+from Acquisition import aq_parent
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from plone.protect.utils import addTokenToUrl
+from zope.component import getMultiAdapter
 
 
 def logit(*kwargs):
@@ -31,16 +33,21 @@ def handle_checkin(obj, event):
         num = num - 1
 
     obj_url = event.baseline.absolute_url()
-    subject = "GFB: Artikel mit Änderungen wurde veröffentlicht"
+    title = safe_unicode(event.baseline.Title())
+    folder_title = safe_unicode(aq_parent(event.baseline).Title())
+    subject = u'GFB: Artikel "{0}" aus Rubrik "{1}" wurde veröffentlicht'.format(
+        title, folder_title)
     history_url = u"{0}/@@history?one=current&two={1}".format(
         safe_unicode(obj_url), num)
     history_url = addTokenToUrl(history_url)
 
     message = (
-        u'Der Artikel "%(title)s" wurde neu veröffentlicht, mit folgendem '
-        u'Kommentar:\n%(comment)s\n\nDie Adresse lautet:\n%(url)s.\nHier '
+        u'Der Artikel "%(title)s" aus Rubrik "%(rubrik)s" wurde neu '
+        u'veröffentlicht, mit folgendem Kommentar:\n%(comment)s\n\n'
+        u'Die Adresse lautet:\n%(url)s.\nHier '
         u'können Sie sich die Änderungen anzeigen lassen:\n%(history)s' % dict(
             title=safe_unicode(obj.Title()),
+            rubrik=folder_title,
             history=history_url,
             comment=safe_unicode(event.message),
             url=safe_unicode(obj_url)))
