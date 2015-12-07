@@ -32,6 +32,23 @@ def handle_checkin(obj, event):
     if num > 0:
         num = num - 1
 
+    pm = getToolByName(portal, 'portal_membership')
+    user = pm.getAuthenticatedMember()
+    cnt = num
+    username = usermail = None
+    while cnt >= 0:
+        try:
+            data = history.retrieve(cnt)
+            principal = data['metadata']['sys_metadata']['principal']
+            if principal != user.id :
+                actor = pm.getMemberById(principal)
+                username = safe_unicode(actor.getProperty('fullname'))
+                usermail = safe_unicode(actor.getProperty('email'))
+                break
+        except:
+            pass
+        cnt = cnt - 1
+
     obj_url = event.baseline.absolute_url()
     title = safe_unicode(event.baseline.Title())
     folder_title = safe_unicode(aq_parent(event.baseline).Title())
@@ -41,13 +58,18 @@ def handle_checkin(obj, event):
         safe_unicode(obj_url), num)
     history_url = addTokenToUrl(history_url)
 
+    note = u""
+    if username:
+        note = u'\nDie letzte Änderung wurde von "%(name)s" durchgeführt.\n\n' % dict(
+            name=username)
     message = (
         u'Der Artikel "%(title)s" aus Rubrik "%(rubrik)s" wurde neu '
-        u'veröffentlicht, mit folgendem Kommentar:\n%(comment)s\n\n'
-        u'Die Adresse lautet:\n%(url)s.\nHier '
+        u'veröffentlicht, mit folgendem Kommentar:\n%(comment)s\n%(note)s'
+        u'\nDie Adresse lautet:\n%(url)s.\nHier '
         u'können Sie sich die Änderungen anzeigen lassen:\n%(history)s' % dict(
             title=safe_unicode(obj.Title()),
             rubrik=folder_title,
+            note=note,
             history=history_url,
             comment=safe_unicode(event.message),
             url=safe_unicode(obj_url)))
@@ -61,3 +83,8 @@ def handle_checkin(obj, event):
         message, mto=send_to_address, mfrom=envelope_from,
         subject=subject, msg_type=msg_type, charset=encoding
     )
+    if usermail:
+        host.send(
+            message, mto=usermail, mfrom=envelope_from,
+            subject=subject, msg_type=msg_type, charset=encoding
+        )
