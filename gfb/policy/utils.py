@@ -40,11 +40,13 @@ def handle_checkin(obj, event):
         try:
             data = history.retrieve(cnt)
             principal = data['metadata']['sys_metadata']['principal']
-            if principal != user.id :
-                actor = pm.getMemberById(principal)
-                username = safe_unicode(actor.getProperty('fullname'))
-                usermail = safe_unicode(actor.getProperty('email'))
-                break
+            if principal != user.id:
+                actors = pm.searchForMembers(email=principal)
+                if len(actors):
+                    actor = actors[0]
+                    username = safe_unicode(actor.getProperty('fullname'))
+                    usermail = safe_unicode(actor.getProperty('email'))
+                    break
         except:
             pass
         cnt = cnt - 1
