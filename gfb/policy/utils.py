@@ -40,7 +40,7 @@ def handle_checkin(obj, event):
         try:
             data = history.retrieve(cnt)
             principal = data['metadata']['sys_metadata']['principal']
-            if principal != user.id:
+            if principal != user.getProperty('email', user.id):
                 actors = pm.searchForMembers(email=principal)
                 if len(actors):
                     actor = actors[0]
