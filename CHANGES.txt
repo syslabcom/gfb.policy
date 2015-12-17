@@ -1,7 +1,7 @@
 gfb.policy Changelog
 ====================
 
-1.3.23 (unreleased)
+1.3.23 (2015-12-17)
 -------------------
 
 - Scrub HTML entities on save #12902
