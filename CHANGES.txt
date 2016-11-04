@@ -4,8 +4,7 @@ gfb.policy Changelog
 1.3.24 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Deactivate scrub HTML again, potential cause of anger #14403
 
 1.3.23 (2015-12-17)
 -------------------
